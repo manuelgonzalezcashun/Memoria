@@ -6,14 +6,14 @@ using UnityEngine.InputSystem;
 /// </summary>
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float playerSpeed = 5f, jumpPower = 5f, groundRadius = 0.3f;
+    [SerializeField] private float playerSpeed = 5f, groundRadius = 0.3f;
     [SerializeField] private LayerMask groundLayerMask;
     private Vector2 groundCheck;
     private bool isGrounded = false;
 
     private Rigidbody2D playerRB = null;
     private PlayerInput playerInput = null;
-    private InputAction moveAction, jumpAction;
+    private InputAction moveAction;
 
     void Awake()
     {
@@ -41,13 +41,6 @@ public class PlayerController : MonoBehaviour
         float moveX = moveAction.ReadValue<Vector2>().x;
         playerRB.velocity = new Vector2(moveX * playerSpeed, playerRB.velocity.y);
     }
-    void PlayerJump()
-    {
-        if (isGrounded)
-        {
-            playerRB.AddForce(new Vector2(playerRB.velocity.x, jumpPower), ForceMode2D.Impulse);
-        }
-    }
 
     #region Player Component Binding
     void OnDrawGizmos()
@@ -63,19 +56,18 @@ public class PlayerController : MonoBehaviour
 
         //* Player Actions
         moveAction = playerInput.actions["Move"];
-        jumpAction = playerInput.actions["Jump"];
     }
     void AddListeners()
     {
         // TODO Write Code to add all listeners
         // * Player Input Listeners
-        jumpAction.performed += ctx => PlayerJump();
+        // * Event Listeners
     }
     void RemoveListeners()
     {
         // TODO Write code to remove all listeners
         // * Player Input Listeners
-        jumpAction.performed -= ctx => PlayerJump();
+        // * Event Listeners
     }
     #endregion
 }
