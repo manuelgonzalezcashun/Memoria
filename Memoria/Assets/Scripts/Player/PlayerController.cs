@@ -41,7 +41,6 @@ public class PlayerController : MonoBehaviour
         float moveX = moveAction.ReadValue<Vector2>().x;
         playerRB.velocity = new Vector2(moveX * playerSpeed, playerRB.velocity.y);
     }
-
     #region Player Component Binding
     void OnDrawGizmos()
     {
