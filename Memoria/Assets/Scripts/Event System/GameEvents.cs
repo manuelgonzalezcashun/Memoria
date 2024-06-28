@@ -1,6 +1,7 @@
 using UnityEngine;
-
-public class MyEvent : Event
+public class CollectEvent : Event
 {
-
+    public GameObject collectedObject;
 }
+
+
