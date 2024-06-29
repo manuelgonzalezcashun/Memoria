@@ -6,14 +6,14 @@ using UnityEngine.InputSystem;
 /// </summary>
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float playerSpeed = 5f, groundRadius = 0.3f;
+    [SerializeField] private float playerSpeed = 5f, groundRadius = 0.3f, interactDist = 0.3f;
     [SerializeField] private LayerMask groundLayerMask;
     private Vector2 groundCheck;
     private bool isGrounded = false;
 
     private Rigidbody2D playerRB = null;
     private PlayerInput playerInput = null;
-    private InputAction moveAction;
+    private InputAction moveAction, interactAction;
 
     void Awake()
     {
@@ -35,18 +35,21 @@ public class PlayerController : MonoBehaviour
     {
         groundCheck = new Vector2(transform.position.x, transform.position.y - 1);
         isGrounded = Physics2D.OverlapCircle(groundCheck, groundRadius, groundLayerMask);
+
+        InteractableManager.Instance.SearchForNearestInteractable(transform.position, interactDist);
     }
     void PlayerMove()
     {
         float moveX = moveAction.ReadValue<Vector2>().x;
         playerRB.velocity = new Vector2(moveX * playerSpeed, playerRB.velocity.y);
     }
-    #region Player Component Binding
-    void OnDrawGizmos()
+
+    void PlayerInteract()
     {
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(groundCheck, groundRadius);
+        InteractableManager.Instance.InteractWithObjects();
     }
+
+    #region Player Component Binding
     void InitializePlayer()
     {
         //* Player Components
@@ -55,17 +58,22 @@ public class PlayerController : MonoBehaviour
 
         //* Player Actions
         moveAction = playerInput.actions["Move"];
+        interactAction = playerInput.actions["Interact"];
     }
     void AddListeners()
     {
         // TODO Write Code to add all listeners
         // * Player Input Listeners
+        interactAction.performed += ctx => PlayerInteract();
+
         // * Event Listeners
     }
     void RemoveListeners()
     {
         // TODO Write code to remove all listeners
         // * Player Input Listeners
+        interactAction.performed -= ctx => PlayerInteract();
+
         // * Event Listeners
     }
     #endregion

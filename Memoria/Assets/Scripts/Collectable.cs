@@ -1,15 +1,11 @@
 using UnityEngine;
 
-public class Collectable : MonoBehaviour
+public class Collectable : Interactable
 {
-    private void OnTriggerEnter2D(Collider2D obj)
+    public override void Interact()
     {
-        if (obj.CompareTag("Player")) PickupItem();
-    }
+        Debug.Log($"Collected {name}");
 
-    private void PickupItem()
-    {
-        Debug.Log("Picked up " + name);
         Destroy(gameObject);
     }
 }

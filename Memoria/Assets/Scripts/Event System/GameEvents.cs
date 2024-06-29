@@ -1,7 +1,7 @@
 using UnityEngine;
-public class CollectEvent : Event
+public class ShowInteractUI : Event
 {
-    public GameObject collectedObject;
+    public bool showUI;
 }
 
 
