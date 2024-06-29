@@ -923,6 +923,7 @@ GameObject:
   - component: {fileID: 2119406079}
   - component: {fileID: 2119406080}
   - component: {fileID: 2119406081}
+  - component: {fileID: 2119406082}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -971,7 +972,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 934496136, guid: 45e7782c3af6c46bc9b70c5a0344087f, type: 3}
   m_Color: {r: 0, g: 0.54663897, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -991,8 +992,8 @@ Transform:
   m_GameObject: {fileID: 2119406075}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5, y: -2.5, z: 0}
-  m_LocalScale: {x: 1, y: 2, z: 1}
+  m_LocalPosition: {x: -1.48, y: -1.17567, z: 0}
+  m_LocalScale: {x: 0.5815078, y: 0.37714222, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1029,18 +1030,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.20914817, y: 0.8868232}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 6.8912992, y: 13.3}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 7.0653005, y: 15.027947}
   m_EdgeRadius: 0
 --- !u!114 &2119406079
 MonoBehaviour:
@@ -1086,7 +1087,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSpeed: 10
   groundRadius: 0.3
-  interactDist: 0.3
+  interactDist: 1
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 64
@@ -1117,6 +1118,21 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!111 &2119406082
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119406075}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: e2a1b737bf75c4ef6b36d5386fe31aad, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1001 &3824671505371599577
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1135,7 +1151,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6953410317771768411, guid: b84baa57d4608314d832904a7f843409, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.18
+      value: -1.18
       objectReference: {fileID: 0}
     - target: {fileID: 6953410317771768411, guid: b84baa57d4608314d832904a7f843409, type: 3}
       propertyPath: m_LocalPosition.z
