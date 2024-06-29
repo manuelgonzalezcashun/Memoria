@@ -4,7 +4,7 @@ public class Collectable : Interactable
 {
     public override void Interact()
     {
-        Debug.Log($"Collected {name}");
+        EventDispatcher.Raise(new CollectedEvent());
 
         Destroy(gameObject);
     }
