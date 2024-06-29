@@ -3,6 +3,7 @@ using UnityEngine;
 public class InteractableManager
 {
     private List<Interactable> _interactables = new List<Interactable>();
+    public List<Interactable> Interactables => _interactables;
 
     private Interactable closestInteractable = null;
 
@@ -10,7 +11,7 @@ public class InteractableManager
     {
         float closestDistance = interactDistance;
         closestInteractable = null;
-        EventDispatcher.Raise(new ShowInteractUI { showUI = false });
+        EventDispatcher.Raise(new ShowInteractUI { showUI = false, interactable = null });
 
         foreach (Interactable interactable in _interactables)
         {
@@ -20,8 +21,17 @@ public class InteractableManager
             {
                 closestDistance = distance;
                 closestInteractable = interactable;
-                EventDispatcher.Raise(new ShowInteractUI { showUI = true });
+
+                EventDispatcher.Raise(new ShowInteractUI { showUI = true, interactable = closestInteractable });
             }
+        }
+    }
+    public void PickupInteractable()
+    {
+        if (closestInteractable != null &&
+        closestInteractable.CanPickupInteractable)
+        {
+            closestInteractable.Interact();
         }
     }
     public void InteractWithObjects()

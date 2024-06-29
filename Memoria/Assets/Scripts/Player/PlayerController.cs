@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
         isGrounded = Physics2D.OverlapCircle(groundCheck, groundRadius, groundLayerMask);
 
         InteractableManager.Instance.SearchForNearestInteractable(transform.position, interactDist);
+        InteractableManager.Instance.PickupInteractable();
     }
     void PlayerMove()
     {
