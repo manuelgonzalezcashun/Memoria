@@ -8,4 +8,8 @@ public class Collectable : Interactable
 
         Destroy(gameObject);
     }
+    void Start()
+    {
+        EventDispatcher.Raise(new GetCollectableCount());
+    }
 }

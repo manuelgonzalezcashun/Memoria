@@ -6,10 +6,7 @@ using UnityEngine.InputSystem;
 /// </summary>
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float playerSpeed = 5f, groundRadius = 0.3f, interactDist = 0.3f;
-    [SerializeField] private LayerMask groundLayerMask;
-    private Vector2 groundCheck;
-    private bool isGrounded = false;
+    [SerializeField] private float playerSpeed = 5f, interactDist = 0.3f;
 
     private Rigidbody2D playerRB = null;
     private PlayerInput playerInput = null;
@@ -33,9 +30,6 @@ public class PlayerController : MonoBehaviour
     }
     void LateUpdate()
     {
-        groundCheck = new Vector2(transform.position.x, transform.position.y - 1);
-        isGrounded = Physics2D.OverlapCircle(groundCheck, groundRadius, groundLayerMask);
-
         InteractableManager.Instance.SearchForNearestInteractable(transform.position, interactDist);
         InteractableManager.Instance.PickupInteractable();
     }
