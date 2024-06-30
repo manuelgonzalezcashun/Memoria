@@ -43,6 +43,15 @@ public class PlayerController : MonoBehaviour
     {
         float moveX = moveAction.ReadValue<Vector2>().x;
         playerRB.velocity = new Vector2(moveX * playerSpeed, playerRB.velocity.y);
+
+        Flip(moveX);
+    }
+
+    void Flip(float velocity) //* Flips the player based on the direction they are heading.
+    {
+        if (velocity == 0) return;
+
+        transform.localScale = new Vector3(velocity, 1, 1);
     }
 
     void PlayerInteract()
