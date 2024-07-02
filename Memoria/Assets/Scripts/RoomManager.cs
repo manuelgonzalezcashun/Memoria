@@ -1,16 +1,18 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class RoomManager : MonoBehaviour
 {
+    [SerializeField] GameObject loadingScreen = null;
     private string _currentScene = string.Empty;
     void OnEnable()
     {
-        EventDispatcher.AddListener<LoadRoomEvent>(ctx => LoadRoom(ctx.roomName));
+        EventDispatcher.AddListener<LoadRoomEvent>(ctx => StartCoroutine(LoadingScreen(ctx.roomName)));
     }
     void OnDisable()
     {
-        EventDispatcher.RemoveListener<LoadRoomEvent>(ctx => LoadRoom(ctx.roomName));
+        EventDispatcher.RemoveListener<LoadRoomEvent>(ctx => StartCoroutine(LoadingScreen(ctx.roomName)));
     }
     void Awake()
     {
@@ -31,6 +33,23 @@ public class RoomManager : MonoBehaviour
         if (_currentScene == string.Empty) return;
 
         SceneManager.UnloadSceneAsync(_currentScene);
+
+    }
+    IEnumerator LoadingScreen(string sceneName)
+    {
+        UnloadRoom();
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+        loadingScreen.SetActive(true);
+        while (!operation.isDone)
+        {
+            yield return null;
+
+            if (operation.isDone)
+            {
+                _currentScene = sceneName;
+                loadingScreen.SetActive(false);
+            }
+        }
 
     }
 }
