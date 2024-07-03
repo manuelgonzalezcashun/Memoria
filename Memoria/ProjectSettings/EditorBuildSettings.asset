@@ -8,7 +8,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main Menu.unity
     guid: 647c3c27a5e9588459bfbaf7d09d33a5
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/WHITEBOX.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Gameplay.unity
+    guid: eeac4b488561926418d19a59b05fae83
+  - enabled: 1
+    path: Assets/Scenes/Room 1.unity
+    guid: d59115bf2a1167143a93522cc04558e3
+  - enabled: 1
+    path: Assets/Scenes/Room 2.unity
+    guid: 206ca20fa7e0e84478c6585732fe20ce
+  - enabled: 0
+    path: Assets/Scenes/Room 3.unity
+    guid: 22c783852fe078e4c925938ea461c3c9
   m_configObjects: {}

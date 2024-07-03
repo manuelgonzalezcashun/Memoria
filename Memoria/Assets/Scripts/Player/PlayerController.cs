@@ -6,14 +6,11 @@ using UnityEngine.InputSystem;
 /// </summary>
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float playerSpeed = 5f, groundRadius = 0.3f;
-    [SerializeField] private LayerMask groundLayerMask;
-    private Vector2 groundCheck;
-    private bool isGrounded = false;
+    [SerializeField] private float playerSpeed = 5f, interactDist = 0.3f;
 
     private Rigidbody2D playerRB = null;
     private PlayerInput playerInput = null;
-    private InputAction moveAction;
+    private InputAction moveAction, interactAction;
 
     void Awake()
     {
@@ -33,20 +30,30 @@ public class PlayerController : MonoBehaviour
     }
     void LateUpdate()
     {
-        groundCheck = new Vector2(transform.position.x, transform.position.y - 1);
-        isGrounded = Physics2D.OverlapCircle(groundCheck, groundRadius, groundLayerMask);
+        InteractableManager.Instance.SearchForNearestInteractable(transform.position, interactDist);
+        InteractableManager.Instance.PickupInteractable();
     }
     void PlayerMove()
     {
         float moveX = moveAction.ReadValue<Vector2>().x;
         playerRB.velocity = new Vector2(moveX * playerSpeed, playerRB.velocity.y);
+
+        Flip(moveX);
     }
-    #region Player Component Binding
-    void OnDrawGizmos()
+
+    void Flip(float velocity) //* Flips the player based on the direction they are heading.
     {
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(groundCheck, groundRadius);
+        if (velocity == 0) return;
+
+        transform.localScale = new Vector3(velocity, 1, 1);
     }
+
+    void PlayerInteract()
+    {
+        InteractableManager.Instance.InteractWithObjects();
+    }
+
+    #region Player Component Binding
     void InitializePlayer()
     {
         //* Player Components
@@ -55,17 +62,22 @@ public class PlayerController : MonoBehaviour
 
         //* Player Actions
         moveAction = playerInput.actions["Move"];
+        interactAction = playerInput.actions["Interact"];
     }
     void AddListeners()
     {
         // TODO Write Code to add all listeners
         // * Player Input Listeners
+        interactAction.performed += ctx => PlayerInteract();
+
         // * Event Listeners
     }
     void RemoveListeners()
     {
         // TODO Write code to remove all listeners
         // * Player Input Listeners
+        interactAction.performed -= ctx => PlayerInteract();
+
         // * Event Listeners
     }
     #endregion
