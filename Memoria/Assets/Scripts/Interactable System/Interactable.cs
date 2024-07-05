@@ -5,6 +5,7 @@ public abstract class Interactable : MonoBehaviour
     [SerializeField] bool canPickup = false;
     public bool CanPickupInteractable => canPickup;
     public GameObject interactUI = null;
+    
 
     void OnEnable()
     {
@@ -27,6 +28,7 @@ public abstract class Interactable : MonoBehaviour
         }
 
         interactUI.SetActive(evtData.showUI);
+       
     }
 
     public abstract void Interact();
