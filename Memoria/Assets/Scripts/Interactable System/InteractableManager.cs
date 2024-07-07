@@ -3,8 +3,6 @@ using UnityEngine;
 public class InteractableManager
 {
     private List<Interactable> _interactables = new List<Interactable>();
-    public List<Interactable> Interactables => _interactables;
-
     private Interactable closestInteractable = null;
 
     public void SearchForNearestInteractable(Vector3 interactPosition, float interactDistance)

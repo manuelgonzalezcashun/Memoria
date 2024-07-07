@@ -6,4 +6,14 @@ public class ShowInteractUI : Event
 }
 public class CollectedEvent : Event { }
 
+public class GetCollectableCount : Event
+{
+    public Collectable collectable;
+}
+
+public class LoadRoomEvent : Event
+{
+    public string roomName;
+}
+
 
