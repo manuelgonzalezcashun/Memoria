@@ -1,16 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class DragDrop2D : MonoBehaviour
+public class PuzzlePiece : MonoBehaviour
 {
     Vector3 offset;
-    Collider2D collider2D;
-    public string destinationTag = "DropArea";
-    
+    Collider2D puzzleCollider;
+    public GameObject dropArea = null;
     void Awake()
     {
-        collider2D = GetComponent<Collider2D>();
+        puzzleCollider = GetComponent<Collider2D>();
     }
 
     void OnMouseDown()
@@ -23,20 +20,21 @@ public class DragDrop2D : MonoBehaviour
         transform.position = MouseWorldPosition() + offset;
     }
 
-    void OnMouseUP()
+    void OnMouseUp()
     {
-        collider2D.enabled = false;
+        puzzleCollider.enabled = false;
         var rayOrigin = Camera.main.transform.position;
         var rayDirection = MouseWorldPosition() - Camera.main.transform.position;
         RaycastHit2D hitInfo;
-        if(hitInfo = Physics2D.Raycast(rayOrigin, rayDirection))
+        if (hitInfo = Physics2D.Raycast(rayOrigin, rayDirection))
         {
-            if(hitInfo.transform.tag == destinationTag)
+            if (hitInfo.collider.gameObject == dropArea)
             {
+                Debug.Log($"Found Pair: {name} / {hitInfo.collider.gameObject.name}");
                 transform.position = hitInfo.transform.position + new Vector3(0, 0, -0.01f);
             }
         }
-        collider2D.enabled = true; 
+        puzzleCollider.enabled = true;
     }
 
     Vector3 MouseWorldPosition()
