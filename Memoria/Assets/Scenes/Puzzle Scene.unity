@@ -364,7 +364,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropArea: {fileID: 1307405552}
-  destinationTag: DropArea
 --- !u!61 &201560843
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -408,7 +407,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9, y: 0.9}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &201560844
 MonoBehaviour:
@@ -500,7 +499,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropArea: {fileID: 391604971}
-  destinationTag: DropArea
 --- !u!61 &276826704
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -544,7 +542,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9, y: 0.9}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &276826705
 MonoBehaviour:
@@ -878,7 +876,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropArea: {fileID: 0}
-  destinationTag: DropArea
 --- !u!61 &553027496
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1014,7 +1011,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropArea: {fileID: 1468127450}
-  destinationTag: DropArea
 --- !u!61 &574062555
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1058,7 +1054,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9, y: 0.9}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &574062556
 MonoBehaviour:
@@ -1155,7 +1151,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropArea: {fileID: 1512240235}
-  destinationTag: DropArea
 --- !u!61 &734755683
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1199,7 +1194,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9, y: 0.9}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &734755684
 MonoBehaviour:
@@ -1338,7 +1333,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropArea: {fileID: 1980680307}
-  destinationTag: DropArea
 --- !u!61 &990501937
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1382,7 +1376,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9, y: 0.9}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &990501938
 MonoBehaviour:
@@ -1524,7 +1518,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropArea: {fileID: 0}
-  destinationTag: DropArea
 --- !u!61 &1139984341
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1660,7 +1653,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropArea: {fileID: 0}
-  destinationTag: DropArea
 --- !u!61 &1225529874
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2431,7 +2423,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropArea: {fileID: 0}
-  destinationTag: DropArea
 --- !u!61 &1459602226
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3052,7 +3043,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropArea: {fileID: 0}
-  destinationTag: DropArea
 --- !u!61 &1574139687
 BoxCollider2D:
   m_ObjectHideFlags: 0
