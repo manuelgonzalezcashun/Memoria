@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class CameraScript : MonoBehaviour
 {
+    private Camera cameraInstance = null;
     public Transform targetTransform;
     public Vector3 offset;
 
@@ -12,6 +13,21 @@ public class CameraScript : MonoBehaviour
     public Vector2 xLimit;
     public Vector2 yLimit;
     private Vector3 velocity = Vector3.zero;
+
+    void Start()
+    {
+        CameraManager.Instance.Add(cameraInstance);
+        CameraManager.Instance.SetCamera(cameraInstance.name);
+    }
+    void OnEnable()
+    {
+        cameraInstance = GetComponent<Camera>();
+    }
+    void OnDestroy()
+    {
+        CameraManager.Instance.Remove(cameraInstance);
+        CameraManager.Instance.SetCamera(CameraManager.Instance.DefaultCamera);
+    }
     void LateUpdate()
     {
         if (targetTransform == null) return; // * Safe Guard from Player Death
