@@ -14,9 +14,12 @@ public class RoomManager : MonoBehaviour
     {
         EventDispatcher.RemoveListener<LoadRoomEvent>(ctx => StartCoroutine(LoadingScreen(ctx.roomName)));
     }
-    void Awake()
+    void Update()
     {
-        LoadRoom("Room 1");
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            LoadRoom("Puzzle Scene");
+        }
     }
     void LoadRoom(string sceneName)
     {
