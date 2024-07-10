@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f7d081c54b5e7f4a8b3d164cfaade4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destinationTag: DropArea
+  dropArea: {fileID: 0}
 --- !u!61 &4268842
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -575,7 +575,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f7d081c54b5e7f4a8b3d164cfaade4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destinationTag: DropArea
+  dropArea: {fileID: 0}
 --- !u!61 &146592167
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2450,7 +2450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f7d081c54b5e7f4a8b3d164cfaade4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destinationTag: DropArea
+  dropArea: {fileID: 0}
 --- !u!61 &642015403
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3560,7 +3560,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f7d081c54b5e7f4a8b3d164cfaade4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destinationTag: DropArea
+  dropArea: {fileID: 0}
 --- !u!61 &1100304110
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3704,7 +3704,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f7d081c54b5e7f4a8b3d164cfaade4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destinationTag: DropArea
+  dropArea: {fileID: 0}
 --- !u!61 &1139184434
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4488,7 +4488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f7d081c54b5e7f4a8b3d164cfaade4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destinationTag: DropArea
+  dropArea: {fileID: 0}
 --- !u!61 &1417916219
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6178,8 +6178,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 934496136, guid: 45e7782c3af6c46bc9b70c5a0344087f, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 1316041085, guid: cf5bfa7a974604135907c0b399c0bdfe, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -6198,8 +6198,8 @@ Transform:
   m_GameObject: {fileID: 2119406075}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.24, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -2.1015, y: -2.6649, z: 0}
+  m_LocalScale: {x: 1.1163349, y: 0.6332123, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -6240,7 +6240,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.2970998, y: 4.4333334}
+    oldSize: {x: 1.9212121, y: 7.5878787}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
