@@ -1,54 +1,44 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class RoomManager : MonoBehaviour
 {
     [SerializeField] GameObject loadingScreen = null;
-    private string _currentRoom = string.Empty;
+    private string _currentScene = string.Empty;
     void OnEnable()
     {
         EventDispatcher.AddListener<LoadRoomEvent>(ctx => StartCoroutine(LoadingScreen(ctx.roomName)));
-        DontDestroyOnLoad(this);
     }
     void OnDisable()
     {
         EventDispatcher.RemoveListener<LoadRoomEvent>(ctx => StartCoroutine(LoadingScreen(ctx.roomName)));
     }
-    void Update()
+    void Awake()
     {
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            LoadRoom("Puzzle Scene");
-        }
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            UnloadRoom();
-        }
+        LoadRoom("Room 1");
     }
-    void LoadRoom(string roomName)
+    void LoadRoom(string sceneName)
     {
         UnloadRoom();
-        if (_currentRoom != roomName)
+        if (_currentScene != sceneName)
         {
-            SceneManager.LoadSceneAsync(roomName, LoadSceneMode.Additive);
+            SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
 
-            _currentRoom = roomName;
+            _currentScene = sceneName;
         }
     }
     void UnloadRoom()
     {
-        if (_currentRoom == string.Empty) return;
+        if (_currentScene == string.Empty) return;
 
-        SceneManager.UnloadSceneAsync(_currentRoom);
-        _currentRoom = string.Empty;
+        SceneManager.UnloadSceneAsync(_currentScene);
 
     }
-    IEnumerator LoadingScreen(string roomName)
+    IEnumerator LoadingScreen(string sceneName)
     {
         UnloadRoom();
-        AsyncOperation operation = SceneManager.LoadSceneAsync(roomName, LoadSceneMode.Additive);
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
         loadingScreen.SetActive(true);
         while (!operation.isDone)
         {
@@ -56,7 +46,7 @@ public class RoomManager : MonoBehaviour
 
             if (operation.isDone)
             {
-                _currentRoom = roomName;
+                _currentScene = sceneName;
                 loadingScreen.SetActive(false);
             }
         }

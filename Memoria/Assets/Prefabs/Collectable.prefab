@@ -202,7 +202,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canPickup: 1
   interactUI: {fileID: 3637172917624829238}
-  interactCam: {fileID: 3637172917624829238}
 --- !u!1 &8139635982316463040
 GameObject:
   m_ObjectHideFlags: 0
