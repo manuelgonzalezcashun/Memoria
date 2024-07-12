@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class CameraScript : MonoBehaviour
 {
+    [SerializeField] bool debugMode = false;
     private Camera cameraInstance = null;
     public Transform targetTransform;
     public Vector3 offset;
@@ -16,8 +17,11 @@ public class CameraScript : MonoBehaviour
 
     void Start()
     {
-        CameraManager.Instance.Add(cameraInstance);
-        CameraManager.Instance.SetCamera(cameraInstance.name);
+        if (!debugMode)
+        {
+            CameraManager.Instance.Add(cameraInstance);
+            CameraManager.Instance.SetCamera(cameraInstance.name);
+        }
     }
     void OnEnable()
     {
@@ -25,8 +29,11 @@ public class CameraScript : MonoBehaviour
     }
     void OnDestroy()
     {
-        CameraManager.Instance.Remove(cameraInstance);
-        CameraManager.Instance.SetCamera(CameraManager.Instance.DefaultCamera);
+        if (!debugMode)
+        {
+            CameraManager.Instance.Remove(cameraInstance);
+            CameraManager.Instance.SetCamera(CameraManager.Instance.DefaultCamera);
+        }
     }
     void LateUpdate()
     {
