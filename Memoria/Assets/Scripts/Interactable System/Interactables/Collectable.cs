@@ -7,10 +7,5 @@ public class Collectable : Interactable
         EventDispatcher.Raise(new CollectedEvent());
 
         Destroy(gameObject);
-        //gameObject.SetActive(false);
-    }
-    void Start()
-    {
-        EventDispatcher.Raise(new GetCollectableCount());
     }
 }

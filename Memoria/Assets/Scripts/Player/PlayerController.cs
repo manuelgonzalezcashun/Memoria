@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     {
         AddListeners();
     }
-    void OnDisable()
+    void OnDestroy()
     {
         RemoveListeners();
     }
@@ -50,6 +50,10 @@ public class PlayerController : MonoBehaviour
         }
 
         Flip(moveX);
+    }
+    void HandlePlayerInput(bool input)
+    {
+        gameObject.SetActive(input);
     }
 
     void Flip(float velocity) //* Flips the player based on the direction they are heading.
@@ -83,6 +87,7 @@ public class PlayerController : MonoBehaviour
         interactAction.performed += ctx => PlayerInteract();
 
         // * Event Listeners
+        EventDispatcher.AddListener<LoadPuzzleEvent>(ctx => HandlePlayerInput(false));
     }
     void RemoveListeners()
     {
@@ -91,6 +96,7 @@ public class PlayerController : MonoBehaviour
         interactAction.performed -= ctx => PlayerInteract();
 
         // * Event Listeners
+        EventDispatcher.RemoveListener<LoadPuzzleEvent>(ctx => HandlePlayerInput(false));
     }
     #endregion
 

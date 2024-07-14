@@ -12,12 +12,10 @@ public class UiManager : MonoBehaviour
     void OnEnable()
     {
         EventDispatcher.AddListener<CollectedEvent>(ctx => AddScore());
-        EventDispatcher.AddListener<GetCollectableCount>(AddCollectable);
     }
     void OnDisable()
     {
         EventDispatcher.RemoveListener<CollectedEvent>(ctx => AddScore());
-        EventDispatcher.RemoveListener<GetCollectableCount>(AddCollectable);
     }
     void Start()
     {
@@ -29,9 +27,6 @@ public class UiManager : MonoBehaviour
     {
         score++;
         collectableTextUI.text = $"Memories Collected {score}/{count}";
-    }
-    void AddCollectable(GetCollectableCount evt)
-    {
-        _collectables.Add(evt.collectable);
+
     }
 }

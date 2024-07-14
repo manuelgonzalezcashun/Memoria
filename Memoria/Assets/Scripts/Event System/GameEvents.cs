@@ -5,11 +5,7 @@ public class ShowInteractUI : Event
     public Interactable interactable;
 }
 public class CollectedEvent : Event { }
-
-public class GetCollectableCount : Event
-{
-    public Collectable collectable;
-}
+public class LoadPuzzleEvent : Event { }
 
 public class LoadRoomEvent : Event
 {
