@@ -88,6 +88,7 @@ public class PlayerController : MonoBehaviour
 
         // * Event Listeners
         EventDispatcher.AddListener<LoadPuzzleEvent>(ctx => HandlePlayerInput(false));
+        EventDispatcher.AddListener<PuzzleWinEvent>(ctx => HandlePlayerInput(true));
     }
     void RemoveListeners()
     {
@@ -97,6 +98,7 @@ public class PlayerController : MonoBehaviour
 
         // * Event Listeners
         EventDispatcher.RemoveListener<LoadPuzzleEvent>(ctx => HandlePlayerInput(false));
+        EventDispatcher.RemoveListener<PuzzleWinEvent>(ctx => HandlePlayerInput(true));
     }
     #endregion
 

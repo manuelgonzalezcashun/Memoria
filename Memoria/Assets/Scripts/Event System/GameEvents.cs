@@ -11,6 +11,9 @@ public class LoadRoomEvent : Event
 {
     public string roomName;
 }
+public class AddPuzzlePieceCount : Event { }
+public class PuzzleWinEvent : Event { }
+
 
 
 

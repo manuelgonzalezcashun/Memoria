@@ -37,7 +37,7 @@ public class PuzzlePiece : MonoBehaviour
 
         if (distance < collisionDist)
         {
-            Debug.Log($"Found Pair: {name} / {dropArea.name}");
+            EventDispatcher.Raise(new AddPuzzlePieceCount());
             transform.position = dropArea.transform.position + new Vector3(0, 0, -0.01f);
             lockPiece = true;
         }

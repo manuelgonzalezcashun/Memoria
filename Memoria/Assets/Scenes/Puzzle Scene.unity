@@ -1398,6 +1398,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36a43f78fd248b44c97834922da34c10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleDropAreas:
+  - {fileID: 1428714724}
+  - {fileID: 1512240235}
+  - {fileID: 1980680307}
+  - {fileID: 1307405552}
+  - {fileID: 1468127450}
+  - {fileID: 391604971}
 --- !u!1 &1139984338
 GameObject:
   m_ObjectHideFlags: 0
@@ -3261,6 +3268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36a43f78fd248b44c97834922da34c10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleDropAreas: []
 --- !u!1 &1952826663
 GameObject:
   m_ObjectHideFlags: 0

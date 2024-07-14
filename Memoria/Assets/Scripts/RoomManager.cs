@@ -10,13 +10,14 @@ public class RoomManager : MonoBehaviour
     private string _puzzleScene = "Puzzle Scene";
     void OnEnable()
     {
+        EventDispatcher.AddListener<PuzzleWinEvent>(ctx => UnloadRoom());
         EventDispatcher.AddListener<LoadRoomEvent>(ctx => StartCoroutine(LoadingScreen(ctx.roomName)));
         EventDispatcher.AddListener<LoadPuzzleEvent>(ctx => LoadRoom(_puzzleScene));
         DontDestroyOnLoad(this);
     }
     void OnDisable()
     {
-        // TODO ADD CODE TO UNLOAD PUZZLES AFTER PUZZLE IS COMEPLETED
+        EventDispatcher.RemoveListener<PuzzleWinEvent>(ctx => UnloadRoom());
         EventDispatcher.RemoveListener<LoadPuzzleEvent>(ctx => LoadRoom(_puzzleScene));
         EventDispatcher.RemoveListener<LoadRoomEvent>(ctx => StartCoroutine(LoadingScreen(ctx.roomName)));
     }
