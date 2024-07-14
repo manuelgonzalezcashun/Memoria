@@ -10962,6 +10962,7 @@ GameObject:
   - component: {fileID: 2119406081}
   - component: {fileID: 2119406082}
   - component: {fileID: 2119406083}
+  - component: {fileID: 2119406084}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -11031,7 +11032,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.1015, y: -2.6649, z: 0}
-  m_LocalScale: {x: 1.1163349, y: 0.6332123, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -11190,6 +11191,25 @@ MonoBehaviour:
   Camera: {fileID: 379462823}
   MainCamera: {fileID: 298126440}
   canvas: {fileID: 208828278}
+--- !u!114 &2119406084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119406075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25a4fd0b4c5b16d41abb6de763c979e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerAnimations:
+  - _name: Idle
+    _clip: {fileID: 7400000, guid: 55bbf343e4caa4955bf50baaf3288515, type: 2}
+  - _name: Run
+    _clip: {fileID: 7400000, guid: 17c4fd0008c1d4e2f80021bbaa482ea6, type: 2}
+  - _name: Collect
+    _clip: {fileID: 7400000, guid: 223b6b7b220494475bc40dcce7602564, type: 2}
 --- !u!1001 &3824671505371599577
 PrefabInstance:
   m_ObjectHideFlags: 0

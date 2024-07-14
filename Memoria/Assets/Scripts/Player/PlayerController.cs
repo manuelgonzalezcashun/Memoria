@@ -40,6 +40,15 @@ public class PlayerController : MonoBehaviour
         float moveX = moveAction.ReadValue<Vector2>().x;
         playerRB.velocity = new Vector2(moveX * playerSpeed, playerRB.velocity.y);
 
+        if (moveX != 0)
+        {
+            EventDispatcher.Raise(new ChangeAnimStateEvent { _state = "Run" });
+        }
+        else
+        {
+            EventDispatcher.Raise(new ChangeAnimStateEvent { _state = "Idle" });
+        }
+
         Flip(moveX);
     }
 
