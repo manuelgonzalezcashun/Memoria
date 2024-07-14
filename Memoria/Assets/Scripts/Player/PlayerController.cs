@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     private PlayerInput playerInput = null;
     private InputAction moveAction, interactAction;
 
+
+
     void Awake()
     {
         InitializePlayer();
@@ -81,4 +83,6 @@ public class PlayerController : MonoBehaviour
         // * Event Listeners
     }
     #endregion
+
+
 }
