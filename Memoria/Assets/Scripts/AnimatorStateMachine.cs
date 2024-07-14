@@ -1,39 +1,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAnimator : MonoBehaviour
+public class AnimatorStateMachine : MonoBehaviour
 {
     private Dictionary<string, AnimationClip> m_playerAnims = new();
     private Animator playerAnimator = null;
     private string _state = string.Empty;
 
-    [SerializeField] private List<PlayerAnimations> playerAnimations = new();
+    [SerializeField] private List<AnimClipStates> animClips = new();
 
     void OnEnable()
     {
         playerAnimator = GetComponent<Animator>();
-
-        EventDispatcher.AddListener<ChangeAnimStateEvent>(ChangeAnimState);
-    }
-    void OnDisable()
-    {
-        EventDispatcher.RemoveListener<ChangeAnimStateEvent>(ChangeAnimState);
     }
     void Awake()
     {
-        foreach (var clips in playerAnimations)
+        foreach (var clips in animClips)
         {
-            if (playerAnimations.Count > 0)
+            if (animClips.Count > 0)
             {
                 m_playerAnims.Add(clips._name, clips._clip);
             }
         }
     }
-    void ChangeAnimState(ChangeAnimStateEvent evt)
-    {
-        ChangeAnimState(evt._state);
-    }
-    void ChangeAnimState(string name)
+    public void ChangeAnimState(string name)
     {
         if (m_playerAnims.ContainsKey(name))
         {
@@ -48,7 +38,7 @@ public class PlayerAnimator : MonoBehaviour
 }
 
 [System.Serializable]
-public class PlayerAnimations
+public class AnimClipStates
 {
     public string _name;
     public AnimationClip _clip;

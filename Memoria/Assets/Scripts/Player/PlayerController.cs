@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D playerRB = null;
     private PlayerInput playerInput = null;
     private InputAction moveAction, interactAction;
-
+    private AnimatorStateMachine player_asm = null;
 
 
     void Awake()
@@ -42,11 +42,11 @@ public class PlayerController : MonoBehaviour
 
         if (moveX != 0)
         {
-            EventDispatcher.Raise(new ChangeAnimStateEvent { _state = "Run" });
+            player_asm.ChangeAnimState("Run");
         }
         else
         {
-            EventDispatcher.Raise(new ChangeAnimStateEvent { _state = "Idle" });
+            player_asm.ChangeAnimState("Idle");
         }
 
         Flip(moveX);
@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
         transform.localScale = new Vector3(velocity, 1, 1);
     }
 
-    void PlayerInteract()
+    void PlayerInteract() //* Interacts with objects
     {
         InteractableManager.Instance.InteractWithObjects();
     }
@@ -70,6 +70,7 @@ public class PlayerController : MonoBehaviour
         //* Player Components
         playerRB = GetComponent<Rigidbody2D>();
         playerInput = GetComponent<PlayerInput>();
+        player_asm = GetComponent<AnimatorStateMachine>();
 
         //* Player Actions
         moveAction = playerInput.actions["Move"];

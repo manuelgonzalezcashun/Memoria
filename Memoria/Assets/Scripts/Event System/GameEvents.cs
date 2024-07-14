@@ -16,9 +16,5 @@ public class LoadRoomEvent : Event
     public string roomName;
 }
 
-public class ChangeAnimStateEvent : Event
-{
-    public string _state;
-}
 
 

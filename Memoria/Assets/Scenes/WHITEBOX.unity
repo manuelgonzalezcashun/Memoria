@@ -11203,7 +11203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25a4fd0b4c5b16d41abb6de763c979e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerAnimations:
+  animClips:
   - _name: Idle
     _clip: {fileID: 7400000, guid: 55bbf343e4caa4955bf50baaf3288515, type: 2}
   - _name: Run
