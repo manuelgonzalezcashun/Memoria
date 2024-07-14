@@ -1655,10 +1655,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Collectable (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 6393962207084805078, guid: b84baa57d4608314d832904a7f843409, type: 3}
-      propertyPath: interactCam
-      value: 
-      objectReference: {fileID: 208828278}
     - target: {fileID: 6953410317771768411, guid: b84baa57d4608314d832904a7f843409, type: 3}
       propertyPath: m_LocalPosition.x
       value: 15.31
@@ -3336,10 +3332,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Collectable (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 6393962207084805078, guid: b84baa57d4608314d832904a7f843409, type: 3}
-      propertyPath: interactCam
-      value: 
-      objectReference: {fileID: 208828278}
     - target: {fileID: 6953410317771768411, guid: b84baa57d4608314d832904a7f843409, type: 3}
       propertyPath: m_LocalPosition.x
       value: -16.76
@@ -4307,51 +4299,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &1355896968
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6346634057197966181}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.07938862, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.8997288, y: 1}
-  m_EdgeRadius: 0
 --- !u!1 &1365620025
 GameObject:
   m_ObjectHideFlags: 0
@@ -4726,22 +4673,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1572817000}
     m_Modifications:
-    - target: {fileID: 3637172917624829238, guid: b84baa57d4608314d832904a7f843409, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6346634058133796567, guid: b84baa57d4608314d832904a7f843409, type: 3}
       propertyPath: m_Name
       value: Collectable (4)
       objectReference: {fileID: 0}
-    - target: {fileID: 6346634058133796567, guid: b84baa57d4608314d832904a7f843409, type: 3}
-      propertyPath: m_TagString
-      value: Collect
-      objectReference: {fileID: 0}
-    - target: {fileID: 6393962207084805078, guid: b84baa57d4608314d832904a7f843409, type: 3}
-      propertyPath: interactCam
-      value: 
-      objectReference: {fileID: 208828278}
     - target: {fileID: 6953410317771768411, guid: b84baa57d4608314d832904a7f843409, type: 3}
       propertyPath: m_LocalPosition.x
       value: -28.59
@@ -4785,10 +4720,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6346634058133796567, guid: b84baa57d4608314d832904a7f843409, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1355896968}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b84baa57d4608314d832904a7f843409, type: 3}
 --- !u!1 &1531617962
 GameObject:
@@ -5350,10 +5282,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Collectable (5)
       objectReference: {fileID: 0}
-    - target: {fileID: 6393962207084805078, guid: b84baa57d4608314d832904a7f843409, type: 3}
-      propertyPath: interactCam
-      value: 
-      objectReference: {fileID: 208828278}
     - target: {fileID: 6953410317771768411, guid: b84baa57d4608314d832904a7f843409, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.9
@@ -5541,14 +5469,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Collectable (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 6393962207084805078, guid: b84baa57d4608314d832904a7f843409, type: 3}
-      propertyPath: canPickup
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6393962207084805078, guid: b84baa57d4608314d832904a7f843409, type: 3}
-      propertyPath: interactCam
-      value: 
-      objectReference: {fileID: 208828278}
     - target: {fileID: 6953410317771768411, guid: b84baa57d4608314d832904a7f843409, type: 3}
       propertyPath: m_LocalPosition.x
       value: 39.34
@@ -11222,10 +11142,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Collectable
       objectReference: {fileID: 0}
-    - target: {fileID: 6393962207084805078, guid: b84baa57d4608314d832904a7f843409, type: 3}
-      propertyPath: interactCam
-      value: 
-      objectReference: {fileID: 208828278}
     - target: {fileID: 6953410317771768411, guid: b84baa57d4608314d832904a7f843409, type: 3}
       propertyPath: m_LocalPosition.x
       value: 28.86
@@ -11271,11 +11187,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b84baa57d4608314d832904a7f843409, type: 3}
---- !u!1 &6346634057197966181 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6346634058133796567, guid: b84baa57d4608314d832904a7f843409, type: 3}
-  m_PrefabInstance: {fileID: 1490789810}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6953410317104261097 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6953410317771768411, guid: b84baa57d4608314d832904a7f843409, type: 3}
