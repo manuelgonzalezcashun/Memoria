@@ -17,11 +17,10 @@ public class CameraScript : MonoBehaviour
 
     void Start()
     {
-        if (!debugMode)
-        {
-            CameraManager.Instance.Add(cameraInstance);
-            CameraManager.Instance.SetCamera(cameraInstance.name);
-        }
+        if (debugMode) return;
+
+        CameraManager.Instance.Add(cameraInstance);
+        CameraManager.Instance.SetCamera(cameraInstance.name);
     }
     void OnEnable()
     {
@@ -29,11 +28,10 @@ public class CameraScript : MonoBehaviour
     }
     void OnDestroy()
     {
-        if (!debugMode)
-        {
-            CameraManager.Instance.Remove(cameraInstance);
-            CameraManager.Instance.SetCamera(CameraManager.Instance.DefaultCamera);
-        }
+        if (debugMode) return;
+
+        CameraManager.Instance.Remove(cameraInstance);
+        CameraManager.Instance.SetCamera(CameraManager.Instance.DefaultCamera);
     }
     void LateUpdate()
     {

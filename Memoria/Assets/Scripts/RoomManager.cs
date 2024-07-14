@@ -1,11 +1,11 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class RoomManager : MonoBehaviour
 {
     [SerializeField] GameObject loadingScreen = null;
+    [SerializeField] string _roomToLoad = string.Empty;
     private string _currentRoom = string.Empty;
     void OnEnable()
     {
@@ -15,6 +15,13 @@ public class RoomManager : MonoBehaviour
     void OnDisable()
     {
         EventDispatcher.RemoveListener<LoadRoomEvent>(ctx => StartCoroutine(LoadingScreen(ctx.roomName)));
+    }
+    void Start()
+    {
+        if (_roomToLoad != string.Empty)
+        {
+            LoadRoom(_roomToLoad);
+        }
     }
     void Update()
     {
@@ -29,11 +36,9 @@ public class RoomManager : MonoBehaviour
     }
     void LoadRoom(string roomName)
     {
-        UnloadRoom();
         if (_currentRoom != roomName)
         {
             SceneManager.LoadSceneAsync(roomName, LoadSceneMode.Additive);
-
             _currentRoom = roomName;
         }
     }
@@ -43,7 +48,6 @@ public class RoomManager : MonoBehaviour
 
         SceneManager.UnloadSceneAsync(_currentRoom);
         _currentRoom = string.Empty;
-
     }
     IEnumerator LoadingScreen(string roomName)
     {
