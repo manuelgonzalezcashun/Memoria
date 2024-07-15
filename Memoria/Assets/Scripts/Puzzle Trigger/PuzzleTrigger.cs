@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PuzzleTrigger : MonoBehaviour
@@ -17,13 +15,8 @@ public class PuzzleTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.gameObject.tag == "Collect")
-        {
-           DoorTrigger.SetActive(true);
-           Debug.Log("Hello World!");
-        }
 
-        if(col.gameObject.tag == "Door")
+        if (col.gameObject.tag == "Door")
         {
             Puzzletrigger.SetActive(true);
             Camera.SetActive(true);

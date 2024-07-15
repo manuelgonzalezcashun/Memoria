@@ -13,7 +13,14 @@ public class LoadRoomEvent : Event
 }
 public class AddPuzzlePieceCount : Event { }
 public class PuzzleWinEvent : Event { }
-
+public class ShowDialogueEvent : Event
+{
+    public bool showDialogueUI;
+}
+public class ContinueDialogueEvent : Event
+{
+    public string dialogueLine;
+}
 
 
 
