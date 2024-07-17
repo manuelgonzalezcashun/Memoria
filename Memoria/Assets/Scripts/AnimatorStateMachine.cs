@@ -22,7 +22,6 @@ public class AnimatorStateMachine : MonoBehaviour
                 m_playerAnims.Add(clips._name, clips._clip);
             }
         }
-        ChangeAnimState("Rain");
     }
     public void ChangeAnimState(string name)
     {
