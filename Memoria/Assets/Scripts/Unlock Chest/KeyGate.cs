@@ -1,31 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class KeyGate : MonoBehaviour
+public class KeyGate : Interactable
 {
-    private bool openUpAllowed;
-
-    public GameObject puzzlepiece;
-
-    private void Update()
+    [SerializeField] GameObject puzzlepiece;
+    public override void Interact()
     {
-        if (openUpAllowed && Input.GetKeyDown(KeyCode.E))
-            OpenUp();
-    }
+        GameVariables.keyCount--;
 
-    void OnTriggerEnter2D(Collider2D collider)
-    {
-        if (collider.CompareTag("Player") && GameVariables.keyCount>0)
-        {
-            GameVariables.keyCount --;
-            openUpAllowed = true;
-            Debug.Log("hit");
-        }
-    }
-
-    private void OpenUp()
-    {
         Destroy(gameObject);
         puzzlepiece.SetActive(true);
     }

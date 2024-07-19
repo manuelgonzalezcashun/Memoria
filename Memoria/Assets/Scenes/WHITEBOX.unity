@@ -1671,6 +1671,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727c680a67ca388448ab8e8c608e13ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canPickup: 0
+  interactUI: {fileID: 0}
 --- !u!1 &336326645
 GameObject:
   m_ObjectHideFlags: 0
@@ -11492,7 +11494,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1969878040
 RectTransform:
   m_ObjectHideFlags: 0
