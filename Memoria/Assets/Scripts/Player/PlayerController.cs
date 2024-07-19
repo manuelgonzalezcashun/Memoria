@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     private InputAction moveAction, interactAction;
     private AnimatorStateMachine player_asm = null;
 
+    bool stopPlayerMovement = false;
 
     void Awake()
     {
@@ -37,6 +38,8 @@ public class PlayerController : MonoBehaviour
     }
     void PlayerMove()
     {
+        if (stopPlayerMovement) return;
+
         float moveX = moveAction.ReadValue<Vector2>().x;
         playerRB.velocity = new Vector2(moveX * playerSpeed, playerRB.velocity.y);
 
@@ -54,6 +57,10 @@ public class PlayerController : MonoBehaviour
     void HandlePlayerInput(bool input)
     {
         gameObject.SetActive(input);
+    }
+    void HandlePlayerMovement(bool move)
+    {
+        stopPlayerMovement = move;
     }
 
     void Flip(float velocity) //* Flips the player based on the direction they are heading.
@@ -89,6 +96,7 @@ public class PlayerController : MonoBehaviour
         // * Event Listeners
         EventDispatcher.AddListener<LoadPuzzleEvent>(ctx => HandlePlayerInput(false));
         EventDispatcher.AddListener<PuzzleWinEvent>(ctx => HandlePlayerInput(true));
+        EventDispatcher.AddListener<ShowDialogueEvent>(ctx => HandlePlayerMovement(ctx.showDialogueUI));
     }
     void RemoveListeners()
     {
@@ -99,6 +107,7 @@ public class PlayerController : MonoBehaviour
         // * Event Listeners
         EventDispatcher.RemoveListener<LoadPuzzleEvent>(ctx => HandlePlayerInput(false));
         EventDispatcher.RemoveListener<PuzzleWinEvent>(ctx => HandlePlayerInput(true));
+        EventDispatcher.AddListener<ShowDialogueEvent>(ctx => HandlePlayerMovement(ctx.showDialogueUI));
     }
     #endregion
 
