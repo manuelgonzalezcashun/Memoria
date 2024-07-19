@@ -1,5 +1,4 @@
 using UnityEngine;
-using System;
 using UnityEngine.Video;
 using System.Collections.Generic;
 
@@ -17,7 +16,6 @@ public class VideoManager : MonoBehaviour
 
     #region Runtime Variables
     int currentIndex = 0;
-    bool currentlyPlaying = false;
     #endregion
     void OnEnable()
     {
@@ -36,7 +34,6 @@ public class VideoManager : MonoBehaviour
     {
         Debug.Log($"We are at {currentIndex}: {clipName}");
 
-        currentlyPlaying = true;
         if (!m_ComicDict.ContainsKey(clipName))
         {
             Debug.LogWarning($"{clipName} does not exist in the database");

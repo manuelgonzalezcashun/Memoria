@@ -13,6 +13,8 @@ public class Inventory : MonoBehaviour
     }
     void AddToCount()
     {
+        Debug.Log("Colledcted Puzzle Piece!");
+
         pieceCount++;
 
         if (pieceCount == 6)

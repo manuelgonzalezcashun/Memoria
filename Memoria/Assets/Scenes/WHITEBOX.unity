@@ -1954,7 +1954,7 @@ GameObject:
   m_Component:
   - component: {fileID: 371641890}
   - component: {fileID: 371641892}
-  - component: {fileID: 371641891}
+  - component: {fileID: 371641893}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -1978,21 +1978,6 @@ Transform:
   - {fileID: 1118281933}
   m_Father: {fileID: 1572817000}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &371641891
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 371641889}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 393990a4545bab24cbe6ce18f1ae3094, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canPickup: 0
-  interactUI: {fileID: 1118281932}
-  storyJSON: {fileID: 4900000, guid: 1d28781a5c013d144bfb261fd99ddb3a, type: 3}
 --- !u!212 &371641892
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2045,6 +2030,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &371641893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 371641889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2a34dfa90b796b47beaa603186e5b15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canPickup: 0
+  interactUI: {fileID: 1118281932}
+  database: {fileID: 11400000, guid: 6bce659b123e56840bccc35e43cf2b7d, type: 2}
 --- !u!1 &379462823
 GameObject:
   m_ObjectHideFlags: 0
@@ -11992,7 +11992,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 1316041085, guid: cf5bfa7a974604135907c0b399c0bdfe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -12203,6 +12203,10 @@ PrefabInstance:
     - target: {fileID: 6346634058133796567, guid: b84baa57d4608314d832904a7f843409, type: 3}
       propertyPath: m_Name
       value: Collectable
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393962207084805078, guid: b84baa57d4608314d832904a7f843409, type: 3}
+      propertyPath: database
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6953410317771768411, guid: b84baa57d4608314d832904a7f843409, type: 3}
       propertyPath: m_LocalPosition.x
