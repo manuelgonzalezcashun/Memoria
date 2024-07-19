@@ -2410,6 +2410,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e5b5f4be67c26d499bd2740a2584d4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canPickup: 0
+  interactUI: {fileID: 0}
   puzzlepiece: {fileID: 82157218}
 --- !u!4 &500518748 stripped
 Transform:
@@ -6121,7 +6123,14 @@ MonoBehaviour:
   sfx_SoundList:
   - clipName: Click
     audioClip: {fileID: 8300000, guid: 0d54653003bc3524ab6b64cac060bd52, type: 3}
-  music_SoundList: []
+    _audioSource: {fileID: 0}
+  - clipName: Call
+    audioClip: {fileID: 8300000, guid: 89dc6bbba2ae6c54a9e835dbe6fbf288, type: 3}
+    _audioSource: {fileID: 0}
+  music_SoundList:
+  - clipName: Coil
+    audioClip: {fileID: 0}
+    _audioSource: {fileID: 0}
 --- !u!1 &1686951361
 GameObject:
   m_ObjectHideFlags: 0
