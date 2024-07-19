@@ -1,30 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class KeyItem : MonoBehaviour
+public class KeyItem : Interactable
 {
-    private bool pickUpAllowed;
-
-
-    private void Update()
+    public override void Interact()
     {
-        if (pickUpAllowed && Input.GetKeyDown(KeyCode.E))
-            PickUp();
-    }
-
-    void OnTriggerEnter2D(Collider2D collider)
-    {
-        if (collider.CompareTag("Player"))
-        {
-            GameVariables.keyCount += 2;
-            pickUpAllowed = true;
-            Debug.Log("hit");
-        }
-    }
-
-    private void PickUp()
-    {
+        GameVariables.keyCount += 2;
         Destroy(gameObject);
     }
 }

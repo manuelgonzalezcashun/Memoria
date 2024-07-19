@@ -21,10 +21,7 @@ public class DialogueUI : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            InkDialogueManager.Instance.DisplayNextLine();
-        }
+
     }
     void ShowDialogueText(ShowDialogueEvent evt)
     {

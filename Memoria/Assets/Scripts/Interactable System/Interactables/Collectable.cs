@@ -2,10 +2,48 @@ using UnityEngine;
 
 public class Collectable : Interactable
 {
+    [SerializeField] DialogueDatabase database;
+
+    private bool currentlyPlayingDialogue = false;
+    private int currentIndex = 0;
     public override void Interact()
     {
-        EventDispatcher.Raise(new CollectedEvent());
+        if (database == null)
+        {
+            Debug.LogWarning("This collectable doesn't have a database. Create a database and attach it to this collectable.");
+            return;
+        }
 
-        Destroy(gameObject);
+        currentlyPlayingDialogue = true;
+        EventDispatcher.Raise(new ShowDialogueEvent { showDialogueUI = true });
+        EventDispatcher.Raise(new ContinueDialogueEvent { dialogueLine = database.DialogueLines[currentIndex] });
+    }
+
+    void StepThroughDialogue()
+    {
+        if (!currentlyPlayingDialogue) return;
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (currentIndex < database.DialogueLines.Count - 1)
+            {
+                currentIndex++;
+                EventDispatcher.Raise(new ContinueDialogueEvent { dialogueLine = database.DialogueLines[currentIndex] });
+            }
+            else
+            {
+                currentlyPlayingDialogue = false;
+                EventDispatcher.Raise(new ShowDialogueEvent { showDialogueUI = false });
+
+                EventDispatcher.Raise(new CollectedEvent());
+                Destroy(gameObject);
+            }
+        }
+
+    }
+
+    void Update()
+    {
+        StepThroughDialogue();
     }
 }
