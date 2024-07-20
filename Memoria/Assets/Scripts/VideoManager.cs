@@ -29,27 +29,20 @@ public class VideoManager : MonoBehaviour
     }
     void Start()
     {
-        if (itchBuild)
-        {
-            PlayItchVideo(currentIndex);
-            return;
-        }
-
         PlayVideo(currentIndex);
     }
     public void PlayVideo(string clipName)
     {
-        Debug.Log($"We are at {currentIndex}: {clipName}");
-
         if (!m_ComicDict.ContainsKey(clipName))
         {
             Debug.LogWarning($"{clipName} does not exist in the database");
             return;
         }
+        VideoClip videoClip = m_ComicDict[clipName];
 
-        vp.clip = m_ComicDict[clipName];
+        if (itchBuild) vp.url = videoClip.originalPath; else vp.clip = videoClip;
+
         vp.Play();
-
         vp.loopPointReached += ctx => PlayNextVideo();
     }
     private void PlayVideo(int index)
@@ -69,44 +62,6 @@ public class VideoManager : MonoBehaviour
             button.SetActive(true);
         }
     }
-
-    #region Itch.io Settings
-
-    private void PlayItchVideo(string clipName)
-    {
-        if (!m_ComicDict.ContainsKey(clipName))
-        {
-            Debug.LogWarning($"{clipName} does not exist in the database");
-            return;
-        }
-
-        VideoClip videoClip = m_ComicDict[clipName];
-        string videoPath = System.IO.Path.Combine(Application.streamingAssetsPath, videoClip.name);
-
-        vp.url = videoPath;
-        vp.Play();
-
-        vp.loopPointReached += ctx => PlayNextItchVideo();
-    }
-    private void PlayItchVideo(int index)
-    {
-        PlayItchVideo(comicVideos[index].name);
-    }
-    private void PlayNextItchVideo()
-    {
-        currentIndex++;
-        if (currentIndex < comicVideos.Count)
-        {
-            PlayItchVideo(currentIndex);
-        }
-        else if (currentIndex > comicVideos.Count)
-        {
-            button.SetActive(true);
-        }
-    }
-
-    #endregion
-
 }
 
 [System.Serializable]
