@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: 647c3c27a5e9588459bfbaf7d09d33a5
   - enabled: 1
+    path: Assets/Scenes/Isaac_Mindscape.unity
+    guid: 0b6bc81a3af3e2d4f902f53b6c203f39
+  - enabled: 1
     path: Assets/Scenes/Gameplay.unity
     guid: eeac4b488561926418d19a59b05fae83
   - enabled: 1

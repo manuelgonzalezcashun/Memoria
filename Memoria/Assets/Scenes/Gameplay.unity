@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadingScreen: {fileID: 1471426499}
-  _roomToLoad: Room 1
+  _roomToLoad: Isaac_Mindscape
 --- !u!1 &511998022
 GameObject:
   m_ObjectHideFlags: 0
