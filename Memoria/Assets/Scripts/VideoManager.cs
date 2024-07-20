@@ -12,6 +12,7 @@ public class VideoManager : MonoBehaviour
     #region Edited Variables
     [SerializeField] List<ComicVideos> comicVideos = new();
     [SerializeField] GameObject button = null;
+    [SerializeField] bool itchBuild = false;
     #endregion
 
     #region Runtime Variables
@@ -28,6 +29,12 @@ public class VideoManager : MonoBehaviour
     }
     void Start()
     {
+        if (itchBuild)
+        {
+            PlayItchVideo(currentIndex);
+            return;
+        }
+
         PlayVideo(currentIndex);
     }
     public void PlayVideo(string clipName)
@@ -63,6 +70,42 @@ public class VideoManager : MonoBehaviour
         }
     }
 
+    #region Itch.io Settings
+
+    private void PlayItchVideo(string clipName)
+    {
+        if (!m_ComicDict.ContainsKey(clipName))
+        {
+            Debug.LogWarning($"{clipName} does not exist in the database");
+            return;
+        }
+
+        VideoClip videoClip = m_ComicDict[clipName];
+        string videoPath = System.IO.Path.Combine(Application.streamingAssetsPath, videoClip.name);
+
+        vp.url = videoPath;
+        vp.Play();
+
+        vp.loopPointReached += ctx => PlayNextItchVideo();
+    }
+    private void PlayItchVideo(int index)
+    {
+        PlayItchVideo(comicVideos[index].name);
+    }
+    private void PlayNextItchVideo()
+    {
+        currentIndex++;
+        if (currentIndex < comicVideos.Count)
+        {
+            PlayItchVideo(currentIndex);
+        }
+        else if (currentIndex > comicVideos.Count)
+        {
+            button.SetActive(true);
+        }
+    }
+
+    #endregion
 
 }
 

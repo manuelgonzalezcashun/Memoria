@@ -736,12 +736,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   comicVideos:
   - name: Comic 1
-    videoClip: {fileID: 32900000, guid: c4b73829cfe12438bb2bc33150e1eb97, type: 3}
+    videoClip: {fileID: 32900000, guid: 584aa2417ff836844bebbbadc644f44a, type: 3}
   - name: Comic 2
-    videoClip: {fileID: 32900000, guid: da043c08f41f64a8abd53fe7630d7260, type: 3}
+    videoClip: {fileID: 32900000, guid: 0a74869ae172f0a42b1fd8cc4541ea11, type: 3}
   - name: Comic 3
-    videoClip: {fileID: 32900000, guid: bed2b5c9e71d0460ab258f877de21a9f, type: 3}
+    videoClip: {fileID: 32900000, guid: 4290ba87fc687e64ead4db60a2e99d4c, type: 3}
   button: {fileID: 1080467175}
+  itchBuild: 0
 --- !u!1 &1922891578
 GameObject:
   m_ObjectHideFlags: 0
