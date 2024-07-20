@@ -43,7 +43,7 @@ public class VideoManager : MonoBehaviour
         if (itchBuild)
         {
             vp.source = VideoSource.Url;
-            vp.url = videoClip.originalPath;
+            vp.url = $"{Application.streamingAssetsPath}/{videoClip.name}.mp4";
         }
         else
         {
