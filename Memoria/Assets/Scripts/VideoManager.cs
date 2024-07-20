@@ -40,7 +40,16 @@ public class VideoManager : MonoBehaviour
         }
         VideoClip videoClip = m_ComicDict[clipName];
 
-        if (itchBuild) vp.url = videoClip.originalPath; else vp.clip = videoClip;
+        if (itchBuild)
+        {
+            vp.source = VideoSource.Url;
+            vp.url = videoClip.originalPath;
+        }
+        else
+        {
+            vp.source = VideoSource.VideoClip;
+            vp.clip = videoClip;
+        }
 
         vp.Play();
         vp.loopPointReached += ctx => PlayNextVideo();
