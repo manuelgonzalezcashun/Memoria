@@ -2827,7 +2827,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc407a4b4cebf0c4ca46a56c73ad1a9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debugMode: 1
+  debugMode: 0
   targetTransform: {fileID: 0}
   offset: {x: 0, y: 0, z: 0}
   smoothTime: 0
