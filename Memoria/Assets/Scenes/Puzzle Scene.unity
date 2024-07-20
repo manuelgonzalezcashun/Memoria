@@ -361,7 +361,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -433241807, guid: 353f269bebe2a471a9f35ec5e2a3092e, type: 3}
+  m_Sprite: {fileID: 165060557, guid: 9ab9505471d1f40799e50a659ef77312, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -496,7 +496,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1221075761, guid: 353f269bebe2a471a9f35ec5e2a3092e, type: 3}
+  m_Sprite: {fileID: -620194007, guid: 9ab9505471d1f40799e50a659ef77312, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1008,7 +1008,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1746808509, guid: 353f269bebe2a471a9f35ec5e2a3092e, type: 3}
+  m_Sprite: {fileID: 988341985, guid: 9ab9505471d1f40799e50a659ef77312, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1148,7 +1148,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 932452257, guid: 353f269bebe2a471a9f35ec5e2a3092e, type: 3}
+  m_Sprite: {fileID: -1361345632, guid: 9ab9505471d1f40799e50a659ef77312, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1330,7 +1330,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1951356069, guid: 353f269bebe2a471a9f35ec5e2a3092e, type: 3}
+  m_Sprite: {fileID: 923001448, guid: 9ab9505471d1f40799e50a659ef77312, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3308,7 +3308,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5, y: 0}
+  m_AnchoredPosition: {x: 4.44, y: 0.35}
   m_SizeDelta: {x: 3, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1952826665
@@ -3332,7 +3332,7 @@ MonoBehaviour:
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 1, y: 1}
-  m_Spacing: {x: 0, y: 0}
+  m_Spacing: {x: 0.07, y: 0.07}
   m_Constraint: 1
   m_ConstraintCount: 2
 --- !u!1 &1964843274
@@ -3596,7 +3596,7 @@ PrefabInstance:
     - target: {fileID: 6246087417562208393, guid: d1d371bfd93c25648822430f6ba5c3af, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 532797275, guid: 353f269bebe2a471a9f35ec5e2a3092e, type: 3}
+      objectReference: {fileID: -1604879737, guid: 9ab9505471d1f40799e50a659ef77312, type: 3}
     - target: {fileID: 6246087417562208393, guid: d1d371bfd93c25648822430f6ba5c3af, type: 3}
       propertyPath: m_Color.b
       value: 1
