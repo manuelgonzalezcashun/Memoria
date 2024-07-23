@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 353f269bebe2a471a9f35ec5e2a3092e
+guid: 9ab9505471d1f40799e50a659ef77312
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 90
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -93,144 +93,131 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Puzzle_Pieces_Sprite_Sheet__0
+      name: Puzzle_Sprites'_0
       rect:
         serializedVersion: 2
-        x: 74
-        y: 1695
-        width: 775
-        height: 639
+        x: 0
+        y: 2074
+        width: 1327.5
+        height: 1037
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0d117eed0711d40b488a1468fc113774
-      internalID: 532797275
+      spriteID: eaf091565ecf64c1a83c9f23ef1697fb
+      internalID: -1604879737
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Puzzle_Pieces_Sprite_Sheet__1
+      name: Puzzle_Sprites'_1
       rect:
         serializedVersion: 2
-        x: 935
-        y: 1619
-        width: 794
-        height: 593
+        x: 1327
+        y: 2074
+        width: 1327.5
+        height: 1037
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3bbfedce1e6be4a88a75dfa0ff750460
-      internalID: 932452257
+      spriteID: 6b549981088fa4687911b0cfec6aac91
+      internalID: -1361345632
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Puzzle_Pieces_Sprite_Sheet__2
+      name: Puzzle_Sprites'_2
       rect:
         serializedVersion: 2
-        x: 81
-        y: 884
-        width: 760
-        height: 785
+        x: 0
+        y: 1037
+        width: 1327.5
+        height: 1037
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e259dfccf26646cf87ab99d22c7669b
-      internalID: 1951356069
+      spriteID: 3c4c0eaa777d54419985157acb4d98bf
+      internalID: 923001448
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Puzzle_Pieces_Sprite_Sheet__3
+      name: Puzzle_Sprites'_3
       rect:
         serializedVersion: 2
-        x: 938
-        y: 882
-        width: 794
-        height: 731
+        x: 1327
+        y: 1037
+        width: 1328
+        height: 1037
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 773ddf2731f6344c9b347e02cb84ef88
-      internalID: -433241807
+      spriteID: 2a36b28ba07f6495a95739b24768e40e
+      internalID: 165060557
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Puzzle_Pieces_Sprite_Sheet__4
+      name: Puzzle_Sprites'_4
       rect:
         serializedVersion: 2
-        x: 83
-        y: 165
-        width: 686
-        height: 649
+        x: 0
+        y: 0
+        width: 1327.5
+        height: 1037
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 700bf2b9ed908497da0dd622f3c8985b
-      internalID: -1746808509
+      spriteID: 668ff076062bb4f888405861966d1db4
+      internalID: 988341985
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Puzzle_Pieces_Sprite_Sheet__5
+      name: Puzzle_Sprites'_5
       rect:
         serializedVersion: 2
-        x: 867
-        y: 161
-        width: 861
-        height: 695
+        x: 1327
+        y: 0
+        width: 1328
+        height: 1037
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55091d6961bab41f0bbc851d06140240
-      internalID: -1221075761
+      spriteID: ac1a709d8e0594264a8fb235323f1c8c
+      internalID: -620194007
       vertices: []
       indices: 
       edges: []
@@ -246,12 +233,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Puzzle_Pieces_Sprite_Sheet__0: 532797275
-      Puzzle_Pieces_Sprite_Sheet__1: 932452257
-      Puzzle_Pieces_Sprite_Sheet__2: 1951356069
-      Puzzle_Pieces_Sprite_Sheet__3: -433241807
-      Puzzle_Pieces_Sprite_Sheet__4: -1746808509
-      Puzzle_Pieces_Sprite_Sheet__5: -1221075761
+      Puzzle_Sprites'_0: -1604879737
+      Puzzle_Sprites'_1: -1361345632
+      Puzzle_Sprites'_2: 923001448
+      Puzzle_Sprites'_3: 165060557
+      Puzzle_Sprites'_4: 988341985
+      Puzzle_Sprites'_5: -620194007
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
