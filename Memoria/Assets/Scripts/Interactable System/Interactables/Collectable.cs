@@ -3,14 +3,20 @@ using UnityEngine;
 public class Collectable : Interactable
 {
     [SerializeField] DialogueDatabase database;
+    [SerializeField] bool debugMode = false;
 
     private bool currentlyPlayingDialogue = false;
     private int currentIndex = 0;
     public override void Interact()
     {
-        if (database == null)
+        if (database == null && !debugMode)
         {
             Debug.LogWarning("This collectable doesn't have a database. Create a database and attach it to this collectable.");
+            return;
+        }
+        else if (debugMode)
+        {
+            Collect();
             return;
         }
 
@@ -34,12 +40,16 @@ public class Collectable : Interactable
             {
                 currentlyPlayingDialogue = false;
                 EventDispatcher.Raise(new ShowDialogueEvent { showDialogueUI = false });
-
-                EventDispatcher.Raise(new CollectedEvent());
-                Destroy(gameObject);
+                Collect();
             }
         }
 
+    }
+
+    private void Collect()
+    {
+        EventDispatcher.Raise(new CollectedEvent());
+        Destroy(gameObject);
     }
 
     void Update()

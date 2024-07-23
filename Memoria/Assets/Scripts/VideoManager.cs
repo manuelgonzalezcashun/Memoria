@@ -12,6 +12,7 @@ public class VideoManager : MonoBehaviour
     #region Edited Variables
     [SerializeField] List<ComicVideos> comicVideos = new();
     [SerializeField] GameObject button = null;
+    [SerializeField] bool itchBuild = false;
     #endregion
 
     #region Runtime Variables
@@ -32,17 +33,25 @@ public class VideoManager : MonoBehaviour
     }
     public void PlayVideo(string clipName)
     {
-        Debug.Log($"We are at {currentIndex}: {clipName}");
-
         if (!m_ComicDict.ContainsKey(clipName))
         {
             Debug.LogWarning($"{clipName} does not exist in the database");
             return;
         }
+        VideoClip videoClip = m_ComicDict[clipName];
 
-        vp.clip = m_ComicDict[clipName];
+        if (itchBuild)
+        {
+            vp.source = VideoSource.Url;
+            vp.url = $"{Application.streamingAssetsPath}/{videoClip.name}.mp4";
+        }
+        else
+        {
+            vp.source = VideoSource.VideoClip;
+            vp.clip = videoClip;
+        }
+
         vp.Play();
-
         vp.loopPointReached += ctx => PlayNextVideo();
     }
     private void PlayVideo(int index)
@@ -62,8 +71,6 @@ public class VideoManager : MonoBehaviour
             button.SetActive(true);
         }
     }
-
-
 }
 
 [System.Serializable]
