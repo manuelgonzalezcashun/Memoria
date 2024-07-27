@@ -183,6 +183,10 @@ PrefabInstance:
       propertyPath: RoomToLoad
       value: Room 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2783464642255101079, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b93f8cd7b67620b42a7b08b8b02ba775, type: 3}
     - target: {fileID: 4744790879723357861, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
       propertyPath: m_Name
       value: Door
