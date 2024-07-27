@@ -7,6 +7,8 @@ TagManager:
   - Collect
   - Door
   - DropArea
+  - Box
+  - Obstacles
   layers:
   - Default
   - TransparentFX
