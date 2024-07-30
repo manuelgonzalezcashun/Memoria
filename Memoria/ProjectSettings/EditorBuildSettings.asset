@@ -21,7 +21,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Backyard.unity
     guid: 206ca20fa7e0e84478c6585732fe20ce
   - enabled: 0
-    path: Assets/Scenes/LivingRoom_Kitchen.unity
+    path: Assets/Scenes/LivingRoom.unity
     guid: 22c783852fe078e4c925938ea461c3c9
   - enabled: 1
     path: Assets/Scenes/Puzzle Scene.unity
