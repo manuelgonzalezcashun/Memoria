@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 976b3ec1274776e4084d0b955f24ffc5, type: 3}
   m_Name: Laundry Basket
   m_EditorClassIdentifier: 
-  dialogueLines: []
+  dialogueLines:
+  - Mom had me help her all the time..
+  - 'She used to scare me by hiding behind the sheets '
+  - I used to miss those days.
