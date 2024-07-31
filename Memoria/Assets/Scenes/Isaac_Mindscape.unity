@@ -807,6 +807,10 @@ PrefabInstance:
       propertyPath: database
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6393962207084805078, guid: b84baa57d4608314d832904a7f843409, type: 3}
+      propertyPath: debugMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6684122434880838210, guid: b84baa57d4608314d832904a7f843409, type: 3}
       propertyPath: m_SizeDelta.x
       value: 2.0846
@@ -1213,7 +1217,7 @@ GameObject:
   - component: {fileID: 825548829}
   - component: {fileID: 825548830}
   m_Layer: 0
-  m_Name: Ground
+  m_Name: Layer-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1364,7 +1368,7 @@ GameObject:
   - component: {fileID: 885999531}
   - component: {fileID: 885999532}
   m_Layer: 0
-  m_Name: Clouds
+  m_Name: Layer-0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2720,7 +2724,7 @@ GameObject:
   - component: {fileID: 2134934105}
   - component: {fileID: 2134934106}
   m_Layer: 0
-  m_Name: Waves
+  m_Name: Layer-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1,8 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Puzzle : MonoBehaviour
 {
+    public UnityEvent PuzzleWinEvent;
     public List<GameObject> puzzleDropAreas = new();
     int pieceCount = 0;
 
@@ -21,7 +23,7 @@ public class Puzzle : MonoBehaviour
 
         if (pieceCount == puzzleDropAreas.Count)
         {
-            EventDispatcher.Raise(new PuzzleWinEvent());
+            PuzzleWinEvent?.Invoke();
         }
     }
 
