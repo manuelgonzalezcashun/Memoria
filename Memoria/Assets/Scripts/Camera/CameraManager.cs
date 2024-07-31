@@ -46,7 +46,6 @@ public class CameraManager : MonoBehaviour
         if (cameras.Count < 1) return;
 
         _currentCam = camName;
-
         foreach (Camera camera in cameras)
         {
             if (camera.name != _currentCam)

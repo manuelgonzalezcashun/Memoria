@@ -29,6 +29,7 @@ public class CameraScript : MonoBehaviour
     void OnDestroy()
     {
         if (debugMode) return;
+
         CameraManager.Instance.Remove(cameraInstance);
         CameraManager.Instance.SetCamera(CameraManager.Instance.DefaultCamera);
     }
