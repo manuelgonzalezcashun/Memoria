@@ -6455,7 +6455,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1405681280328048943, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
       propertyPath: RoomToLoad
-      value: Living Room
+      value: LivingRoom
       objectReference: {fileID: 0}
     - target: {fileID: 4744790879723357861, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
       propertyPath: m_Name
