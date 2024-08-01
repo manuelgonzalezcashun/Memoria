@@ -19,10 +19,6 @@ public class DialogueUI : MonoBehaviour
         EventDispatcher.RemoveListener<ContinueDialogueEvent>(StepThroughDialogue);
 
     }
-    void Update()
-    {
-
-    }
     void ShowDialogueText(ShowDialogueEvent evt)
     {
         dialogueContainer.SetActive(evt.showDialogueUI);

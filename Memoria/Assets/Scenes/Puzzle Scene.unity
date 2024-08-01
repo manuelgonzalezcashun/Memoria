@@ -2998,15 +2998,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1341731904}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 5
+        m_TargetAssemblyTypeName: EndGameScript, Assembly-CSharp
+        m_MethodName: InvokeEndGameEvent
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Endstate
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1341731902
@@ -3056,7 +3056,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1341731899}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71ec5454fa0e00b4e9fa5e422fa2dbb6, type: 3}
+  m_Script: {fileID: 11500000, guid: bc074c3d59030904bbbb1cb4d8f58f9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1398034316

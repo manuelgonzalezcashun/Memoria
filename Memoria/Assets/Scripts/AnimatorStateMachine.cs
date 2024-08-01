@@ -8,6 +8,7 @@ public class AnimatorStateMachine : MonoBehaviour
     private string _state = string.Empty;
 
     [SerializeField] private List<AnimClipStates> animClips = new();
+    [SerializeField] private bool playOnAwake = false;
 
     void OnEnable()
     {
@@ -21,6 +22,13 @@ public class AnimatorStateMachine : MonoBehaviour
             {
                 m_playerAnims.Add(clips._name, clips._clip);
             }
+        }
+    }
+    void Start()
+    {
+        if (playOnAwake)
+        {
+            ChangeAnimState(animClips[0]._name);
         }
     }
     public void ChangeAnimState(string name)

@@ -10,14 +10,14 @@ public class RoomManager : MonoBehaviour
     private string _puzzleScene = "Puzzle Scene";
     void OnEnable()
     {
-        EventDispatcher.AddListener<PuzzleWinEvent>(ctx => UnloadRoom());
+        EventDispatcher.AddListener<PuzzleWinEvent>(ctx => UnloadCurrentRoom());
         EventDispatcher.AddListener<LoadRoomEvent>(ctx => StartCoroutine(LoadingScreen(ctx.roomName)));
         EventDispatcher.AddListener<LoadPuzzleEvent>(ctx => LoadRoom(_puzzleScene));
         DontDestroyOnLoad(this);
     }
     void OnDisable()
     {
-        EventDispatcher.RemoveListener<PuzzleWinEvent>(ctx => UnloadRoom());
+        EventDispatcher.RemoveListener<PuzzleWinEvent>(ctx => UnloadCurrentRoom());
         EventDispatcher.RemoveListener<LoadPuzzleEvent>(ctx => LoadRoom(_puzzleScene));
         EventDispatcher.RemoveListener<LoadRoomEvent>(ctx => StartCoroutine(LoadingScreen(ctx.roomName)));
     }
@@ -36,16 +36,20 @@ public class RoomManager : MonoBehaviour
             _currentRoom = roomName;
         }
     }
-    void UnloadRoom()
+    void UnloadCurrentRoom()
     {
         if (_currentRoom == string.Empty) return;
 
         SceneManager.UnloadSceneAsync(_currentRoom);
         _currentRoom = string.Empty;
     }
+    void UnloadRoom(string roomName)
+    {
+        SceneManager.UnloadSceneAsync(roomName);
+    }
     IEnumerator LoadingScreen(string roomName)
     {
-        UnloadRoom();
+        UnloadCurrentRoom();
         AsyncOperation operation = SceneManager.LoadSceneAsync(roomName, LoadSceneMode.Additive);
         loadingScreen.SetActive(true);
         while (!operation.isDone)
