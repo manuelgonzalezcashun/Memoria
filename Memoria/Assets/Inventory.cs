@@ -1,18 +1,20 @@
 using UnityEngine;
-using TMPro; 
+using TMPro;
 
 public class Inventory : MonoBehaviour
 {
     int pieceCount = 0;
-    public TMP_Text counterText; 
+    public TMP_Text counterText;
     void OnEnable()
     {
         EventDispatcher.AddListener<CollectedEvent>(ctx => AddToCount());
+        EventDispatcher.AddListener<ClickCollectedEvent>(ctx => AddToCount());
         counterText.text = "0/6";
     }
     void OnDisable()
     {
         EventDispatcher.RemoveListener<CollectedEvent>(ctx => AddToCount());
+        EventDispatcher.RemoveListener<ClickCollectedEvent>(ctx => AddToCount());
     }
     void AddToCount()
     {
@@ -21,9 +23,14 @@ public class Inventory : MonoBehaviour
         pieceCount++;
         counterText.text = pieceCount + "/6";
 
+        if (pieceCount == 3)
+        {
+            EventDispatcher.Raise(new LoadSceneEvent { sceneToLoad = "Video Scene" });
+        }
+
         if (pieceCount == 6)
         {
-            EventDispatcher.Raise(new LoadPuzzleEvent());
+            EventDispatcher.Raise(new LoadSceneEvent { sceneToLoad = "Puzzle Scene" });
             pieceCount = 0;
         }
     }

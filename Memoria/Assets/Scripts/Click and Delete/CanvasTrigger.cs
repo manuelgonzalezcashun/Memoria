@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class CanvasTrigger : MonoBehaviour 
+public class CanvasTrigger : MonoBehaviour
 {
 
     public GameObject canvas2;
@@ -11,7 +9,14 @@ public class CanvasTrigger : MonoBehaviour
 
     private bool openUpAllowed;
 
-
+    void OnEnable()
+    {
+        EventDispatcher.AddListener<ClickCollectedEvent>(ctx => Close());
+    }
+    void OnDisable()
+    {
+        EventDispatcher.RemoveListener<ClickCollectedEvent>(ctx => Close());
+    }
     private void Update()
     {
         if (openUpAllowed && Input.GetKeyDown(KeyCode.E))
@@ -31,6 +36,13 @@ public class CanvasTrigger : MonoBehaviour
     {
         canvas2.SetActive(true);
         camera2.SetActive(true);
-        this.GetComponent<CanvasTrigger>().enabled = false;
+    }
+    private void Close()
+    {
+        if (gameObject == null || !gameObject.activeInHierarchy) return;
+
+        canvas2.SetActive(false);
+        camera2.SetActive(false);
+        GetComponent<CanvasTrigger>().enabled = false;
     }
 }
