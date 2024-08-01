@@ -9,6 +9,7 @@ TagManager:
   - DropArea
   - Box
   - Obstacles
+  - EndDoor
   layers:
   - Default
   - TransparentFX

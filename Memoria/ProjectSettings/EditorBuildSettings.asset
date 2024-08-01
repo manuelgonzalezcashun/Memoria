@@ -27,12 +27,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Puzzle Scene.unity
     guid: e7b03c615ab7d354a95ad5c74b047f4f
   - enabled: 1
+    path: Assets/Scenes/Video Scene.unity
+    guid: b87836a744d233c4aae241100605071c
+  - enabled: 1
     path: Assets/Scenes/Endstate.unity
     guid: a3e971375011cfc49b1110a5c1c3dc6b
   - enabled: 0
     path: Assets/Scenes/WHITEBOX.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/Scenes/Video Scene.unity
-    guid: b87836a744d233c4aae241100605071c
   m_configObjects: {}

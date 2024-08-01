@@ -21,6 +21,7 @@ public class ContinueDialogueEvent : Event
 {
     public string dialogueLine;
 }
+public class SpawnDoor : Event { }
 
 
 
