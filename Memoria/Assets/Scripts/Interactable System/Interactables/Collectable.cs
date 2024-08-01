@@ -1,10 +1,11 @@
 using UnityEngine;
 
-public class Collectable : Interactable
+public class Collectable : Interactable, IDragable
 {
     [SerializeField] DialogueDatabase database;
     [SerializeField] bool debugMode = false;
 
+    private bool collectableClicked = false;
     private bool currentlyPlayingDialogue = false;
     private int currentIndex = 0;
     public override void Interact()
@@ -40,7 +41,15 @@ public class Collectable : Interactable
             {
                 currentlyPlayingDialogue = false;
                 EventDispatcher.Raise(new ShowDialogueEvent { showDialogueUI = false });
-                Collect();
+
+                if (collectableClicked)
+                {
+                    ClickCollect();
+                }
+                else
+                {
+                    Collect();
+                }
             }
         }
 
@@ -51,9 +60,30 @@ public class Collectable : Interactable
         EventDispatcher.Raise(new CollectedEvent());
         Destroy(gameObject);
     }
+    private void ClickCollect()
+    {
+        EventDispatcher.Raise(new ClickCollectedEvent());
+        Destroy(gameObject);
+    }
 
     void Update()
     {
         StepThroughDialogue();
+    }
+
+    public void Click()
+    {
+        collectableClicked = true;
+        Interact();
+    }
+
+    public void Drag()
+    {
+        return;
+    }
+
+    public void Release()
+    {
+        return;
     }
 }

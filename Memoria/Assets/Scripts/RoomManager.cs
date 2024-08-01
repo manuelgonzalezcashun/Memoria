@@ -7,18 +7,17 @@ public class RoomManager : MonoBehaviour
     [SerializeField] GameObject loadingScreen = null;
     [SerializeField] string _roomToLoad = string.Empty;
     private string _currentRoom = string.Empty;
-    private string _puzzleScene = "Puzzle Scene";
     void OnEnable()
     {
         EventDispatcher.AddListener<PuzzleWinEvent>(ctx => UnloadCurrentRoom());
         EventDispatcher.AddListener<LoadRoomEvent>(ctx => StartCoroutine(LoadingScreen(ctx.roomName)));
-        EventDispatcher.AddListener<LoadPuzzleEvent>(ctx => LoadRoom(_puzzleScene));
+        EventDispatcher.AddListener<LoadSceneEvent>(ctx => LoadRoom(ctx.sceneToLoad));
         DontDestroyOnLoad(this);
     }
     void OnDisable()
     {
         EventDispatcher.RemoveListener<PuzzleWinEvent>(ctx => UnloadCurrentRoom());
-        EventDispatcher.RemoveListener<LoadPuzzleEvent>(ctx => LoadRoom(_puzzleScene));
+        EventDispatcher.RemoveListener<LoadSceneEvent>(ctx => LoadRoom(ctx.sceneToLoad));
         EventDispatcher.RemoveListener<LoadRoomEvent>(ctx => StartCoroutine(LoadingScreen(ctx.roomName)));
     }
     void Start()
