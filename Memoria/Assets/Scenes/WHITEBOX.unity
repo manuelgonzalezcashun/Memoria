@@ -2348,7 +2348,7 @@ Camera:
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
-  m_AllowMSAA: 1
+  m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
@@ -2860,6 +2860,7 @@ MonoBehaviour:
   animClips:
   - _name: Rain
     _clip: {fileID: 7400000, guid: 43153114fda988d4a9c1131af1da085e, type: 2}
+  playOnAwake: 0
 --- !u!1 &527851274
 GameObject:
   m_ObjectHideFlags: 0
@@ -13666,6 +13667,7 @@ MonoBehaviour:
     _clip: {fileID: 7400000, guid: 17c4fd0008c1d4e2f80021bbaa482ea6, type: 2}
   - _name: Collect
     _clip: {fileID: 7400000, guid: 223b6b7b220494475bc40dcce7602564, type: 2}
+  playOnAwake: 0
 --- !u!1 &2125997175
 GameObject:
   m_ObjectHideFlags: 0
