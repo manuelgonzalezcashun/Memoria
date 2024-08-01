@@ -397,6 +397,10 @@ PrefabInstance:
       value: Collectable (1)
       objectReference: {fileID: 0}
     - target: {fileID: 6393962207084805078, guid: b84baa57d4608314d832904a7f843409, type: 3}
+      propertyPath: database
+      value: 
+      objectReference: {fileID: 11400000, guid: d9030f6ebc9b5ce49b9f5fc8f2fe338d, type: 2}
+    - target: {fileID: 6393962207084805078, guid: b84baa57d4608314d832904a7f843409, type: 3}
       propertyPath: canPickup
       value: 0
       objectReference: {fileID: 0}
@@ -6012,7 +6016,7 @@ PrefabInstance:
     - target: {fileID: 6393962207084805078, guid: b84baa57d4608314d832904a7f843409, type: 3}
       propertyPath: database
       value: 
-      objectReference: {fileID: 11400000, guid: 6bce659b123e56840bccc35e43cf2b7d, type: 2}
+      objectReference: {fileID: 11400000, guid: 8aae847bf698c4ea2994d225461857c3, type: 2}
     - target: {fileID: 6393962207084805078, guid: b84baa57d4608314d832904a7f843409, type: 3}
       propertyPath: canPickup
       value: 0

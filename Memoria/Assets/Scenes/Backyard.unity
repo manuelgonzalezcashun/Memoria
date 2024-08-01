@@ -169,19 +169,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 604004587770534323, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.66066575
+      value: 0.45798853
       objectReference: {fileID: 0}
     - target: {fileID: 604004587770534323, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.6317358
+      value: 0.4215192
       objectReference: {fileID: 0}
     - target: {fileID: 604004587770534323, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.9
+      value: 4.6322
       objectReference: {fileID: 0}
     - target: {fileID: 604004587770534323, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.1
+      value: -2.4529
       objectReference: {fileID: 0}
     - target: {fileID: 604004587770534323, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
       propertyPath: m_LocalPosition.z
@@ -513,7 +513,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.587, y: 0.5}
   m_AnchorMax: {x: 0.587, y: 0.5}
-  m_AnchoredPosition: {x: -8.1, y: 1.1}
+  m_AnchoredPosition: {x: -8.1, y: 1.9}
   m_SizeDelta: {x: 100, y: 29.2977}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &810859156
@@ -536,7 +536,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0c177498e11634f368f69e09d0b7c558, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 322c0fd14845b4652acd4fd613b72521, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -796,7 +796,6 @@ GameObject:
   - component: {fileID: 1516115285}
   - component: {fileID: 1516115284}
   - component: {fileID: 1516115289}
-  - component: {fileID: 1516115290}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -896,19 +895,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1516115283}
   m_CullTransparentMesh: 1
---- !u!114 &1516115290
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1516115283}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56455c5578e8d554e959ee96aecf9dce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parallaxCamera: {fileID: 0}
 --- !u!1001 &1520804908
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1122,6 +1108,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Collectable_2
       objectReference: {fileID: 0}
+    - target: {fileID: 6393962207084805078, guid: b84baa57d4608314d832904a7f843409, type: 3}
+      propertyPath: database
+      value: 
+      objectReference: {fileID: 11400000, guid: d180d718e87814e599589104c921f01f, type: 2}
     - target: {fileID: 6393962207084805078, guid: b84baa57d4608314d832904a7f843409, type: 3}
       propertyPath: debugMode
       value: 1
