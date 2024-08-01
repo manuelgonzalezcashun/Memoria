@@ -7,6 +7,7 @@ public class VideoManager : MonoBehaviour
     #region Initialized Variables
     private Dictionary<string, VideoClip> m_ComicDict = new();
     private VideoPlayer vp = null;
+    bool autoPlayVideo = false;
     #endregion
 
     #region Edited Variables
@@ -31,6 +32,18 @@ public class VideoManager : MonoBehaviour
     {
         PlayVideo(currentIndex);
     }
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            PlayNextVideo();
+        }
+    }
+    public void SetAutoPlayToggle(bool isAuto)
+    {
+        autoPlayVideo = isAuto;
+        Debug.Log(autoPlayVideo);
+    }
     public void PlayVideo(string clipName)
     {
         if (!m_ComicDict.ContainsKey(clipName))
@@ -52,7 +65,6 @@ public class VideoManager : MonoBehaviour
         }
 
         vp.Play();
-        vp.loopPointReached += ctx => PlayNextVideo();
     }
     private void PlayVideo(int index)
     {
