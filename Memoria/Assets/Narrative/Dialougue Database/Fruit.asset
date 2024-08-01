@@ -10,9 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 976b3ec1274776e4084d0b955f24ffc5, type: 3}
-  m_Name: Moving boxes
+  m_Name: Fruit
   m_EditorClassIdentifier: 
   dialogueLines:
-  - I remember throwing a fit
-  - 'I blamed mom so much, just like today '
-  - 
+  - 'Mom used to cut these apples for me all the time '
+  - 'I remember feeling so happy when she did. '
