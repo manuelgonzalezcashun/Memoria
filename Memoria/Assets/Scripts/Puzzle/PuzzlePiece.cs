@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PuzzlePiece : MonoBehaviour
+public class PuzzlePiece : MonoBehaviour, IDragable
 {
-    Vector3 offset;
+    DragDrop2D dragDrop;
     Collider2D puzzleCollider;
     Image puzzleImage;
     float collisionDist = 1.0f;
@@ -13,24 +13,25 @@ public class PuzzlePiece : MonoBehaviour
     {
         puzzleCollider = GetComponent<Collider2D>();
         puzzleImage = GetComponent<Image>();
+        dragDrop = GetComponent<DragDrop2D>();
     }
 
-    void OnMouseDown()
+    public void Click()
     {
         if (lockPiece) return;
 
-        transform.position = MouseWorldPosition();
+        transform.position = dragDrop.MouseWorldPosition();
     }
 
-    void OnMouseDrag()
+    public void Drag()
     {
         if (lockPiece) return;
 
-        transform.position = MouseWorldPosition() + offset;
+        transform.position = dragDrop.MouseWorldPosition();
         puzzleImage.color = new Color(puzzleImage.color.r, puzzleImage.color.g, puzzleImage.color.b, 0.5f);
     }
 
-    void OnMouseUp()
+    public void Release()
     {
         float distance = Vector3.Distance(transform.position, dropArea.transform.position);
         puzzleCollider.enabled = false;
@@ -43,12 +44,5 @@ public class PuzzlePiece : MonoBehaviour
         }
         puzzleCollider.enabled = true;
         puzzleImage.color = new Color(puzzleImage.color.r, puzzleImage.color.g, puzzleImage.color.b, 1f);
-    }
-
-    Vector3 MouseWorldPosition()
-    {
-        var mouseScreenPos = Input.mousePosition;
-        mouseScreenPos.z = Camera.main.WorldToScreenPoint(transform.position).z;
-        return Camera.main.ScreenToWorldPoint(mouseScreenPos);
     }
 }
