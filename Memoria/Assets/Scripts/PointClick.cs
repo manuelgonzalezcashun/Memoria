@@ -1,30 +1,30 @@
 using UnityEngine;
 
-public class DragDrop2D : MonoBehaviour
+public class PointClick : MonoBehaviour
 {
     Vector3 offset;
     Collider2D objectCollider;
-    IDragable dragable;
+    IClickable clickable;
 
     void Awake()
     {
         objectCollider = GetComponent<Collider2D>();
-        dragable = GetComponent<IDragable>();
+        clickable = GetComponent<IClickable>();
     }
 
     void OnMouseDown()
     {
-        dragable.Click();
+        clickable.Click();
     }
 
     void OnMouseDrag()
     {
-        dragable.Drag();
+        clickable.Drag();
     }
 
     void OnMouseUp()
     {
-        dragable.Release();
+        clickable.Release();
     }
     public Vector3 MouseWorldPosition()
     {

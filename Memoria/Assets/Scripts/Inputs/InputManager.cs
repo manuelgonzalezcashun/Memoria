@@ -1,17 +1,11 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
-
 public class InputManager : MonoBehaviour
 {
     private static InputManager _instance = null;
-    private PlayerInput playerInput;
-    private InputAction moveAction = null, interactAction = null;
 
     public static InputManager Instance => _instance;
     void OnEnable()
     {
-        playerInput = GetComponent<PlayerInput>();
-
         SetInstance();
     }
 

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Collectable : Interactable, IDragable
+public class Collectable : Interactable, IClickable
 {
     [SerializeField] DialogueDatabase database;
     [SerializeField] bool debugMode = false;
@@ -60,15 +60,5 @@ public class Collectable : Interactable, IDragable
     public void Click()
     {
         Interact();
-    }
-
-    public void Drag()
-    {
-        return;
-    }
-
-    public void Release()
-    {
-        return;
     }
 }

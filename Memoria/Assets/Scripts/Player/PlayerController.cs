@@ -7,13 +7,11 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float playerSpeed = 5f, interactDist = 0.3f;
-
     private Rigidbody2D playerRB = null;
     private PlayerInput playerInput = null;
     private InputAction moveAction, interactAction;
     private AnimatorStateMachine player_asm = null;
-
-    bool stopPlayerMovement = false;
+    private bool stopPlayerMovement = false;
 
     void Awake()
     {
@@ -38,7 +36,12 @@ public class PlayerController : MonoBehaviour
     }
     void PlayerMove()
     {
-        if (stopPlayerMovement) return;
+        if (stopPlayerMovement)
+        {
+            playerRB.velocity = Vector2.zero;
+            player_asm.ChangeAnimState("Idle");
+            return;
+        }
 
         float moveX = moveAction.ReadValue<Vector2>().x;
         playerRB.velocity = new Vector2(moveX * playerSpeed, playerRB.velocity.y);
@@ -58,9 +61,10 @@ public class PlayerController : MonoBehaviour
     {
         gameObject.SetActive(input);
     }
-    void HandlePlayerMovement(bool move)
+    void HandlePlayerMovement(bool stopMove)
     {
-        stopPlayerMovement = move;
+        stopPlayerMovement = stopMove;
+        playerInput.enabled = !stopMove;
     }
 
     void Flip(float velocity) //* Flips the player based on the direction they are heading.
@@ -80,8 +84,8 @@ public class PlayerController : MonoBehaviour
     {
         //* Player Components
         playerRB = GetComponent<Rigidbody2D>();
-        playerInput = GetComponent<PlayerInput>();
         player_asm = GetComponent<AnimatorStateMachine>();
+        playerInput = GetComponent<PlayerInput>();
 
         //* Player Actions
         moveAction = playerInput.actions["Move"];
@@ -89,7 +93,6 @@ public class PlayerController : MonoBehaviour
     }
     void AddListeners()
     {
-        // TODO Write Code to add all listeners
         // * Player Input Listeners
         interactAction.performed += ctx => PlayerInteract();
 
@@ -100,7 +103,6 @@ public class PlayerController : MonoBehaviour
     }
     void RemoveListeners()
     {
-        // TODO Write code to remove all listeners
         // * Player Input Listeners
         interactAction.performed -= ctx => PlayerInteract();
 

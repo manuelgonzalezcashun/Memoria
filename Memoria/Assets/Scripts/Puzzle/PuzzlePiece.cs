@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PuzzlePiece : MonoBehaviour, IDragable
+public class PuzzlePiece : MonoBehaviour, IClickable
 {
-    DragDrop2D dragDrop;
+    PointClick pointClick;
     Collider2D puzzleCollider;
     Image puzzleImage;
     float collisionDist = 1.0f;
@@ -13,21 +13,21 @@ public class PuzzlePiece : MonoBehaviour, IDragable
     {
         puzzleCollider = GetComponent<Collider2D>();
         puzzleImage = GetComponent<Image>();
-        dragDrop = GetComponent<DragDrop2D>();
+        pointClick = GetComponent<PointClick>();
     }
 
     public void Click()
     {
         if (lockPiece) return;
 
-        transform.position = dragDrop.MouseWorldPosition();
+        transform.position = pointClick.MouseWorldPosition();
     }
 
     public void Drag()
     {
         if (lockPiece) return;
 
-        transform.position = dragDrop.MouseWorldPosition();
+        transform.position = pointClick.MouseWorldPosition();
         puzzleImage.color = new Color(puzzleImage.color.r, puzzleImage.color.g, puzzleImage.color.b, 0.5f);
     }
 
