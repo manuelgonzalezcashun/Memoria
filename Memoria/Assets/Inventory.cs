@@ -23,10 +23,10 @@ public class Inventory : MonoBehaviour
         pieceCount++;
         counterText.text = pieceCount + "/6";
 
-        if (pieceCount == 3)
-        {
-            EventDispatcher.Raise(new LoadSceneEvent { sceneToLoad = "Video Scene" });
-        }
+        ///if (pieceCount == 3)
+        ///{
+            ///EventDispatcher.Raise(new LoadSceneEvent { sceneToLoad = "Video Scene" });
+        ///}
 
         if (pieceCount == 6)
         {
