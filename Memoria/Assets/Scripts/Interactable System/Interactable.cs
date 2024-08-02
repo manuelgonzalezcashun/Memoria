@@ -31,7 +31,6 @@ public abstract class Interactable : MonoBehaviour
         }
 
         interactUI.SetActive(evtData.showUI);
-
     }
 
     public abstract void Interact();
