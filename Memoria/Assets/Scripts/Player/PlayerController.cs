@@ -76,6 +76,7 @@ public class PlayerController : MonoBehaviour
 
     void PlayerInteract() //* Interacts with objects
     {
+        player_asm.ChangeAnimState("Collect");
         InteractableManager.Instance.InteractWithObjects();
     }
 
