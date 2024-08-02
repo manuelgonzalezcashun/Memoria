@@ -281,7 +281,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.18000007, y: -1.3705}
+  m_AnchoredPosition: {x: -0.72, y: -1.93}
   m_SizeDelta: {x: 1.15, y: 1.15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &201560842
@@ -340,7 +340,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.1, y: 1.1}
   m_EdgeRadius: 0
 --- !u!114 &201560844
 MonoBehaviour:
@@ -429,7 +429,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.13300014, y: 0.20249999}
+  m_AnchoredPosition: {x: 1.12, y: 0.35}
   m_SizeDelta: {x: 1.15, y: 1.15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &276826703
@@ -488,7 +488,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.1, y: 1.1}
   m_EdgeRadius: 0
 --- !u!114 &276826705
 MonoBehaviour:
@@ -1038,7 +1038,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.299, y: -1.4275}
+  m_AnchoredPosition: {x: 1.53, y: -1.99}
   m_SizeDelta: {x: 1.15, y: 1.15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &574062554
@@ -1097,7 +1097,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.1, y: 1.1}
   m_EdgeRadius: 0
 --- !u!114 &574062556
 MonoBehaviour:
@@ -1393,7 +1393,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.32500005, y: 1.4275}
+  m_AnchoredPosition: {x: -0.41, y: 1.78}
   m_SizeDelta: {x: 1.15, y: 1.15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &734755682
@@ -1452,7 +1452,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.1, y: 1.1}
   m_EdgeRadius: 0
 --- !u!114 &734755684
 MonoBehaviour:
@@ -1798,7 +1798,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.299, y: 0.20249999}
+  m_AnchoredPosition: {x: -0.82, y: -0.32}
   m_SizeDelta: {x: 1.15, y: 1.15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &990501936
@@ -1857,7 +1857,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.1, y: 1.1}
   m_EdgeRadius: 0
 --- !u!114 &990501938
 MonoBehaviour:
@@ -4950,11 +4950,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1299553181523238714, guid: d1d371bfd93c25648822430f6ba5c3af, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1.299
+      value: 2.21
       objectReference: {fileID: 0}
     - target: {fileID: 1299553181523238714, guid: d1d371bfd93c25648822430f6ba5c3af, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.20249999
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 1299553181523238714, guid: d1d371bfd93c25648822430f6ba5c3af, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4971,6 +4971,14 @@ PrefabInstance:
     - target: {fileID: 2619476264915918222, guid: d1d371bfd93c25648822430f6ba5c3af, type: 3}
       propertyPath: m_Name
       value: Puzzle Piece
+      objectReference: {fileID: 0}
+    - target: {fileID: 3309780693088635170, guid: d1d371bfd93c25648822430f6ba5c3af, type: 3}
+      propertyPath: m_Size.x
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3309780693088635170, guid: d1d371bfd93c25648822430f6ba5c3af, type: 3}
+      propertyPath: m_Size.y
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 4398214131498343947, guid: d1d371bfd93c25648822430f6ba5c3af, type: 3}
       propertyPath: dropArea
@@ -5088,6 +5096,14 @@ PrefabInstance:
     - target: {fileID: 7565713486384575686, guid: f892acf4ee65177438315048b1da1548, type: 3}
       propertyPath: m_Name
       value: Puzzle Drop Area
+      objectReference: {fileID: 0}
+    - target: {fileID: 8314286150365537662, guid: f892acf4ee65177438315048b1da1548, type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8314286150365537662, guid: f892acf4ee65177438315048b1da1548, type: 3}
+      propertyPath: m_Size.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

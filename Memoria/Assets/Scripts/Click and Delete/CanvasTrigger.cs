@@ -9,18 +9,13 @@ public class CanvasTrigger : MonoBehaviour
 
     private bool openUpAllowed;
 
-    void OnEnable()
-    {
-        EventDispatcher.AddListener<ClickCollectedEvent>(ctx => Close());
-    }
-    void OnDisable()
-    {
-        EventDispatcher.RemoveListener<ClickCollectedEvent>(ctx => Close());
-    }
     private void Update()
     {
         if (openUpAllowed && Input.GetKeyDown(KeyCode.E))
             OpenUp();
+
+        if (gameObject.activeInHierarchy && Input.GetKeyDown(KeyCode.Escape))
+            Close();
     }
 
     void OnTriggerEnter2D(Collider2D collider)
@@ -39,10 +34,7 @@ public class CanvasTrigger : MonoBehaviour
     }
     private void Close()
     {
-        if (gameObject == null || !gameObject.activeInHierarchy) return;
-
         canvas2.SetActive(false);
         camera2.SetActive(false);
-        GetComponent<CanvasTrigger>().enabled = false;
     }
 }

@@ -42,14 +42,7 @@ public class Collectable : Interactable, IDragable
                 currentlyPlayingDialogue = false;
                 EventDispatcher.Raise(new ShowDialogueEvent { showDialogueUI = false });
 
-                if (collectableClicked)
-                {
-                    ClickCollect();
-                }
-                else
-                {
-                    Collect();
-                }
+                Collect();
             }
         }
 
@@ -73,7 +66,6 @@ public class Collectable : Interactable, IDragable
 
     public void Click()
     {
-        collectableClicked = true;
         Interact();
     }
 
