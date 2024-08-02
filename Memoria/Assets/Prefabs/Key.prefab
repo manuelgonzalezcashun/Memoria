@@ -203,6 +203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canPickup: 0
   interactUI: {fileID: 10879038018094890}
+  _keyIconPrefab: {fileID: 6699588512128116912, guid: c93e85cf7d444b442956d049c5961dd9, type: 3}
 --- !u!1 &5930701475783266575
 GameObject:
   m_ObjectHideFlags: 0

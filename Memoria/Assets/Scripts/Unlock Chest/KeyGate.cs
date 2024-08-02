@@ -15,6 +15,7 @@ public class KeyGate : Interactable
         if (GameVariables.keyCount > 0)
         {
             GameVariables.keyCount--;
+            EventDispatcher.Raise(new KeyUsedEvent());
 
             Destroy(gameObject);
             puzzlepiece.SetActive(true);

@@ -5,7 +5,8 @@ public class ShowInteractUI : Event
     public Interactable interactable;
 }
 public class CollectedEvent : Event { }
-public class ClickCollectedEvent : Event { }
+public class KeyCollectedEvent : Event { }
+public class KeyUsedEvent : Event { }
 public class AddPuzzlePieceCount : Event { }
 public class PuzzleWinEvent : Event { }
 public class SpawnDoor : Event { }

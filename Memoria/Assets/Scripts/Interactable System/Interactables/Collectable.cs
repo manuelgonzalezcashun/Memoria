@@ -5,7 +5,6 @@ public class Collectable : Interactable, IDragable
     [SerializeField] DialogueDatabase database;
     [SerializeField] bool debugMode = false;
 
-    private bool collectableClicked = false;
     private bool currentlyPlayingDialogue = false;
     private int currentIndex = 0;
     public override void Interact()
@@ -53,12 +52,6 @@ public class Collectable : Interactable, IDragable
         EventDispatcher.Raise(new CollectedEvent());
         Destroy(gameObject);
     }
-    private void ClickCollect()
-    {
-        EventDispatcher.Raise(new ClickCollectedEvent());
-        Destroy(gameObject);
-    }
-
     void Update()
     {
         StepThroughDialogue();
