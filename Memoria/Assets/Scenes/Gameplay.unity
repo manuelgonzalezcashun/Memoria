@@ -392,6 +392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91df4336b0290f24392f8b6a2a648b33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointClickCam: {fileID: 0}
 --- !u!1 &276826701
 GameObject:
   m_ObjectHideFlags: 0
@@ -540,6 +541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91df4336b0290f24392f8b6a2a648b33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointClickCam: {fileID: 0}
 --- !u!1 &324102615 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4744790879723357861, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
@@ -821,6 +823,7 @@ GameObject:
   - component: {fileID: 511998023}
   - component: {fileID: 511998026}
   - component: {fileID: 511998027}
+  - component: {fileID: 511998028}
   m_Layer: 0
   m_Name: Gameplay Camera
   m_TagString: MainCamera
@@ -914,7 +917,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc407a4b4cebf0c4ca46a56c73ad1a9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debugMode: 0
   targetTransform: {fileID: 952815677}
   offset: {x: 0, y: 0, z: 0}
   smoothTime: 0.2
@@ -932,6 +934,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48561c5c4455f6840a862e447b74b286, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &511998028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511998022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ca83a9493315c146aac78edaf4f49e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugMode: 0
 --- !u!1 &545567788
 GameObject:
   m_ObjectHideFlags: 0
@@ -1336,6 +1351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91df4336b0290f24392f8b6a2a648b33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointClickCam: {fileID: 0}
 --- !u!224 &649715307 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1299553181523238714, guid: d1d371bfd93c25648822430f6ba5c3af, type: 3}
@@ -1596,6 +1612,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91df4336b0290f24392f8b6a2a648b33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointClickCam: {fileID: 0}
 --- !u!1 &869712777
 GameObject:
   m_ObjectHideFlags: 0
@@ -2152,6 +2169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91df4336b0290f24392f8b6a2a648b33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointClickCam: {fileID: 0}
 --- !u!1 &1020319968
 GameObject:
   m_ObjectHideFlags: 0

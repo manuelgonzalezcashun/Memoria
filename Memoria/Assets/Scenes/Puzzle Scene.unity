@@ -392,6 +392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91df4336b0290f24392f8b6a2a648b33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointClickCam: {fileID: 1544499914}
 --- !u!1 &276826701
 GameObject:
   m_ObjectHideFlags: 0
@@ -540,6 +541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91df4336b0290f24392f8b6a2a648b33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointClickCam: {fileID: 1544499914}
 --- !u!1 &345977401
 GameObject:
   m_ObjectHideFlags: 0
@@ -1149,6 +1151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91df4336b0290f24392f8b6a2a648b33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointClickCam: {fileID: 1544499914}
 --- !u!1 &621709323
 GameObject:
   m_ObjectHideFlags: 0
@@ -1504,6 +1507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91df4336b0290f24392f8b6a2a648b33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointClickCam: {fileID: 1544499914}
 --- !u!1 &781892410
 GameObject:
   m_ObjectHideFlags: 0
@@ -1909,6 +1913,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91df4336b0290f24392f8b6a2a648b33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointClickCam: {fileID: 1544499914}
 --- !u!1 &1002321552
 GameObject:
   m_ObjectHideFlags: 0
@@ -3956,15 +3961,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1544499912}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc407a4b4cebf0c4ca46a56c73ad1a9a, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ca83a9493315c146aac78edaf4f49e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   debugMode: 0
-  targetTransform: {fileID: 0}
-  offset: {x: 0, y: 0, z: 0}
-  smoothTime: 0
-  xLimit: {x: 0, y: 0}
-  yLimit: {x: 0, y: 0}
 --- !u!1001 &1546200612
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4972,6 +4972,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Puzzle Piece
       objectReference: {fileID: 0}
+    - target: {fileID: 2751090946784608883, guid: d1d371bfd93c25648822430f6ba5c3af, type: 3}
+      propertyPath: pointClickCam
+      value: 
+      objectReference: {fileID: 1544499914}
     - target: {fileID: 3309780693088635170, guid: d1d371bfd93c25648822430f6ba5c3af, type: 3}
       propertyPath: m_Size.x
       value: 1.1

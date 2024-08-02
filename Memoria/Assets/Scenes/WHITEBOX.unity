@@ -7511,6 +7511,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2619476264915918222, guid: d1d371bfd93c25648822430f6ba5c3af, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2751090946784608883, guid: d1d371bfd93c25648822430f6ba5c3af, type: 3}
+      propertyPath: pointClickCam
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4398214131498343947, guid: d1d371bfd93c25648822430f6ba5c3af, type: 3}
       propertyPath: dropArea
       value: 

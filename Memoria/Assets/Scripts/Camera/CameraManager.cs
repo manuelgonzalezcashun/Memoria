@@ -57,4 +57,8 @@ public class CameraManager : MonoBehaviour
 
         m_camerasDict[_currentCam].gameObject.SetActive(true);
     }
+    public Camera GetCamera()
+    {
+        return m_camerasDict[_currentCam];
+    }
 }
