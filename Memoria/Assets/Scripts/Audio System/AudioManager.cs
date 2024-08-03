@@ -6,7 +6,23 @@ public class AudioManager : MonoBehaviour
     Dictionary<string, Sounds> m_sfxClipDict = new(), m_musicClipDict = new();
     [SerializeField] List<Sounds> sfx_SoundList = new(), music_SoundList = new();
 
+    private static AudioManager _instance = null;
+    public static AudioManager Instance => _instance;
+
     void OnEnable()
+    {
+        if (_instance == null)
+        {
+            _instance = this;
+            DontDestroyOnLoad(_instance);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    void Awake()
     {
         foreach (Sounds sfxClips in sfx_SoundList)
         {
@@ -19,7 +35,6 @@ public class AudioManager : MonoBehaviour
             m_musicClipDict.Add(musicClips.clipName, musicClips);
         }
     }
-
     public void Play(string clipName)
     {
         if (m_sfxClipDict.ContainsKey(clipName))
