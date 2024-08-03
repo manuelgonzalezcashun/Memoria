@@ -550,6 +550,10 @@ PrefabInstance:
       value: Backyard
       objectReference: {fileID: 0}
     - target: {fileID: 1405681280328048943, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
+      propertyPath: _spawnPoint
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1405681280328048943, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
       propertyPath: roomToLoad.guid
       value: 206ca20fa7e0e84478c6585732fe20ce
       objectReference: {fileID: 0}
