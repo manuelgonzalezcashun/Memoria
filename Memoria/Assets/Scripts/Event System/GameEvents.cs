@@ -8,7 +8,10 @@ public class CollectedEvent : Event { }
 public class KeyCollectedEvent : Event { }
 public class KeyUsedEvent : Event { }
 public class AddPuzzlePieceCount : Event { }
-public class PuzzleWinEvent : Event { }
+public class PuzzleWinEvent : Event
+{
+    public string endSceneName;
+}
 public class SpawnDoor : Event { }
 
 public class LoadSceneEvent : Event
