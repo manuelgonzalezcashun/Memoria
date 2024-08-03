@@ -1,10 +1,17 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using Eflatun.SceneReference;
 public class MenuManager : MonoBehaviour
 {
-    public void LoadScene(string name)
+    [SerializeField] SceneReference scene = null;
+    public void LoadScene()
     {
-        SceneManager.LoadScene(name);
+        if (scene == null)
+        {
+            Debug.LogWarning($"{name} is missing a scene reference!");
+            return;
+        }
+
+        SceneManager.LoadScene(scene.Name);
     }
 }
