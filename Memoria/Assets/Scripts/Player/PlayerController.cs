@@ -102,6 +102,7 @@ public class PlayerController : MonoBehaviour
         interactAction.performed += ctx => PlayerInteract();
 
         // * Event Listeners
+        EventDispatcher.AddListener<SceneLoadingEvent>(ctx => HandlePlayerMovement(ctx.isSceneLoading));
         EventDispatcher.AddListener<LoadSceneEvent>(ctx => HandlePlayerInput(false));
         EventDispatcher.AddListener<PuzzleWinEvent>(ctx => HandlePlayerInput(true));
         EventDispatcher.AddListener<ShowDialogueEvent>(ctx => HandlePlayerMovement(ctx.showDialogueUI));
@@ -113,9 +114,10 @@ public class PlayerController : MonoBehaviour
         interactAction.performed -= ctx => PlayerInteract();
 
         // * Event Listeners
+        EventDispatcher.RemoveListener<SceneLoadingEvent>(ctx => HandlePlayerMovement(ctx.isSceneLoading));
         EventDispatcher.RemoveListener<LoadSceneEvent>(ctx => HandlePlayerInput(false));
         EventDispatcher.RemoveListener<PuzzleWinEvent>(ctx => HandlePlayerInput(true));
-        EventDispatcher.AddListener<ShowDialogueEvent>(ctx => HandlePlayerMovement(ctx.showDialogueUI));
+        EventDispatcher.RemoveListener<ShowDialogueEvent>(ctx => HandlePlayerMovement(ctx.showDialogueUI));
         EventDispatcher.RemoveListener<SpawnPlayerEvent>(ctx => PlayerSpawn(ctx.spawnPos));
     }
     #endregion

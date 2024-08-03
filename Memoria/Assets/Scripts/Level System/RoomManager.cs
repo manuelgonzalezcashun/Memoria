@@ -8,6 +8,7 @@ public class RoomManager : MonoBehaviour
     [SerializeField] GameObject loadingScreen = null;
     [SerializeField] SceneReference _roomToLoad = null;
     private string _currentRoom = string.Empty;
+    private float _loadingTime = 5.0f;
     void OnEnable()
     {
         EventDispatcher.AddListener<PuzzleWinEvent>(ctx => StartCoroutine(LoadingScreen(ctx.endSceneName)));
@@ -48,18 +49,17 @@ public class RoomManager : MonoBehaviour
     IEnumerator LoadingScreen(string roomName)
     {
         UnloadCurrentRoom();
-        AsyncOperation operation = SceneManager.LoadSceneAsync(roomName, LoadSceneMode.Additive);
         loadingScreen.SetActive(true);
-        while (!operation.isDone)
+        EventDispatcher.Raise(new SceneLoadingEvent { isSceneLoading = true });
+        AsyncOperation operation = SceneManager.LoadSceneAsync(roomName, LoadSceneMode.Additive);
+
+        yield return new WaitForSeconds(_loadingTime);
+
+        if (operation.isDone)
         {
-            yield return null;
-
-            if (operation.isDone)
-            {
-                _currentRoom = roomName;
-                loadingScreen.SetActive(false);
-            }
+            _currentRoom = roomName;
+            loadingScreen.SetActive(false);
+            EventDispatcher.Raise(new SceneLoadingEvent { isSceneLoading = false });
         }
-
     }
 }

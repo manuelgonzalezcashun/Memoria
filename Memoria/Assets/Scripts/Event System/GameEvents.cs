@@ -35,6 +35,9 @@ public class SpawnPlayerEvent : Event
 {
     public Vector2 spawnPos;
 }
-
+public class SceneLoadingEvent : Event
+{
+    public bool isSceneLoading = false;
+}
 
 
