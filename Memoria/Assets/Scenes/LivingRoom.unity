@@ -427,7 +427,11 @@ PrefabInstance:
     - target: {fileID: 1769269677575871959, guid: 6a6795e39cef84745a3cd1ebbb977ffa, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 7c3f6af233cfa41c3b62f85db67f4afc, type: 3}
+      objectReference: {fileID: 0}
+    - target: {fileID: 1769269677575871959, guid: 6a6795e39cef84745a3cd1ebbb977ffa, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4949012638914345121, guid: 6a6795e39cef84745a3cd1ebbb977ffa, type: 3}
       propertyPath: camera2
       value: 
@@ -519,7 +523,6 @@ GameObject:
   m_Component:
   - component: {fileID: 632034863}
   - component: {fileID: 632034862}
-  - component: {fileID: 632034861}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -527,14 +530,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!81 &632034861
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 632034860}
-  m_Enabled: 1
 --- !u!20 &632034862
 Camera:
   m_ObjectHideFlags: 0
@@ -867,11 +862,23 @@ PrefabInstance:
       objectReference: {fileID: 2051216784}
     - target: {fileID: 6566783988143079681, guid: 6a6795e39cef84745a3cd1ebbb977ffa, type: 3}
       propertyPath: m_Size.x
-      value: 3.5047255
+      value: 15.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 6566783988143079681, guid: 6a6795e39cef84745a3cd1ebbb977ffa, type: 3}
+      propertyPath: m_Size.y
+      value: 14.27
       objectReference: {fileID: 0}
     - target: {fileID: 6566783988143079681, guid: 6a6795e39cef84745a3cd1ebbb977ffa, type: 3}
       propertyPath: m_Offset.x
-      value: 0.01757884
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6566783988143079681, guid: 6a6795e39cef84745a3cd1ebbb977ffa, type: 3}
+      propertyPath: m_Offset.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6566783988143079681, guid: 6a6795e39cef84745a3cd1ebbb977ffa, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6566783988143079681, guid: 6a6795e39cef84745a3cd1ebbb977ffa, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -933,7 +940,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6566783988143079681, guid: 6a6795e39cef84745a3cd1ebbb977ffa, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
