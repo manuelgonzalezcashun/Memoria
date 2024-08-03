@@ -617,6 +617,14 @@ PrefabInstance:
       propertyPath: RoomToLoad
       value: Backyard
       objectReference: {fileID: 0}
+    - target: {fileID: 1405681280328048943, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
+      propertyPath: roomToLoad.guid
+      value: 206ca20fa7e0e84478c6585732fe20ce
+      objectReference: {fileID: 0}
+    - target: {fileID: 1405681280328048943, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
+      propertyPath: roomToLoad.asset
+      value: 
+      objectReference: {fileID: 102900000, guid: 206ca20fa7e0e84478c6585732fe20ce, type: 3}
     - target: {fileID: 2783464642255101079, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
       propertyPath: m_Sprite
       value: 
