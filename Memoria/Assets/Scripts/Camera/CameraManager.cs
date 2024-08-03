@@ -1,21 +1,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraManager : MonoBehaviour
+public class CameraManager
 {
     #region Singleton Data
     private static CameraManager _instance;
-    public static CameraManager Instance => _instance;
-
-    void OnEnable()
+    public static CameraManager Instance
     {
-        if (_instance == null)
+        get
         {
-            _instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
+            if (_instance == null)
+            {
+                _instance = new CameraManager();
+            }
+            return _instance;
         }
     }
     #endregion
@@ -25,10 +23,8 @@ public class CameraManager : MonoBehaviour
     public string DefaultCamera => _defaultCam;
     public void Add(Camera cam)
     {
-        if (cameras.Count < 1)
-        {
+        if (cam.CompareTag(Camera.main.tag))
             _defaultCam = cam.name;
-        }
 
         cameras.Add(cam);
 
@@ -57,7 +53,7 @@ public class CameraManager : MonoBehaviour
 
         m_camerasDict[_currentCam].gameObject.SetActive(true);
     }
-    public Camera GetCamera()
+    public Camera GetCurrentCamera()
     {
         return m_camerasDict[_currentCam];
     }

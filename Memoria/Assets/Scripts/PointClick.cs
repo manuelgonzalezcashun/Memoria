@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PointClick : MonoBehaviour
 {
-    [SerializeField] private Camera pointClickCam = null;
+    private Camera pointClickCam = null;
     Vector3 offset;
     Collider2D objectCollider;
     IClickable clickable;
@@ -15,7 +15,7 @@ public class PointClick : MonoBehaviour
 
     void Start()
     {
-        if (pointClickCam == null) pointClickCam = CameraManager.Instance.GetCamera();
+        pointClickCam = CameraManager.Instance.GetCurrentCamera();
     }
 
     void OnMouseDown()

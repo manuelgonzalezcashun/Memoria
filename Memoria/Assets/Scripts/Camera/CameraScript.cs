@@ -7,19 +7,18 @@ public class CameraScript : MonoBehaviour
     void OnEnable()
     {
         cameraInstance = GetComponent<Camera>();
-    }
-    void OnDestroy()
-    {
         if (debugMode) return;
 
-        CameraManager.Instance.Remove(cameraInstance);
-        CameraManager.Instance.SetCamera(CameraManager.Instance.DefaultCamera);
-    }
-    void Start()
-    {
-        if (debugMode) return;
-
+        Debug.Log(cameraInstance.name);
         CameraManager.Instance.Add(cameraInstance);
         CameraManager.Instance.SetCamera(cameraInstance.name);
+    }
+    void OnDisable()
+    {
+        if (debugMode) return;
+        if (cameraInstance.name == CameraManager.Instance.DefaultCamera) return;
+
+        CameraManager.Instance.SetCamera(CameraManager.Instance.DefaultCamera);
+        CameraManager.Instance.Remove(cameraInstance);
     }
 }
