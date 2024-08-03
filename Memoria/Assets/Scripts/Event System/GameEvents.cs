@@ -31,6 +31,10 @@ public class ContinueDialogueEvent : Event
 {
     public string dialogueLine;
 }
+public class SpawnPlayerEvent : Event
+{
+    public Vector2 spawnPos;
+}
 
 
 

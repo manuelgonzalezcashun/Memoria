@@ -1,11 +1,12 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Eflatun.SceneReference;
 
 public class RoomManager : MonoBehaviour
 {
     [SerializeField] GameObject loadingScreen = null;
-    [SerializeField] string _roomToLoad = string.Empty;
+    [SerializeField] SceneReference _roomToLoad = null;
     private string _currentRoom = string.Empty;
     void OnEnable()
     {
@@ -20,9 +21,9 @@ public class RoomManager : MonoBehaviour
     }
     void Start()
     {
-        if (_roomToLoad != string.Empty)
+        if (_roomToLoad != null)
         {
-            LoadRoom(_roomToLoad);
+            LoadRoom(_roomToLoad.Name);
         }
     }
     void LoadRoom(string roomName)

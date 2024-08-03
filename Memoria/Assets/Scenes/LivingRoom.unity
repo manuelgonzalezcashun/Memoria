@@ -136,6 +136,14 @@ PrefabInstance:
       value: Backyard
       objectReference: {fileID: 0}
     - target: {fileID: 4296725661604129911, guid: 4777dc3c511fd4144a22490640879dae, type: 3}
+      propertyPath: _connection
+      value: 
+      objectReference: {fileID: 11400000, guid: 83d4ed245d629df45b790325ea0d2de8, type: 2}
+    - target: {fileID: 4296725661604129911, guid: 4777dc3c511fd4144a22490640879dae, type: 3}
+      propertyPath: _spawnPoint
+      value: 
+      objectReference: {fileID: 2012033760}
+    - target: {fileID: 4296725661604129911, guid: 4777dc3c511fd4144a22490640879dae, type: 3}
       propertyPath: roomToLoad.guid
       value: 206ca20fa7e0e84478c6585732fe20ce
       objectReference: {fileID: 0}
@@ -201,9 +209,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6933837158959353167, guid: 4777dc3c511fd4144a22490640879dae, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2012033760}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4777dc3c511fd4144a22490640879dae, type: 3}
+--- !u!4 &245400828 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6933837158959353167, guid: 4777dc3c511fd4144a22490640879dae, type: 3}
+  m_PrefabInstance: {fileID: 245400827}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &371647853
 GameObject:
   m_ObjectHideFlags: 0
@@ -689,6 +705,14 @@ PrefabInstance:
       value: Bedroom
       objectReference: {fileID: 0}
     - target: {fileID: 1405681280328048943, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
+      propertyPath: _connection
+      value: 
+      objectReference: {fileID: 11400000, guid: 92bc8776221d7ae449a8af13bf9c1e90, type: 2}
+    - target: {fileID: 1405681280328048943, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
+      propertyPath: _spawnPoint
+      value: 
+      objectReference: {fileID: 1068311315}
+    - target: {fileID: 1405681280328048943, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
       propertyPath: roomToLoad.guid
       value: d59115bf2a1167143a93522cc04558e3
       objectReference: {fileID: 0}
@@ -700,6 +724,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
+    - target: {fileID: 7765007636352350790, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3
+      objectReference: {fileID: 0}
     - target: {fileID: 8506099248812611065, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
       propertyPath: m_SortingOrder
       value: 1
@@ -709,6 +737,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
+--- !u!4 &1068311315 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7765007636352350790, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
+  m_PrefabInstance: {fileID: 1068311314}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1104041142
 GameObject:
   m_ObjectHideFlags: 0
@@ -1848,6 +1881,37 @@ RectTransform:
   m_AnchoredPosition: {x: 960.9, y: 517.573}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &2012033759
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2012033760}
+  m_Layer: 0
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2012033760
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2012033759}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 245400828}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2051216784
 GameObject:
   m_ObjectHideFlags: 0

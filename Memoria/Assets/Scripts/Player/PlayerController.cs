@@ -34,6 +34,10 @@ public class PlayerController : MonoBehaviour
         InteractableManager.Instance.SearchForNearestInteractable(transform.position, interactDist);
         InteractableManager.Instance.PickupInteractable();
     }
+    void PlayerSpawn(Vector2 spawnPos)
+    {
+        this.transform.position = spawnPos;
+    }
     void PlayerMove()
     {
         if (stopPlayerMovement)
@@ -101,6 +105,7 @@ public class PlayerController : MonoBehaviour
         EventDispatcher.AddListener<LoadSceneEvent>(ctx => HandlePlayerInput(false));
         EventDispatcher.AddListener<PuzzleWinEvent>(ctx => HandlePlayerInput(true));
         EventDispatcher.AddListener<ShowDialogueEvent>(ctx => HandlePlayerMovement(ctx.showDialogueUI));
+        EventDispatcher.AddListener<SpawnPlayerEvent>(ctx => PlayerSpawn(ctx.spawnPos));
     }
     void RemoveListeners()
     {
@@ -111,6 +116,7 @@ public class PlayerController : MonoBehaviour
         EventDispatcher.RemoveListener<LoadSceneEvent>(ctx => HandlePlayerInput(false));
         EventDispatcher.RemoveListener<PuzzleWinEvent>(ctx => HandlePlayerInput(true));
         EventDispatcher.AddListener<ShowDialogueEvent>(ctx => HandlePlayerMovement(ctx.showDialogueUI));
+        EventDispatcher.RemoveListener<SpawnPlayerEvent>(ctx => PlayerSpawn(ctx.spawnPos));
     }
     #endregion
 

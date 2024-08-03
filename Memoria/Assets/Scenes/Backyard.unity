@@ -361,6 +361,14 @@ PrefabInstance:
       value: LivingRoom
       objectReference: {fileID: 0}
     - target: {fileID: 1405681280328048943, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
+      propertyPath: _connection
+      value: 
+      objectReference: {fileID: 11400000, guid: 83d4ed245d629df45b790325ea0d2de8, type: 2}
+    - target: {fileID: 1405681280328048943, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
+      propertyPath: _spawnPoint
+      value: 
+      objectReference: {fileID: 324942774}
+    - target: {fileID: 1405681280328048943, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
       propertyPath: roomToLoad.guid
       value: 22c783852fe078e4c925938ea461c3c9
       objectReference: {fileID: 0}
@@ -375,6 +383,10 @@ PrefabInstance:
     - target: {fileID: 4744790879723357861, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
       propertyPath: m_Name
       value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765007636352350790, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 7880798216981687140, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
       propertyPath: m_SizeDelta.x
@@ -436,6 +448,11 @@ PrefabInstance:
 --- !u!4 &324942773 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 604004587770534323, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
+  m_PrefabInstance: {fileID: 324942772}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &324942774 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7765007636352350790, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
   m_PrefabInstance: {fileID: 324942772}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &492152023
