@@ -7,6 +7,11 @@ public class Collectable : Interactable, IClickable
 
     private bool currentlyPlayingDialogue = false;
     private int currentIndex = 0;
+
+    void Awake()
+    {
+        GameVariables.Instance.CheckIfCollected(this);
+    }
     public override void Interact()
     {
         if (database == null && !debugMode)
@@ -49,6 +54,7 @@ public class Collectable : Interactable, IClickable
 
     private void Collect()
     {
+        GameVariables.Instance.AddCollectedCount(this);
         EventDispatcher.Raise(new CollectedEvent());
         Destroy(gameObject);
     }

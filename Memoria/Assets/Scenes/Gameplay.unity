@@ -716,8 +716,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadingScreen: {fileID: 1471426499}
   _roomToLoad:
-    asset: {fileID: 102900000, guid: 0b6bc81a3af3e2d4f902f53b6c203f39, type: 3}
-    guid: 0b6bc81a3af3e2d4f902f53b6c203f39
+    asset: {fileID: 102900000, guid: 22c783852fe078e4c925938ea461c3c9, type: 3}
+    guid: 22c783852fe078e4c925938ea461c3c9
 --- !u!1 &391604971
 GameObject:
   m_ObjectHideFlags: 0
