@@ -17,17 +17,17 @@ public class GameVariables
     List<string> _collectedPieces = new();
     public static int keyCount;
 
-    public void AddCollectedCount(Collectable collectable)
+    public void AddCollectedCount(Interactable interactable)
     {
-        _collectedPieces.Add(collectable.name);
+        _collectedPieces.Add(interactable.name);
     }
-    public void CheckIfCollected(Collectable collectable)
+    public void CheckIfCollected(Interactable interactable)
     {
         foreach (var pieceNames in _collectedPieces)
         {
-            if (collectable.name == pieceNames)
+            if (interactable.name == pieceNames)
             {
-                collectable.gameObject.SetActive(false);
+                interactable.gameObject.SetActive(false);
             }
         }
     }
