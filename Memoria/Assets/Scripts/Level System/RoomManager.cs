@@ -31,7 +31,7 @@ public class RoomManager : MonoBehaviour
     {
         if (_currentRoom != roomName)
         {
-            SceneManager.LoadSceneAsync(roomName, LoadSceneMode.Additive);
+            AsyncOperation operation = SceneManager.LoadSceneAsync(roomName, LoadSceneMode.Additive);
             _currentRoom = roomName;
         }
     }
@@ -51,15 +51,11 @@ public class RoomManager : MonoBehaviour
         UnloadCurrentRoom();
         loadingScreen.SetActive(true);
         EventDispatcher.Raise(new SceneLoadingEvent { isSceneLoading = true });
-        AsyncOperation operation = SceneManager.LoadSceneAsync(roomName, LoadSceneMode.Additive);
+        LoadRoom(roomName);
 
         yield return new WaitForSeconds(_loadingTime);
 
-        if (operation.isDone)
-        {
-            _currentRoom = roomName;
-            loadingScreen.SetActive(false);
-            EventDispatcher.Raise(new SceneLoadingEvent { isSceneLoading = false });
-        }
+        loadingScreen.SetActive(false);
+        EventDispatcher.Raise(new SceneLoadingEvent { isSceneLoading = false });
     }
 }
