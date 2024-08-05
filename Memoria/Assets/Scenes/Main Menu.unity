@@ -1194,6 +1194,7 @@ GameObject:
   - component: {fileID: 1066432752}
   - component: {fileID: 1066432751}
   - component: {fileID: 1066432750}
+  - component: {fileID: 1066432754}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -1292,6 +1293,18 @@ MonoBehaviour:
           m_StringArgument: Begin Button
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1066432754}
+        m_TargetAssemblyTypeName: ComicLoader, Assembly-CSharp
+        m_MethodName: LoadVideoComic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1066432750}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
         m_MethodName: LoadScene
@@ -1342,6 +1355,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1066432748}
   m_CullTransparentMesh: 1
+--- !u!114 &1066432754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066432748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5b4c7de3a2804a4e89d51ca13f769e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  comicToLoad: Beginning
 --- !u!224 &1185506897 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2747803580128033640, guid: ee9cb8a710ba8b940a0c6db8f09ac08c, type: 3}

@@ -6,9 +6,9 @@ public class MenuManager : MonoBehaviour
     [SerializeField] SceneReference scene = null;
     public void LoadScene()
     {
-        if (scene == null)
+        if (SceneManager.GetSceneByName(scene.Name).isLoaded)
         {
-            Debug.LogWarning($"{name} is missing a scene reference!");
+            SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
             return;
         }
 

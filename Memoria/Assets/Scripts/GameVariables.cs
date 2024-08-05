@@ -15,6 +15,8 @@ public class GameVariables
         }
     }
     List<string> _collectedPieces = new();
+    private string _comicToLoad = string.Empty;
+    public string ComicToLoad => _comicToLoad;
     public static int keyCount;
 
     public void AddCollectedCount(Interactable interactable)
@@ -30,6 +32,10 @@ public class GameVariables
                 interactable.gameObject.SetActive(false);
             }
         }
+    }
+    public void SetComicToLoad(string comic)
+    {
+        _comicToLoad = comic;
     }
 }
 

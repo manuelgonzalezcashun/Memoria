@@ -1,37 +1,36 @@
 using UnityEngine;
 using UnityEngine.Video;
 using System.Collections.Generic;
+using System;
 
 public class VideoManager : MonoBehaviour
 {
     #region Initialized Variables
-    private Dictionary<string, VideoClip> m_ComicDict = new();
+    private Dictionary<string, Comic> m_ComicDict = new();
     private VideoPlayer vp = null;
     #endregion
 
     #region Edited Variables
-    [SerializeField] List<ComicVideos> comicVideos = new();
+    [SerializeField] List<Comic> comics = new();
     [SerializeField] GameObject startGameButton = null;
     [SerializeField] bool itchBuild = false;
     #endregion
 
     #region Runtime Variables
+    List<VideoClip> _comicVideos = new();
     int currentIndex = 0;
     bool autoPlayVideo = false;
     #endregion
-    void OnEnable()
+    void Awake()
     {
         vp = GetComponent<VideoPlayer>();
 
-        foreach (var clips in comicVideos)
+        foreach (var comic in comics)
         {
-            m_ComicDict.Add(clips.name, clips.videoClip);
+            m_ComicDict.Add(comic.name, comic);
         }
     }
-    void Start()
-    {
-        PlayVideo(currentIndex);
-    }
+    void Start() => PlayVideo(GameVariables.Instance.ComicToLoad);
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -39,21 +38,8 @@ public class VideoManager : MonoBehaviour
             PlayNextVideo();
         }
     }
-    public void SetAutoPlayToggle(bool isAuto)
+    private void PlayVideo(VideoClip videoClip)
     {
-        autoPlayVideo = isAuto;
-
-        if (autoPlayVideo) vp.loopPointReached += ctx => PlayNextVideo();
-    }
-    public void PlayVideo(string clipName)
-    {
-        if (!m_ComicDict.ContainsKey(clipName))
-        {
-            Debug.LogWarning($"{clipName} does not exist in the database");
-            return;
-        }
-        VideoClip videoClip = m_ComicDict[clipName];
-
         if (itchBuild)
         {
             vp.source = VideoSource.Url;
@@ -66,27 +52,50 @@ public class VideoManager : MonoBehaviour
         }
         vp.Play();
     }
-    private void PlayVideo(int index)
+    private void PlayVideo(string comicName)
     {
-        PlayVideo(comicVideos[index].name);
+        if (!m_ComicDict.ContainsKey(comicName))
+        {
+            Debug.LogError($"{comicName} does not exist in the database");
+            return;
+        }
+        InitializeVideoList(comicName);
+        VideoClip videoClip = _comicVideos[currentIndex];
+
+        PlayVideo(videoClip);
     }
     private void PlayNextVideo()
     {
         currentIndex++;
 
-        if (currentIndex < comicVideos.Count)
+        if (currentIndex < _comicVideos.Count)
         {
-            PlayVideo(currentIndex);
+            PlayVideo(_comicVideos[currentIndex]);
             return;
         }
 
         startGameButton.SetActive(true);
+        _comicVideos = null;
+    }
+
+    private void InitializeVideoList(string comicName)
+    {
+        if (_comicVideos == null || _comicVideos.Count <= 0)
+        {
+            _comicVideos = m_ComicDict[comicName].comicVideos;
+        }
+    }
+    public void SetAutoPlayToggle(bool isAuto)
+    {
+        autoPlayVideo = isAuto;
+
+        if (autoPlayVideo) vp.loopPointReached += ctx => PlayNextVideo();
     }
 }
 
-[System.Serializable]
-public class ComicVideos
+[Serializable]
+public class Comic
 {
     public string name = string.Empty;
-    public VideoClip videoClip = null;
+    public List<VideoClip> comicVideos = new();
 }
