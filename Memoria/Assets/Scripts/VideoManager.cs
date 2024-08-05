@@ -7,17 +7,17 @@ public class VideoManager : MonoBehaviour
     #region Initialized Variables
     private Dictionary<string, VideoClip> m_ComicDict = new();
     private VideoPlayer vp = null;
-    bool autoPlayVideo = false;
     #endregion
 
     #region Edited Variables
     [SerializeField] List<ComicVideos> comicVideos = new();
-    [SerializeField] GameObject button = null;
+    [SerializeField] GameObject startGameButton = null;
     [SerializeField] bool itchBuild = false;
     #endregion
 
     #region Runtime Variables
     int currentIndex = 0;
+    bool autoPlayVideo = false;
     #endregion
     void OnEnable()
     {
@@ -42,7 +42,8 @@ public class VideoManager : MonoBehaviour
     public void SetAutoPlayToggle(bool isAuto)
     {
         autoPlayVideo = isAuto;
-        Debug.Log(autoPlayVideo);
+
+        if (autoPlayVideo) vp.loopPointReached += ctx => PlayNextVideo();
     }
     public void PlayVideo(string clipName)
     {
@@ -63,7 +64,6 @@ public class VideoManager : MonoBehaviour
             vp.source = VideoSource.VideoClip;
             vp.clip = videoClip;
         }
-
         vp.Play();
     }
     private void PlayVideo(int index)
@@ -77,11 +77,10 @@ public class VideoManager : MonoBehaviour
         if (currentIndex < comicVideos.Count)
         {
             PlayVideo(currentIndex);
+            return;
         }
-        else if (currentIndex > comicVideos.Count)
-        {
-            button.SetActive(true);
-        }
+
+        startGameButton.SetActive(true);
     }
 }
 
