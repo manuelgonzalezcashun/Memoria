@@ -39,5 +39,7 @@ public class SceneLoadingEvent : Event
 {
     public bool isSceneLoading = false;
 }
-
-
+public class ChangeCameraSettings : Event
+{
+    public Vector2 newXlimit, newYLimit;
+}

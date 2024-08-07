@@ -7,8 +7,9 @@ public class RoomManager : MonoBehaviour
 {
     [SerializeField] GameObject loadingScreen = null;
     [SerializeField] SceneReference _roomToLoad = null;
+    [SerializeField] private float _loadingTime = 3.0f;
+
     private string _currentRoom = string.Empty;
-    private float _loadingTime = 3.0f;
     void OnEnable()
     {
         EventDispatcher.AddListener<PuzzleWinEvent>(ctx => StartCoroutine(LoadingScreen(ctx.endSceneName)));
