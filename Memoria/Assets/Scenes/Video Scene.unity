@@ -1050,14 +1050,12 @@ MonoBehaviour:
   comics:
   - name: Beginning
     comicVideos:
-    - {fileID: 32900000, guid: 584aa2417ff836844bebbbadc644f44a, type: 3}
-    - {fileID: 32900000, guid: 0a74869ae172f0a42b1fd8cc4541ea11, type: 3}
-    - {fileID: 32900000, guid: 4290ba87fc687e64ead4db60a2e99d4c, type: 3}
+    - {fileID: 32900000, guid: 359be51eb5ceb438c9d971388f7004ad, type: 3}
+    - {fileID: 32900000, guid: c4083bee0bed5408c80f98776aa9adca, type: 3}
   - name: Pop
     comicVideos:
     - {fileID: 32900000, guid: 2d5abb1738fbb4a3cbb7300c55150d24, type: 3}
   startGameButton: {fileID: 1080467175}
-  comicToPlay: Beginning
   itchBuild: 0
 --- !u!1 &1922891578
 GameObject:
