@@ -9,7 +9,6 @@ public class CameraScript : MonoBehaviour
         cameraInstance = GetComponent<Camera>();
         if (debugMode) return;
 
-        Debug.Log(cameraInstance.name);
         CameraManager.Instance.Add(cameraInstance);
         CameraManager.Instance.SetCamera(cameraInstance.name);
     }

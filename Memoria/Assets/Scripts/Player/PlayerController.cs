@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -19,7 +20,7 @@ public class PlayerController : MonoBehaviour
     {
         AddListeners();
     }
-    void OnDestroy()
+    void OnDisable()
     {
         RemoveListeners();
     }
@@ -45,7 +46,7 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        float moveX = InputManager.Instance.MoveAction.ReadValue<Vector2>().x;
+        float moveX = Mathf.RoundToInt(InputManager.Instance.MoveAction.ReadValue<Vector2>().x);
         playerRB.velocity = new Vector2(moveX * playerSpeed, playerRB.velocity.y);
 
         if (moveX != 0)
