@@ -12,10 +12,12 @@ public class PlayerController : MonoBehaviour
     private AnimatorStateMachine player_asm = null;
     private bool stopPlayerMovement = false;
 
+    
     void Awake()
     {
         InitializePlayer();
     }
+
     void OnEnable()
     {
         AddListeners();
@@ -24,9 +26,12 @@ public class PlayerController : MonoBehaviour
     {
         RemoveListeners();
     }
-    void FixedUpdate()
+
+
+        void FixedUpdate()
     {
-        PlayerMove();
+
+            PlayerMove();
     }
     void LateUpdate()
     {
@@ -69,14 +74,16 @@ public class PlayerController : MonoBehaviour
         stopPlayerMovement = stopMove;
     }
 
+ 
+
     void Flip(float velocity) //* Flips the player based on the direction they are heading.
-    {
-        if (velocity == 0) return;
+        {
+            if (velocity == 0) return;
 
-        transform.localScale = new Vector3(velocity, 1, 1);
-    }
+            transform.localScale = new Vector3(velocity, 1, 1); 
+        } 
 
-    void PlayerInteract() //* Interacts with objects
+        void PlayerInteract() //* Interacts with objects
     {
         player_asm.ChangeAnimState("Collect");
         InteractableManager.Instance.InteractWithObjects();
