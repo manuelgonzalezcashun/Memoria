@@ -8,11 +8,11 @@ public class PuzzleCollector : MonoBehaviour
     public GameObject camera3;
     //public GameObject box;
 
-    void OnMouseDown()
+   public void OnMouseDown()
     {
-        //canvas3.SetActive(false);
-        //camera3.SetActive(false);
-        //Destroy(gameObject);
+        canvas3.SetActive(false);
+        camera3.SetActive(false);
+        Destroy(gameObject);
         //box.GetComponent<BoxCollider>().enabled = false;
     }
 }

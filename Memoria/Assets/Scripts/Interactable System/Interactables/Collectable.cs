@@ -34,7 +34,7 @@ public class Collectable : Interactable, IClickable
     {
         if (!currentlyPlayingDialogue) return;
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetButtonDown("Jump"))
         {
             if (currentIndex < database.DialogueLines.Count - 1)
             {
