@@ -30,6 +30,9 @@ public class RoomManager : MonoBehaviour
     }
     void LoadRoom(string roomName)
     {
+
+        AdjustForBackyardCamera(roomName);
+
         if (_currentRoom != roomName)
         {
             AsyncOperation operation = SceneManager.LoadSceneAsync(roomName, LoadSceneMode.Additive);
@@ -58,5 +61,28 @@ public class RoomManager : MonoBehaviour
 
         loadingScreen.SetActive(false);
         EventDispatcher.Raise(new SceneLoadingEvent { isSceneLoading = false });
+    }
+
+    // Method to find the Gameplay camera and modify it only in Backyard scene, return to normal otherwise
+    void AdjustForBackyardCamera(string roomName)
+    {
+        Scene gameplayScene = SceneManager.GetSceneByName("Gameplay");
+        Scene backyardScene = SceneManager.GetSceneByName("Backyard");
+
+        if (gameplayScene.isLoaded) {
+            GameObject gameplayCamera = GameObject.FindWithTag("MainCamera");
+            Camera mainCamera = gameplayCamera.GetComponent<Camera>();
+            CameraFollow cameraFollow = gameplayCamera.GetComponent<CameraFollow>();
+            Vector2 oldXLimit = cameraFollow.xLimit;
+            if (roomName == "Backyard" && mainCamera) {
+                mainCamera.orthographicSize = 12f;
+                cameraFollow.xLimit = new Vector2(-28f, 29.3f);
+            } else {
+                mainCamera.orthographicSize = 7f;
+                cameraFollow.xLimit = new Vector2(-37f, 37f);
+            }
+            
+        }
+
     }
 }
