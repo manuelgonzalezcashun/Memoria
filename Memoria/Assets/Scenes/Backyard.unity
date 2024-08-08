@@ -273,7 +273,7 @@ GameObject:
   - component: {fileID: 130314624}
   - component: {fileID: 130314623}
   m_Layer: 0
-  m_Name: Layer-7-ground
+  m_Name: Layer-7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -545,7 +545,7 @@ PrefabInstance:
     - target: {fileID: 1405681280328048943, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
       propertyPath: _spawnPoint
       value: 
-      objectReference: {fileID: 324942774}
+      objectReference: {fileID: 324942775}
     - target: {fileID: 1405681280328048943, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
       propertyPath: roomToLoad.guid
       value: 22c783852fe078e4c925938ea461c3c9
@@ -558,6 +558,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 55ae33f61d998f849ba943c540f3f3f2, type: 3}
+    - target: {fileID: 3133828832839145756, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
+      propertyPath: _pointTransform
+      value: 
+      objectReference: {fileID: 324942774}
+    - target: {fileID: 3133828832839145756, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
+      propertyPath: _roomConnection
+      value: 
+      objectReference: {fileID: 11400000, guid: 83d4ed245d629df45b790325ea0d2de8, type: 2}
     - target: {fileID: 4744790879723357861, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
       propertyPath: m_Name
       value: Door
@@ -637,6 +645,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7765007636352350790, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
   m_PrefabInstance: {fileID: 324942772}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &324942775 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3133828832839145756, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
+  m_PrefabInstance: {fileID: 324942772}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d7c15a5cd927fc4fa33a2ed63bacf7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &458244833
 GameObject:
   m_ObjectHideFlags: 0
@@ -1163,7 +1182,7 @@ GameObject:
   - component: {fileID: 948534612}
   - component: {fileID: 948534611}
   m_Layer: 0
-  m_Name: Layer-11-shed
+  m_Name: Layer-11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1253,7 +1272,7 @@ GameObject:
   - component: {fileID: 960209767}
   - component: {fileID: 960209766}
   m_Layer: 0
-  m_Name: Layer-12-foreground
+  m_Name: Layer-12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2486,7 +2505,7 @@ GameObject:
   - component: {fileID: 1979000655}
   - component: {fileID: 1979000654}
   m_Layer: 0
-  m_Name: Layer-8-midground
+  m_Name: Layer-8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
