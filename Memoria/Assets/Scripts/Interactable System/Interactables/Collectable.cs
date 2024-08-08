@@ -11,6 +11,7 @@ public class Collectable : Interactable, IClickable
     void Awake()
     {
         GameVariables.Instance.CheckIfCollected(this);
+        InputManager.Instance.DialogueAction.performed += ctx => StepThroughDialogue();
     }
     public override void Interact()
     {
@@ -34,22 +35,18 @@ public class Collectable : Interactable, IClickable
     {
         if (!currentlyPlayingDialogue) return;
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (currentIndex < database.DialogueLines.Count - 1)
         {
-            if (currentIndex < database.DialogueLines.Count - 1)
-            {
-                currentIndex++;
-                EventDispatcher.Raise(new ContinueDialogueEvent { dialogueLine = database.DialogueLines[currentIndex] });
-            }
-            else
-            {
-                currentlyPlayingDialogue = false;
-                EventDispatcher.Raise(new ShowDialogueEvent { showDialogueUI = false });
-
-                Collect();
-            }
+            currentIndex++;
+            EventDispatcher.Raise(new ContinueDialogueEvent { dialogueLine = database.DialogueLines[currentIndex] });
         }
+        else
+        {
+            currentlyPlayingDialogue = false;
+            EventDispatcher.Raise(new ShowDialogueEvent { showDialogueUI = false });
 
+            Collect();
+        }
     }
 
     private void Collect()
@@ -57,10 +54,6 @@ public class Collectable : Interactable, IClickable
         GameVariables.Instance.AddCollectedCount(this);
         EventDispatcher.Raise(new CollectedEvent());
         Destroy(gameObject);
-    }
-    void Update()
-    {
-        StepThroughDialogue();
     }
 
     public void Click()

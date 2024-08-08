@@ -67,7 +67,6 @@ public class PlayerController : MonoBehaviour
     void HandlePlayerMovement(bool stopMove)
     {
         stopPlayerMovement = stopMove;
-        InputManager.Instance.enabled = !stopMove;
     }
 
     void Flip(float velocity) //* Flips the player based on the direction they are heading.
@@ -107,7 +106,6 @@ public class PlayerController : MonoBehaviour
     void RemoveListeners()
     {
         // * Player Input Listeners
-        InputManager.Instance.InteractAction.performed -= ctx => PlayerInteract();
 
         // * Event Listeners
         EventDispatcher.RemoveListener<SceneLoadingEvent>(ctx => HandlePlayerMovement(ctx.isSceneLoading));
