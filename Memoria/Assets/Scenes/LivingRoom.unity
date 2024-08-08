@@ -142,7 +142,7 @@ PrefabInstance:
     - target: {fileID: 4296725661604129911, guid: 4777dc3c511fd4144a22490640879dae, type: 3}
       propertyPath: _spawnPoint
       value: 
-      objectReference: {fileID: 2012033760}
+      objectReference: {fileID: 2012033761}
     - target: {fileID: 4296725661604129911, guid: 4777dc3c511fd4144a22490640879dae, type: 3}
       propertyPath: roomToLoad.guid
       value: 206ca20fa7e0e84478c6585732fe20ce
@@ -711,7 +711,7 @@ PrefabInstance:
     - target: {fileID: 1405681280328048943, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
       propertyPath: _spawnPoint
       value: 
-      objectReference: {fileID: 1068311315}
+      objectReference: {fileID: 1068311316}
     - target: {fileID: 1405681280328048943, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
       propertyPath: roomToLoad.guid
       value: d59115bf2a1167143a93522cc04558e3
@@ -720,6 +720,14 @@ PrefabInstance:
       propertyPath: roomToLoad.asset
       value: 
       objectReference: {fileID: 102900000, guid: d59115bf2a1167143a93522cc04558e3, type: 3}
+    - target: {fileID: 3133828832839145756, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
+      propertyPath: _pointTransform
+      value: 
+      objectReference: {fileID: 1068311315}
+    - target: {fileID: 3133828832839145756, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
+      propertyPath: _roomConnection
+      value: 
+      objectReference: {fileID: 11400000, guid: 92bc8776221d7ae449a8af13bf9c1e90, type: 2}
     - target: {fileID: 4744790879723357861, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
       propertyPath: m_Name
       value: Door
@@ -742,6 +750,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7765007636352350790, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
   m_PrefabInstance: {fileID: 1068311314}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1068311316 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3133828832839145756, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
+  m_PrefabInstance: {fileID: 1068311314}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d7c15a5cd927fc4fa33a2ed63bacf7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1104041142
 GameObject:
   m_ObjectHideFlags: 0
@@ -1162,7 +1181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6346634058133796567, guid: b84baa57d4608314d832904a7f843409, type: 3}
       propertyPath: m_Name
-      value: Collectable (5)
+      value: Family Photo
       objectReference: {fileID: 0}
     - target: {fileID: 6346634058133796567, guid: b84baa57d4608314d832904a7f843409, type: 3}
       propertyPath: m_Layer
@@ -1312,7 +1331,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6346634058133796567, guid: b84baa57d4608314d832904a7f843409, type: 3}
       propertyPath: m_Name
-      value: Collectable (5)
+      value: Apples
       objectReference: {fileID: 0}
     - target: {fileID: 6346634058133796567, guid: b84baa57d4608314d832904a7f843409, type: 3}
       propertyPath: m_Layer
@@ -1890,6 +1909,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2012033760}
+  - component: {fileID: 2012033761}
   m_Layer: 0
   m_Name: SpawnPoint
   m_TagString: Untagged
@@ -1912,6 +1932,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 245400828}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2012033761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2012033759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d7c15a5cd927fc4fa33a2ed63bacf7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _roomConnection: {fileID: 11400000, guid: 83d4ed245d629df45b790325ea0d2de8, type: 2}
+  _pointTransform: {fileID: 2012033760}
 --- !u!1 &2051216784
 GameObject:
   m_ObjectHideFlags: 0
