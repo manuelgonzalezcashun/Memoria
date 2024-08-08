@@ -8,8 +8,6 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float playerSpeed = 5f, interactDist = 0.3f;
     private Rigidbody2D playerRB = null;
-    private PlayerInput playerInput = null;
-    private InputAction moveAction, interactAction;
     private AnimatorStateMachine player_asm = null;
     private bool stopPlayerMovement = false;
 
@@ -36,7 +34,7 @@ public class PlayerController : MonoBehaviour
     }
     void PlayerSpawn(Vector2 spawnPos)
     {
-        this.transform.position = spawnPos;
+        transform.position = spawnPos;
     }
     void PlayerMove()
     {
@@ -47,7 +45,7 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        float moveX = moveAction.ReadValue<Vector2>().x;
+        float moveX = InputManager.Instance.MoveAction.ReadValue<Vector2>().x;
         playerRB.velocity = new Vector2(moveX * playerSpeed, playerRB.velocity.y);
 
         if (moveX != 0)
@@ -68,7 +66,7 @@ public class PlayerController : MonoBehaviour
     void HandlePlayerMovement(bool stopMove)
     {
         stopPlayerMovement = stopMove;
-        playerInput.enabled = !stopMove;
+        InputManager.Instance.enabled = !stopMove;
     }
 
     void Flip(float velocity) //* Flips the player based on the direction they are heading.
@@ -90,16 +88,13 @@ public class PlayerController : MonoBehaviour
         //* Player Components
         playerRB = GetComponent<Rigidbody2D>();
         player_asm = GetComponent<AnimatorStateMachine>();
-        playerInput = GetComponent<PlayerInput>();
 
         //* Player Actions
-        moveAction = playerInput.actions["Move"];
-        interactAction = playerInput.actions["Interact"];
     }
     void AddListeners()
     {
         // * Player Input Listeners
-        interactAction.performed += ctx => PlayerInteract();
+        InputManager.Instance.InteractAction.performed += ctx => PlayerInteract();
 
         // * Event Listeners
         EventDispatcher.AddListener<SceneLoadingEvent>(ctx => HandlePlayerMovement(ctx.isSceneLoading));
@@ -111,7 +106,7 @@ public class PlayerController : MonoBehaviour
     void RemoveListeners()
     {
         // * Player Input Listeners
-        interactAction.performed -= ctx => PlayerInteract();
+        InputManager.Instance.InteractAction.performed -= ctx => PlayerInteract();
 
         // * Event Listeners
         EventDispatcher.RemoveListener<SceneLoadingEvent>(ctx => HandlePlayerMovement(ctx.isSceneLoading));

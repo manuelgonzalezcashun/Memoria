@@ -1,29 +1,32 @@
 using UnityEngine;
-public class InputManager : MonoBehaviour
+using UnityEngine.InputSystem;
+public class InputManager : Singleton<InputManager>
 {
-    private static InputManager _instance = null;
+    [SerializeField] InputActionAsset inputActions = null;
 
-    public static InputManager Instance => _instance;
+    private InputAction moveAction = null, interactAction = null;
+
+    public InputAction MoveAction => moveAction;
+    public InputAction InteractAction => interactAction;
+    void Awake()
+    {
+        base.Awake();
+
+        moveAction = inputActions["Move"];
+        interactAction = inputActions["Interact"];
+    }
     void OnEnable()
     {
-        SetInstance();
+        foreach (var action in inputActions)
+        {
+            action.Enable();
+        }
     }
-
     void OnDisable()
     {
-
-    }
-
-    void SetInstance()
-    {
-        if (_instance == null)
+        foreach (var action in inputActions)
         {
-            _instance = this;
-            DontDestroyOnLoad(_instance);
-        }
-        else
-        {
-            Destroy(gameObject);
+            action.Disable();
         }
     }
 }
