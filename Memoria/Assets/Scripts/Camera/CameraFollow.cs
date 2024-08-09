@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-
+    private Camera cameraInstance = null;
     public Transform targetTransform;
     public Vector3 offset;
 
@@ -12,15 +12,27 @@ public class CameraFollow : MonoBehaviour
     [Header("Camera Limits")]
     public Vector2 xLimit;
     public Vector2 yLimit;
+    public float camZoomValue;
     private Vector3 velocity = Vector3.zero;
 
     private void OnEnable()
     {
-        EventDispatcher.AddListener<ChangeCameraSettings>(ctx => SetNewCameraLimits(ctx.newXlimit, ctx.newYLimit));
+        EventDispatcher.AddListener<ChangeCameraSettings>(ctx => SetNewCameraLimits(ctx.newXlimit, ctx.newYLimit, ctx.newCamZoom));
     }
     private void OnDestroy()
     {
-        EventDispatcher.RemoveListener<ChangeCameraSettings>(ctx => SetNewCameraLimits(ctx.newXlimit, ctx.newYLimit));
+        EventDispatcher.RemoveListener<ChangeCameraSettings>(ctx => SetNewCameraLimits(ctx.newXlimit, ctx.newYLimit, ctx.newCamZoom));
+    }
+
+    void Start()
+    {
+        cameraInstance = GetComponent<Camera>();
+
+        if (cameraInstance == null)
+        {
+            Debug.LogError("Script must be on Camera GameObject");
+            return;
+        }
     }
 
     void LateUpdate()
@@ -34,9 +46,11 @@ public class CameraFollow : MonoBehaviour
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
     }
 
-    void SetNewCameraLimits(Vector2 newXLimit, Vector2 newYLimit)
+    void SetNewCameraLimits(Vector2 newXLimit, Vector2 newYLimit, float newCamZoom)
     {
         xLimit = newXLimit;
         yLimit = newYLimit;
+
+        cameraInstance.orthographicSize = newCamZoom;
     }
 }

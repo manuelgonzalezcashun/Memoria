@@ -708,6 +708,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 461526358538808585, guid: a2061a4d3ba2c4423860dc2ca1a38e12, type: 3}
+      propertyPath: cameraZoom
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 461526358538808585, guid: a2061a4d3ba2c4423860dc2ca1a38e12, type: 3}
       propertyPath: _camLimitX.x
       value: -23
       objectReference: {fileID: 0}

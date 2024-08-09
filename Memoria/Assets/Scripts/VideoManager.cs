@@ -68,14 +68,13 @@ public class VideoManager : MonoBehaviour
     {
         currentIndex++;
 
-        if (currentIndex < _comicVideos.Count)
+        if (currentIndex >= _comicVideos.Count)
         {
-            PlayVideo(_comicVideos[currentIndex]);
+            startGameButton.SetActive(true);
             return;
         }
 
-        startGameButton.SetActive(true);
-        _comicVideos = null;
+        PlayVideo(_comicVideos[currentIndex]);
     }
 
     private void InitializeVideoList(string comicName)

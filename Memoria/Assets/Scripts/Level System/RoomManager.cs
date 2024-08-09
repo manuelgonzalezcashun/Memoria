@@ -31,7 +31,7 @@ public class RoomManager : MonoBehaviour
     void LoadRoom(string roomName)
     {
 
-        AdjustCamera(roomName);
+        //! AdjustCamera(roomName);
 
         if (_currentRoom != roomName)
         {
@@ -69,21 +69,26 @@ public class RoomManager : MonoBehaviour
         Scene gameplayScene = SceneManager.GetSceneByName("Gameplay");
         Scene backyardScene = SceneManager.GetSceneByName("Backyard");
 
-        if (gameplayScene.isLoaded) {
+        if (gameplayScene.isLoaded)
+        {
             GameObject gameplayCamera = GameObject.FindWithTag("MainCamera");
             Camera mainCamera = gameplayCamera.GetComponent<Camera>();
             CameraFollow cameraFollow = gameplayCamera.GetComponent<CameraFollow>();
-            if (roomName == "Backyard" && mainCamera) {
+            if (roomName == "Backyard" && mainCamera)
+            {
                 mainCamera.orthographicSize = 12f;
                 cameraFollow.xLimit = new Vector2(-28f, 29.3f);
-            } else if (roomName == "LivingRoom") {
+            }
+            else if (roomName == "LivingRoom")
+            {
                 mainCamera.orthographicSize = 5.31f;
             }
-            else {
+            else
+            {
                 mainCamera.orthographicSize = 7f;
                 cameraFollow.xLimit = new Vector2(-37f, 37f);
             }
-            
+
         }
 
     }

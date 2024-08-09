@@ -608,12 +608,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2783464642255101079, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
+    - {fileID: 996824845274658651, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8740289074021146483, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
       insertIndex: -1
       addedObject: {fileID: 278564547}
+    - targetCorrespondingSourceObject: {fileID: 1996833209978974919, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 278564550}
   m_SourcePrefab: {fileID: 100100000, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
 --- !u!4 &278564545 stripped
 Transform:
@@ -666,6 +670,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d7c15a5cd927fc4fa33a2ed63bacf7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &278564549 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1996833209978974919, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
+  m_PrefabInstance: {fileID: 278564544}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &278564550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278564549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25a4fd0b4c5b16d41abb6de763c979e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animClips:
+  - _name: Blink
+    _clip: {fileID: 7400000, guid: c56da35809fa87a4582c1603f18b3e32, type: 2}
+  playOnAwake: 1
 --- !u!1 &297650103
 GameObject:
   m_ObjectHideFlags: 0
@@ -891,11 +916,36 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 4.67
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4779720502997573890, guid: b84baa57d4608314d832904a7f843409, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4379534271482563710, guid: b84baa57d4608314d832904a7f843409, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 324252361}
   m_SourcePrefab: {fileID: 100100000, guid: b84baa57d4608314d832904a7f843409, type: 3}
+--- !u!1 &324252360 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4379534271482563710, guid: b84baa57d4608314d832904a7f843409, type: 3}
+  m_PrefabInstance: {fileID: 324252359}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &324252361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 324252360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25a4fd0b4c5b16d41abb6de763c979e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animClips:
+  - _name: Blink
+    _clip: {fileID: 7400000, guid: c56da35809fa87a4582c1603f18b3e32, type: 2}
+  playOnAwake: 1
 --- !u!1 &447449263
 GameObject:
   m_ObjectHideFlags: 0
@@ -2619,6 +2669,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 461526358538808585, guid: a2061a4d3ba2c4423860dc2ca1a38e12, type: 3}
+      propertyPath: cameraZoom
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 461526358538808585, guid: a2061a4d3ba2c4423860dc2ca1a38e12, type: 3}
       propertyPath: _camLimitX.x
       value: -37
