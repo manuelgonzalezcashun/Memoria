@@ -17,7 +17,7 @@ public class CanvasTrigger : Interactable
 
     void Update()
     {
-        if (gameObject.activeInHierarchy && Input.GetKeyDown(KeyCode.Escape))
+        if (gameObject.activeInHierarchy && !dialogueIsPlaying && Input.GetKeyDown(KeyCode.Space))
             Close();
     }
     private void OpenUp()
