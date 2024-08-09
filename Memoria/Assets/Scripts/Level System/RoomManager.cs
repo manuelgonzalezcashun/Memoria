@@ -31,7 +31,7 @@ public class RoomManager : MonoBehaviour
     void LoadRoom(string roomName)
     {
 
-        AdjustForBackyardCamera(roomName);
+        AdjustCamera(roomName);
 
         if (_currentRoom != roomName)
         {
@@ -64,7 +64,7 @@ public class RoomManager : MonoBehaviour
     }
 
     // Method to find the Gameplay camera and modify it only in Backyard scene, return to normal otherwise
-    void AdjustForBackyardCamera(string roomName)
+    void AdjustCamera(string roomName)
     {
         Scene gameplayScene = SceneManager.GetSceneByName("Gameplay");
         Scene backyardScene = SceneManager.GetSceneByName("Backyard");
@@ -73,11 +73,13 @@ public class RoomManager : MonoBehaviour
             GameObject gameplayCamera = GameObject.FindWithTag("MainCamera");
             Camera mainCamera = gameplayCamera.GetComponent<Camera>();
             CameraFollow cameraFollow = gameplayCamera.GetComponent<CameraFollow>();
-            Vector2 oldXLimit = cameraFollow.xLimit;
             if (roomName == "Backyard" && mainCamera) {
                 mainCamera.orthographicSize = 12f;
                 cameraFollow.xLimit = new Vector2(-28f, 29.3f);
-            } else {
+            } else if (roomName == "LivingRoom") {
+                mainCamera.orthographicSize = 5.31f;
+            }
+            else {
                 mainCamera.orthographicSize = 7f;
                 cameraFollow.xLimit = new Vector2(-37f, 37f);
             }
