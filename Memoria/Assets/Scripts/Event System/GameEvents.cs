@@ -44,3 +44,7 @@ public class ChangeCameraSettings : Event
     public Vector2 newXlimit, newYLimit;
     public float newCamZoom;
 }
+public class PlaySoundEvent : Event
+{
+    public string _clipName;
+}
