@@ -8,6 +8,8 @@ public class Collectable : Interactable, IClickable
     private bool currentlyPlayingDialogue = false;
     private int currentIndex = 0;
 
+    private const string k_CollectSound = "Collect";
+
     void Awake()
     {
         GameVariables.Instance.CheckIfCollected(this);
@@ -51,6 +53,7 @@ public class Collectable : Interactable, IClickable
 
     private void Collect()
     {
+        EventDispatcher.Raise(new PlaySoundEvent { _clipName = k_CollectSound });
         GameVariables.Instance.AddCollectedCount(this);
         EventDispatcher.Raise(new CollectedEvent());
         Destroy(gameObject);
