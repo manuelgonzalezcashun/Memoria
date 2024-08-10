@@ -1144,11 +1144,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugMode: 0
-  targetTransform: {fileID: 0}
-  offset: {x: 0, y: 0, z: 0}
-  smoothTime: 0
-  xLimit: {x: 0, y: 0}
-  yLimit: {x: 0, y: 0}
 --- !u!1 &545567788
 GameObject:
   m_ObjectHideFlags: 0
@@ -2070,6 +2065,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9be2e41712c02ad4eb6268ffa49b5e04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleCamera: {fileID: 0}
+  puzzleCanvas: {fileID: 0}
   puzzles:
   - {fileID: 1100423349}
   - {fileID: 1906130601}
@@ -2304,11 +2301,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugMode: 0
-  targetTransform: {fileID: 0}
-  offset: {x: 0, y: 0, z: 0}
-  smoothTime: 0
-  xLimit: {x: 0, y: 0}
-  yLimit: {x: 0, y: 0}
 --- !u!1 &946155740
 GameObject:
   m_ObjectHideFlags: 0
@@ -3839,6 +3831,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77b5a20c876562046b77fac8e296f58e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UICanvas: {fileID: 0}
   collectableTextUI: {fileID: 0}
 --- !u!1 &1294754529
 GameObject:
@@ -6404,6 +6397,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1845806041}
   - component: {fileID: 1845806042}
+  - component: {fileID: 1845806043}
   m_Layer: 0
   m_Name: 'Puzzle Pieces Inventory '
   m_TagString: Untagged
@@ -6439,7 +6433,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   counterText: {fileID: 1137645912}
+  animator: {fileID: 0}
   keyIcon: {fileID: 946155740}
+--- !u!114 &1845806043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1845806040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25a4fd0b4c5b16d41abb6de763c979e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animClips:
+  - _name: Starburst
+    _clip: {fileID: 7400000, guid: 68385e5cb7c009949bd6d42d30043d52, type: 2}
+  playOnAwake: 0
 --- !u!1 &1861905148
 GameObject:
   m_ObjectHideFlags: 0
