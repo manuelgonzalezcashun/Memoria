@@ -167,7 +167,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9f70d91b37b1e747970f1e1d1d62827, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sfx_SoundList: []
+  sfx_SoundList:
+  - clipName: Collect
+    audioClip: {fileID: 8300000, guid: ae9ac757ba0b39e4f91369d167331c3e, type: 3}
+    _audioSource: {fileID: 0}
   music_SoundList: []
 --- !u!1 &148952269
 GameObject:
