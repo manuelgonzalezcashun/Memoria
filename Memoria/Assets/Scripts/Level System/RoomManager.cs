@@ -14,7 +14,6 @@ public class RoomManager : MonoBehaviour
     {
         EventDispatcher.AddListener<PuzzleWinEvent>(ctx => StartCoroutine(LoadingScreen(ctx.endSceneName)));
         EventDispatcher.AddListener<LoadRoomEvent>(ctx => StartCoroutine(LoadingScreen(ctx.roomName)));
-        DontDestroyOnLoad(this);
     }
     void OnDisable()
     {
@@ -30,9 +29,6 @@ public class RoomManager : MonoBehaviour
     }
     void LoadRoom(string roomName)
     {
-
-        //! AdjustCamera(roomName);
-
         if (_currentRoom != roomName)
         {
             AsyncOperation operation = SceneManager.LoadSceneAsync(roomName, LoadSceneMode.Additive);
@@ -62,7 +58,6 @@ public class RoomManager : MonoBehaviour
         loadingScreen.SetActive(false);
         EventDispatcher.Raise(new SceneLoadingEvent { isSceneLoading = false });
     }
-
     // Method to find the Gameplay camera and modify it only in Backyard scene, return to normal otherwise
     void AdjustCamera(string roomName)
     {

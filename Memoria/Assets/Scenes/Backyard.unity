@@ -933,6 +933,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1822836181}
     m_Modifications:
+    - target: {fileID: 3431037640920871447, guid: fdd5ac5447408f046b0d45da98852dba, type: 3}
+      propertyPath: canPickup
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4337614318463996418, guid: fdd5ac5447408f046b0d45da98852dba, type: 3}
       propertyPath: m_Name
       value: Key

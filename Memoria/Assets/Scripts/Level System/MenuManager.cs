@@ -14,4 +14,11 @@ public class MenuManager : MonoBehaviour
 
         SceneManager.LoadScene(scene.Name);
     }
+
+    // * When player loads MainMenu, Reset all the data in GameVariables class
+    public void ResetGameVaraibles()
+    {
+        GameVariables.Instance.ResetValues();
+        Debug.Log("Reset Variables");
+    }
 }
