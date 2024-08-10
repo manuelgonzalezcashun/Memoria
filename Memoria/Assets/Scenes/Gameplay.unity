@@ -1118,6 +1118,7 @@ MonoBehaviour:
   smoothTime: 0.2
   xLimit: {x: -37, y: 37}
   yLimit: {x: 0, y: 5}
+  camZoomValue: 0
 --- !u!114 &511998027
 MonoBehaviour:
   m_ObjectHideFlags: 0
