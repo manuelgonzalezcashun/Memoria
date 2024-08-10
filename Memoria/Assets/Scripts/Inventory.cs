@@ -37,10 +37,14 @@ public class Inventory : MonoBehaviour
     }
     void ShowKeyIcon()
     {
+        if (keyIcon == null) return;
+
         keyIcon.SetActive(true);
     }
     void HideKeyIcon()
     {
+        if (keyIcon == null) return;
+
         keyIcon.SetActive(false);
     }
 }
