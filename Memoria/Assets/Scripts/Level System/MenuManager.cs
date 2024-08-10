@@ -21,4 +21,9 @@ public class MenuManager : MonoBehaviour
         GameVariables.Instance.ResetValues();
         Debug.Log("Reset Variables");
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
