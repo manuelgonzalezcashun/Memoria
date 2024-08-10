@@ -20,6 +20,12 @@ public class AudioManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        EventDispatcher.AddListener<PlaySoundEvent>(ctx => Play(ctx._clipName));
+    }
+    void OnDisable()
+    {
+        EventDispatcher.RemoveListener<PlaySoundEvent>(ctx => Play(ctx._clipName));
     }
 
     void Awake()
