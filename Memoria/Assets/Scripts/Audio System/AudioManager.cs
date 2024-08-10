@@ -43,6 +43,8 @@ public class AudioManager : MonoBehaviour
     }
     public void Play(string clipName)
     {
+        if (clipName == null) return;
+
         if (m_sfxClipDict.ContainsKey(clipName))
         {
             AudioSource source = m_sfxClipDict[clipName]._audioSource;
