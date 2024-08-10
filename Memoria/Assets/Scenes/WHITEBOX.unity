@@ -1282,6 +1282,7 @@ MonoBehaviour:
   smoothTime: 0.2
   xLimit: {x: 0, y: 48}
   yLimit: {x: 0, y: 200}
+  camZoomValue: 0
 --- !u!81 &298126442
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1414,6 +1415,7 @@ MonoBehaviour:
   _roomToLoad:
     asset: {fileID: 0}
     guid: 00000000000000000000000000000000
+  _loadingTime: 3
 --- !u!4 &300824815
 Transform:
   m_ObjectHideFlags: 0
@@ -7679,7 +7681,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1572817000
 Transform:
   m_ObjectHideFlags: 0
@@ -14663,7 +14665,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &2119406076
 SpriteRenderer:
   m_ObjectHideFlags: 0
