@@ -2202,8 +2202,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9be2e41712c02ad4eb6268ffa49b5e04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puzzleCamera: {fileID: 0}
-  puzzleCanvas: {fileID: 0}
+  puzzleCamera: {fileID: 926472352}
+  puzzleCanvas: {fileID: 1294754532}
   puzzles:
   - {fileID: 1100423349}
   - {fileID: 1906130601}
@@ -3922,7 +3922,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77b5a20c876562046b77fac8e296f58e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UICanvas: {fileID: 0}
+  UICanvas: {fileID: 1841135257}
   collectableTextUI: {fileID: 0}
 --- !u!1 &1294754529
 GameObject:
