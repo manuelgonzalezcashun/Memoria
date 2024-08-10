@@ -1,10 +1,12 @@
 using UnityEngine;
 using TMPro;
 
+
 public class Inventory : MonoBehaviour
 {
     int pieceCount = 0;
     public TMP_Text counterText;
+    public Animator animator;
     public GameObject keyIcon = null;
     void OnEnable()
     {
@@ -23,7 +25,7 @@ public class Inventory : MonoBehaviour
     {
         pieceCount++;
         counterText.text = pieceCount + "/6";
-
+        animator.SetTrigger("Burst");
         ///if (pieceCount == 3)
         ///{
         ///EventDispatcher.Raise(new LoadSceneEvent { sceneToLoad = "Video Scene" });

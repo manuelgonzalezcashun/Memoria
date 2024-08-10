@@ -1143,6 +1143,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugMode: 0
+  targetTransform: {fileID: 0}
+  offset: {x: 0, y: 0, z: 0}
+  smoothTime: 0
+  xLimit: {x: 0, y: 0}
+  yLimit: {x: 0, y: 0}
 --- !u!1 &545567788
 GameObject:
   m_ObjectHideFlags: 0
@@ -2064,8 +2069,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9be2e41712c02ad4eb6268ffa49b5e04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puzzleCamera: {fileID: 926472352}
-  puzzleCanvas: {fileID: 1294754532}
   puzzles:
   - {fileID: 1100423349}
   - {fileID: 1906130601}
@@ -2300,6 +2303,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugMode: 0
+  targetTransform: {fileID: 0}
+  offset: {x: 0, y: 0, z: 0}
+  smoothTime: 0
+  xLimit: {x: 0, y: 0}
+  yLimit: {x: 0, y: 0}
 --- !u!1 &946155740
 GameObject:
   m_ObjectHideFlags: 0
@@ -3830,7 +3838,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77b5a20c876562046b77fac8e296f58e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UICanvas: {fileID: 1841135257}
   collectableTextUI: {fileID: 0}
 --- !u!1 &1294754529
 GameObject:
@@ -6109,12 +6116,20 @@ PrefabInstance:
       value: Hudpuzzlepiececollector
       objectReference: {fileID: 0}
     - target: {fileID: 3701459060451447196, guid: 2e8ecc6ebfabf0f479b8648dfb9396da, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 60.879
+      objectReference: {fileID: 0}
+    - target: {fileID: 3701459060451447196, guid: 2e8ecc6ebfabf0f479b8648dfb9396da, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 65.6401
+      objectReference: {fileID: 0}
+    - target: {fileID: 3701459060451447196, guid: 2e8ecc6ebfabf0f479b8648dfb9396da, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 251.2
+      value: 226.1
       objectReference: {fileID: 0}
     - target: {fileID: 3701459060451447196, guid: 2e8ecc6ebfabf0f479b8648dfb9396da, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 172.8
+      value: 188.4
       objectReference: {fileID: 0}
     - target: {fileID: 5050019002441212028, guid: 2e8ecc6ebfabf0f479b8648dfb9396da, type: 3}
       propertyPath: m_Pivot.x
@@ -6208,6 +6223,34 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 43b75635deead0f4bba870d1b897044b, type: 3}
+    - target: {fileID: 7797138716610636977, guid: 2e8ecc6ebfabf0f479b8648dfb9396da, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6c5928d45d1a5c84987bcc622e4be490, type: 3}
+    - target: {fileID: 7797138716610636977, guid: 2e8ecc6ebfabf0f479b8648dfb9396da, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7797138716610636977, guid: 2e8ecc6ebfabf0f479b8648dfb9396da, type: 3}
+      propertyPath: m_Color.b
+      value: 0.035037242
+      objectReference: {fileID: 0}
+    - target: {fileID: 7797138716610636977, guid: 2e8ecc6ebfabf0f479b8648dfb9396da, type: 3}
+      propertyPath: m_Color.g
+      value: 0.97735846
+      objectReference: {fileID: 0}
+    - target: {fileID: 7797138716610636977, guid: 2e8ecc6ebfabf0f479b8648dfb9396da, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9515225
+      objectReference: {fileID: 0}
+    - target: {fileID: 7797138716610636977, guid: 2e8ecc6ebfabf0f479b8648dfb9396da, type: 3}
+      propertyPath: m_UseSpriteMesh
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7797138716610636977, guid: 2e8ecc6ebfabf0f479b8648dfb9396da, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8661798916920991778, guid: 2e8ecc6ebfabf0f479b8648dfb9396da, type: 3}
       propertyPath: m_SizeDelta.x
       value: 86.782
