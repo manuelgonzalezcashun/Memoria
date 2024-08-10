@@ -13,12 +13,12 @@ public class RoomManager : MonoBehaviour
     void OnEnable()
     {
         EventDispatcher.AddListener<PuzzleWinEvent>(ctx => StartCoroutine(LoadingScreen(ctx.endSceneName)));
-        EventDispatcher.AddListener<LoadRoomEvent>(ctx => StartCoroutine(LoadingScreen(ctx.roomName)));
+        Door.LoadRoomEvent += LoadScreen;
     }
     void OnDisable()
     {
         EventDispatcher.RemoveListener<PuzzleWinEvent>(ctx => StartCoroutine(LoadingScreen(ctx.endSceneName)));
-        EventDispatcher.RemoveListener<LoadRoomEvent>(ctx => StartCoroutine(LoadingScreen(ctx.roomName)));
+        Door.LoadRoomEvent -= LoadScreen;
     }
     void Start()
     {
@@ -45,6 +45,10 @@ public class RoomManager : MonoBehaviour
     void UnloadRoom(string roomName)
     {
         SceneManager.UnloadSceneAsync(roomName);
+    }
+    void LoadScreen(string roomName)
+    {
+        StartCoroutine(LoadingScreen(roomName));
     }
     IEnumerator LoadingScreen(string roomName)
     {
