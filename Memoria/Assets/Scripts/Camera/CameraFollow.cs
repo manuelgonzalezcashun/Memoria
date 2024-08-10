@@ -15,24 +15,17 @@ public class CameraFollow : MonoBehaviour
     public float camZoomValue;
     private Vector3 velocity = Vector3.zero;
 
-    private void OnEnable()
-    {
-        EventDispatcher.AddListener<ChangeCameraSettings>(ctx => SetNewCameraLimits(ctx.newXlimit, ctx.newYLimit, ctx.newCamZoom));
-    }
-    private void OnDestroy()
-    {
-        EventDispatcher.RemoveListener<ChangeCameraSettings>(ctx => SetNewCameraLimits(ctx.newXlimit, ctx.newYLimit, ctx.newCamZoom));
-    }
-
-    void Start()
+    void OnEnable()
     {
         cameraInstance = GetComponent<Camera>();
 
-        if (cameraInstance == null)
-        {
-            Debug.LogError("Script must be on Camera GameObject");
-            return;
-        }
+        EventDispatcher.AddListener<ChangeCameraSettings>(ctx => SetNewCameraLimits(ctx.newXlimit, ctx.newYLimit, ctx.newCamZoom));
+    }
+    void OnDisable()
+    {
+        cameraInstance = null;
+
+        EventDispatcher.RemoveListener<ChangeCameraSettings>(ctx => SetNewCameraLimits(ctx.newXlimit, ctx.newYLimit, ctx.newCamZoom));
     }
 
     void LateUpdate()
@@ -51,6 +44,7 @@ public class CameraFollow : MonoBehaviour
         xLimit = newXLimit;
         yLimit = newYLimit;
 
+        if (cameraInstance == null) return;
         cameraInstance.orthographicSize = newCamZoom;
     }
 }

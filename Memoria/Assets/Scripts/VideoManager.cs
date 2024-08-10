@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Video;
 using System.Collections.Generic;
 using System;
+using UnityEngine.Events;
 
 public class VideoManager : MonoBehaviour
 {
@@ -12,11 +13,11 @@ public class VideoManager : MonoBehaviour
 
     #region Edited Variables
     [SerializeField] List<Comic> comics = new();
-    [SerializeField] GameObject startGameButton = null;
     [SerializeField] bool itchBuild = false;
     #endregion
 
     #region Runtime Variables
+    Comic _currentComic = null;
     List<VideoClip> _comicVideos = new();
     int currentIndex = 0;
     bool autoPlayVideo = false;
@@ -59,6 +60,8 @@ public class VideoManager : MonoBehaviour
             Debug.LogError($"{comicName} does not exist in the database");
             return;
         }
+
+        _currentComic = m_ComicDict[comicName];
         InitializeVideoList(comicName);
         VideoClip videoClip = _comicVideos[currentIndex];
 
@@ -70,7 +73,10 @@ public class VideoManager : MonoBehaviour
 
         if (currentIndex >= _comicVideos.Count)
         {
-            startGameButton.SetActive(true);
+            if (_currentComic._comicEvent != null)
+            {
+                _currentComic._comicEvent?.Invoke();
+            }
             return;
         }
 
@@ -97,4 +103,5 @@ public class Comic
 {
     public string name = string.Empty;
     public List<VideoClip> comicVideos = new();
+    public UnityEvent _comicEvent = null;
 }

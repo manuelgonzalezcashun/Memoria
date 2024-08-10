@@ -37,5 +37,13 @@ public class GameVariables
     {
         _comicToLoad = comic;
     }
+
+    public void ResetValues()
+    {
+        RoomConnection.ActiveConnection = null;
+        _collectedPieces.Clear();
+        _comicToLoad = string.Empty;
+        keyCount = 0;
+    }
 }
 
