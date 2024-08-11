@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 
+
 public class Inventory : MonoBehaviour
 {
     int pieceCount = 0;
@@ -24,23 +25,23 @@ public class Inventory : MonoBehaviour
         pieceCount++;
         counterText.text = pieceCount + "/6";
 
-        ///if (pieceCount == 3)
-        ///{
-        ///EventDispatcher.Raise(new LoadSceneEvent { sceneToLoad = "Video Scene" });
-        ///}
-
         if (pieceCount == 6)
         {
-            EventDispatcher.Raise(new LoadSceneEvent { sceneToLoad = "Puzzle Scene" });
+            LoadPuzzleEvent loadPuzzleEvent = new LoadPuzzleEvent { loaded = true };
+            EventDispatcher.Raise(loadPuzzleEvent);
             pieceCount = 0;
         }
     }
     void ShowKeyIcon()
     {
+        if (keyIcon == null) return;
+
         keyIcon.SetActive(true);
     }
     void HideKeyIcon()
     {
+        if (keyIcon == null) return;
+
         keyIcon.SetActive(false);
     }
 }

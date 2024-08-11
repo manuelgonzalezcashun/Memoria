@@ -8,20 +8,17 @@ public class CollectedEvent : Event { }
 public class KeyCollectedEvent : Event { }
 public class KeyUsedEvent : Event { }
 public class AddPuzzlePieceCount : Event { }
-public class PuzzleWinEvent : Event
+public class PlayerInteractEvent : Event { }
+public class LoadPuzzleEvent : Event
 {
-    public string endSceneName;
+    public bool loaded = false;
 }
+public class PuzzleWinEvent : Event { }
 public class SpawnDoor : Event { }
 
 public class LoadSceneEvent : Event
 {
     public string sceneToLoad = string.Empty;
-}
-
-public class LoadRoomEvent : Event
-{
-    public string roomName;
 }
 public class ShowDialogueEvent : Event
 {
@@ -43,4 +40,16 @@ public class ChangeCameraSettings : Event
 {
     public Vector2 newXlimit, newYLimit;
     public float newCamZoom;
+}
+public class PlaySoundEvent : Event
+{
+    public string _clipName;
+}
+public class StopSoundEvent : Event
+{
+    public string _clipName;
+}
+public class ChangeActionMapEvent : Event
+{
+    public string newActionMap = string.Empty;
 }

@@ -16,6 +16,8 @@ public class Door : Interactable
     {
         _spawnPoint.SetActiveConnection();
 
-        EventDispatcher.Raise(new LoadRoomEvent { roomName = roomToLoad.Name });
+        LoadSceneEvent loadSceneEvent = new LoadSceneEvent { sceneToLoad = roomToLoad.Name };
+        EventDispatcher.Raise(loadSceneEvent);
+        Debug.Log("Door Interacted");
     }
 }

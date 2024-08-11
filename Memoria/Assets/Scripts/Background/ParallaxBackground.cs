@@ -9,11 +9,11 @@ public class ParallaxBackground : MonoBehaviour
 
     void OnEnable()
     {
-        EventDispatcher.AddListener<LoadRoomEvent>(SetLayers);
+        EventDispatcher.AddListener<LoadSceneEvent>(SetLayers);
     }
     void OnDisable()
     {
-        EventDispatcher.RemoveListener<LoadRoomEvent>(SetLayers);
+        EventDispatcher.RemoveListener<LoadSceneEvent>(SetLayers);
     }
     void Start()
     {
@@ -23,7 +23,7 @@ public class ParallaxBackground : MonoBehaviour
         parallaxCamera.onCameraTranslate += Move;
         SetLayers();
     }
-    void SetLayers(LoadRoomEvent evt)
+    void SetLayers(LoadSceneEvent loadSceneEvent)
     {
         SetLayers();
     }

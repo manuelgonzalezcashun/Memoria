@@ -8,10 +8,12 @@ public class Collectable : Interactable, IClickable
     private bool currentlyPlayingDialogue = false;
     private int currentIndex = 0;
 
+    private const string k_CollectSound = "Collect";
+
     void Awake()
     {
-        GameVariables.Instance.CheckIfCollected(this);
         InputManager.Instance.DialogueAction.performed += ctx => StepThroughDialogue();
+        GameVariables.Instance.CheckIfCollected(this);
     }
     public override void Interact()
     {
@@ -27,8 +29,14 @@ public class Collectable : Interactable, IClickable
         }
 
         currentlyPlayingDialogue = true;
-        EventDispatcher.Raise(new ShowDialogueEvent { showDialogueUI = true });
-        EventDispatcher.Raise(new ContinueDialogueEvent { dialogueLine = database.DialogueLines[currentIndex] });
+
+        ShowDialogueEvent showDialogueEvent = new ShowDialogueEvent { showDialogueUI = true };
+        ChangeActionMapEvent changeActionMapEvent = new ChangeActionMapEvent { newActionMap = "Dialogue" };
+        ContinueDialogueEvent continueDialogueEvent = new ContinueDialogueEvent { dialogueLine = database.DialogueLines[currentIndex] };
+
+        EventDispatcher.Raise(showDialogueEvent);
+        EventDispatcher.Raise(changeActionMapEvent);
+        EventDispatcher.Raise(continueDialogueEvent);
     }
 
     void StepThroughDialogue()
@@ -38,12 +46,16 @@ public class Collectable : Interactable, IClickable
         if (currentIndex < database.DialogueLines.Count - 1)
         {
             currentIndex++;
-            EventDispatcher.Raise(new ContinueDialogueEvent { dialogueLine = database.DialogueLines[currentIndex] });
+
+            ContinueDialogueEvent continueDialogueEvent = new ContinueDialogueEvent { dialogueLine = database.DialogueLines[currentIndex] };
+            EventDispatcher.Raise(continueDialogueEvent);
         }
         else
         {
             currentlyPlayingDialogue = false;
-            EventDispatcher.Raise(new ShowDialogueEvent { showDialogueUI = false });
+
+            ShowDialogueEvent showDialogueEvent = new ShowDialogueEvent { showDialogueUI = false };
+            EventDispatcher.Raise(showDialogueEvent);
 
             Collect();
         }
@@ -51,8 +63,15 @@ public class Collectable : Interactable, IClickable
 
     private void Collect()
     {
+        PlaySoundEvent playSoundEvent = new PlaySoundEvent { _clipName = k_CollectSound };
+        ChangeActionMapEvent changeActionMapEvent = new ChangeActionMapEvent { newActionMap = "Player" };
+        CollectedEvent collectedEvent = new CollectedEvent();
+
         GameVariables.Instance.AddCollectedCount(this);
-        EventDispatcher.Raise(new CollectedEvent());
+        EventDispatcher.Raise(collectedEvent);
+        EventDispatcher.Raise(playSoundEvent);
+        EventDispatcher.Raise(changeActionMapEvent);
+
         Destroy(gameObject);
     }
 
