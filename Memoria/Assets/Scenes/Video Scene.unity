@@ -1358,6 +1358,7 @@ MonoBehaviour:
   comics:
   - name: Beginning
     comicVideos:
+    - {fileID: 32900000, guid: 47ce6c85336f24d19bea74bb8c1c99a5, type: 3}
     - {fileID: 32900000, guid: 359be51eb5ceb438c9d971388f7004ad, type: 3}
     - {fileID: 32900000, guid: c4083bee0bed5408c80f98776aa9adca, type: 3}
     _comicEvent:
