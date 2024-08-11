@@ -603,11 +603,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 293818203}
   m_CullTransparentMesh: 1
---- !u!224 &293890689 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1829305356113687592, guid: 6acca6117d2e1444782f906e30d64d66, type: 3}
-  m_PrefabInstance: {fileID: 3665412652769035200}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &324942772
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1194,11 +1189,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5649267906110236882, guid: fdd5ac5447408f046b0d45da98852dba, type: 3}
   m_PrefabInstance: {fileID: 492152023}
   m_PrefabAsset: {fileID: 0}
---- !u!224 &577767614 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 494986665951885933, guid: 1150a96f9d6226e478fdac5cee8f97ff, type: 3}
-  m_PrefabInstance: {fileID: 4510397881276660954}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &591581584
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1456,11 +1446,6 @@ Transform:
   - {fileID: 591581585}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!224 &675494583 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 5314993754681288732, guid: 7585494d3142d5a41955303ba3e02ca6, type: 3}
-  m_PrefabInstance: {fileID: 3171418300823150041}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &781497605
 GameObject:
   m_ObjectHideFlags: 0
@@ -2501,7 +2486,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 427628650}
   - {fileID: 324942773}
   - {fileID: 1093484586}
   - {fileID: 1600849730}
@@ -3154,11 +3138,6 @@ Transform:
   - {fileID: 492152024}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!224 &1890208794 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 4002275073476548212, guid: 69b7d95e0bc0c4e44a5c816f2e56d924, type: 3}
-  m_PrefabInstance: {fileID: 8670585214999059945}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1970928701
 GameObject:
   m_ObjectHideFlags: 0
@@ -3336,11 +3315,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1979000652}
   m_CullTransparentMesh: 1
---- !u!224 &1994573581 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 903166411793513644, guid: d0d8d79589ed08748beca73c7c8710b9, type: 3}
-  m_PrefabInstance: {fileID: 1993908167938545885}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2059181201
 GameObject:
   m_ObjectHideFlags: 0
@@ -3436,7 +3410,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 427628650}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 903166411793513644, guid: d0d8d79589ed08748beca73c7c8710b9, type: 3}
       propertyPath: m_Pivot.x
@@ -3533,7 +3507,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 427628650}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1851063630302646034, guid: 7585494d3142d5a41955303ba3e02ca6, type: 3}
       propertyPath: m_Name
@@ -3630,7 +3604,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 427628650}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1829305356113687592, guid: 6acca6117d2e1444782f906e30d64d66, type: 3}
       propertyPath: m_Pivot.x
@@ -3727,7 +3701,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 427628650}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 494986665951885933, guid: 1150a96f9d6226e478fdac5cee8f97ff, type: 3}
       propertyPath: m_Pivot.x
@@ -3824,7 +3798,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 427628650}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 118763688073947081, guid: 69b7d95e0bc0c4e44a5c816f2e56d924, type: 3}
       propertyPath: m_Name
@@ -3928,3 +3902,8 @@ SceneRoots:
   - {fileID: 639561851}
   - {fileID: 1335224112}
   - {fileID: 424933014}
+  - {fileID: 3665412652769035200}
+  - {fileID: 4510397881276660954}
+  - {fileID: 3171418300823150041}
+  - {fileID: 8670585214999059945}
+  - {fileID: 1993908167938545885}
