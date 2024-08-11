@@ -417,6 +417,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f7d081c54b5e7f4a8b3d164cfaade4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionDist: 1.5
   dropArea: {fileID: 1307405552}
 --- !u!61 &201560843
 BoxCollider2D:
@@ -640,6 +641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f7d081c54b5e7f4a8b3d164cfaade4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionDist: 1.5
   dropArea: {fileID: 391604971}
 --- !u!61 &276826704
 BoxCollider2D:
@@ -1117,6 +1119,7 @@ GameObject:
   - component: {fileID: 511998026}
   - component: {fileID: 511998027}
   - component: {fileID: 511998028}
+  - component: {fileID: 511998029}
   m_Layer: 0
   m_Name: Gameplay Camera
   m_TagString: MainCamera
@@ -1241,6 +1244,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugMode: 0
+--- !u!114 &511998029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511998022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ac93f8bd4162aa429ee5ea9c5b37686, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shakeStrength: 1
+  _duration: 1
+  _frequency: 4
 --- !u!1 &516703965 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1065745328789369414, guid: 2e8ecc6ebfabf0f479b8648dfb9396da, type: 3}
@@ -1434,6 +1452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f7d081c54b5e7f4a8b3d164cfaade4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionDist: 1.5
   dropArea: {fileID: 0}
 --- !u!61 &553027496
 BoxCollider2D:
@@ -1570,6 +1589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f7d081c54b5e7f4a8b3d164cfaade4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionDist: 1.5
   dropArea: {fileID: 1468127450}
 --- !u!61 &574062555
 BoxCollider2D:
@@ -2043,6 +2063,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f7d081c54b5e7f4a8b3d164cfaade4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionDist: 1.5
   dropArea: {fileID: 1512240235}
 --- !u!61 &734755683
 BoxCollider2D:
@@ -3044,6 +3065,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f7d081c54b5e7f4a8b3d164cfaade4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionDist: 1.5
   dropArea: {fileID: 1980680307}
 --- !u!61 &990501937
 BoxCollider2D:
@@ -3640,6 +3662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f7d081c54b5e7f4a8b3d164cfaade4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionDist: 1.5
   dropArea: {fileID: 0}
 --- !u!61 &1139984341
 BoxCollider2D:
@@ -3832,6 +3855,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f7d081c54b5e7f4a8b3d164cfaade4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionDist: 1.5
   dropArea: {fileID: 0}
 --- !u!61 &1225529874
 BoxCollider2D:
@@ -5091,6 +5115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f7d081c54b5e7f4a8b3d164cfaade4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionDist: 1.5
   dropArea: {fileID: 0}
 --- !u!61 &1459602226
 BoxCollider2D:
@@ -5694,6 +5719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f7d081c54b5e7f4a8b3d164cfaade4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionDist: 1.5
   dropArea: {fileID: 0}
 --- !u!61 &1574139687
 BoxCollider2D:

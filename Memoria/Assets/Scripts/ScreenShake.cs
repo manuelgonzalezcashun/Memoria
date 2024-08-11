@@ -13,6 +13,18 @@ public class ScreenShake : MonoBehaviour
     {
         _camera = GetComponent<Camera>();
     }
+    void OnEnable()
+    {
+        EventDispatcher.AddListener<ScreenShakeEvent>(Shake);
+    }
+    void OnDisable()
+    {
+        EventDispatcher.RemoveListener<ScreenShakeEvent>(Shake);
+    }
+    public void Shake(ScreenShakeEvent screenShakeEvent)
+    {
+        Shake();
+    }
 
     public void Shake()
     {
