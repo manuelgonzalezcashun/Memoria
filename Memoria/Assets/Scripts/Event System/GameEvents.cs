@@ -45,6 +45,10 @@ public class PlaySoundEvent : Event
 {
     public string _clipName;
 }
+public class StopSoundEvent : Event
+{
+    public string _clipName;
+}
 public class ChangeActionMapEvent : Event
 {
     public string newActionMap = string.Empty;

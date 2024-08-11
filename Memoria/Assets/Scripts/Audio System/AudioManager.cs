@@ -8,13 +8,17 @@ public class AudioManager : Singleton<AudioManager>
     void OnEnable()
     {
         EventDispatcher.AddListener<PlaySoundEvent>(Play);
+        EventDispatcher.AddListener<StopSoundEvent>(Stop);
     }
     void OnDisable()
     {
         EventDispatcher.RemoveListener<PlaySoundEvent>(Play);
+        EventDispatcher.RemoveListener<StopSoundEvent>(Stop);
     }
-    void Start()
+    new void Awake()
     {
+        base.Awake();
+
         foreach (Sounds soundClips in _soundList)
         {
             m_soundDict.Add(soundClips.clipName, soundClips);
@@ -40,6 +44,25 @@ public class AudioManager : Singleton<AudioManager>
         if (source != null)
         {
             source.Play();
+        }
+    }
+    private void Stop(StopSoundEvent evt)
+    {
+        Stop(evt._clipName);
+    }
+
+    private void Stop(string clipName)
+    {
+        if (!m_soundDict.ContainsKey(clipName))
+        {
+            Debug.LogError($"Could not find {clipName} in the database");
+            return;
+        }
+
+        AudioSource source = m_soundDict[clipName].audioSource;
+        if (source != null)
+        {
+            source.Stop();
         }
     }
 
