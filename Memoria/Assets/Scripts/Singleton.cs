@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class Singleton<T> : MonoBehaviour where T : MonoBehaviour
@@ -12,14 +10,11 @@ public abstract class Singleton<T> : MonoBehaviour where T : MonoBehaviour
         if (_instance == null)
         {
             _instance = gameObject.GetComponent<T>();
+            DontDestroyOnLoad(_instance);
         }
         else
         {
-            Destroy(_instance);
+            Destroy(gameObject);
         }
-    }
-    void OnDestroy()
-    {
-        _instance = null;
     }
 }

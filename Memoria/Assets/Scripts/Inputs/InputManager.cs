@@ -24,6 +24,8 @@ public class InputManager : Singleton<InputManager>
     void OnDisable()
     {
         EventDispatcher.RemoveListener<ChangeActionMapEvent>(ctx => ChangePlayerActionMap(ctx.newActionMap));
+
+        if (interactAction == null) return;
         interactAction.performed -= RaiseInteractEvent;
     }
     void ChangePlayerActionMap(string mapName)
@@ -34,6 +36,8 @@ public class InputManager : Singleton<InputManager>
     }
     private void RaiseInteractEvent(InputAction.CallbackContext context)
     {
+        if (interactAction == null) return;
+
         PlayerInteractEvent playerInteractEvent = new PlayerInteractEvent();
         EventDispatcher.Raise(playerInteractEvent);
     }
