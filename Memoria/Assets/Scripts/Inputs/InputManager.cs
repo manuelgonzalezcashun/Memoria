@@ -6,8 +6,6 @@ public class InputManager : Singleton<InputManager>
     PlayerInput playerInput = null;
 
     private InputAction moveAction = null, interactAction = null, dialogueAction = null;
-    private const string k_DIALOGUEMAP = "Dialogue";
-
     public InputAction MoveAction => moveAction;
     public InputAction InteractAction => interactAction;
     public InputAction DialogueAction => dialogueAction;

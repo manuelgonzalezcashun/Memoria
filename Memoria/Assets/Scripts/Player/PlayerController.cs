@@ -86,7 +86,6 @@ public class PlayerController : MonoBehaviour
 
         EventDispatcher.AddListener<SpawnPlayerEvent>(PlayerSpawn);
         EventDispatcher.AddListener<PlayerInteractEvent>(PlayerInteract);
-
     }
     void RemoveListeners()
     {
@@ -96,8 +95,6 @@ public class PlayerController : MonoBehaviour
 
         EventDispatcher.RemoveListener<SpawnPlayerEvent>(PlayerSpawn);
         EventDispatcher.RemoveListener<PlayerInteractEvent>(PlayerInteract);
-
-
     }
     #endregion
 
