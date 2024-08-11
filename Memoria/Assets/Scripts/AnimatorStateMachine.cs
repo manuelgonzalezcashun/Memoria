@@ -33,15 +33,17 @@ public class AnimatorStateMachine : MonoBehaviour
     }
     public void ChangeAnimState(string name)
     {
-        if (m_playerAnims.ContainsKey(name))
-        {
-            _state = name;
-            playerAnimator.Play(m_playerAnims[_state].name);
-        }
-        else
+        if (playerAnimator == null) return;
+
+        if (!m_playerAnims.ContainsKey(name))
         {
             Debug.LogWarning($"Could not find {name} in list of animation clips");
+            return;
         }
+
+        _state = name;
+        playerAnimator.Play(m_playerAnims[_state].name);
+
     }
 }
 

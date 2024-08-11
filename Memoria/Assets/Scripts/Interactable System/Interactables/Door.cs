@@ -3,7 +3,6 @@ using Eflatun.SceneReference;
 
 public class Door : Interactable
 {
-    public static event System.Action<string> LoadRoomEvent = null;
     [SerializeField] private SceneReference roomToLoad;
     [SerializeField] private SpawnPoint _spawnPoint;
 
@@ -17,6 +16,7 @@ public class Door : Interactable
     {
         _spawnPoint.SetActiveConnection();
 
-        LoadRoomEvent?.Invoke(roomToLoad.Name);
+        LoadSceneEvent loadSceneEvent = new LoadSceneEvent { sceneToLoad = roomToLoad.Name };
+        EventDispatcher.Raise(loadSceneEvent);
     }
 }

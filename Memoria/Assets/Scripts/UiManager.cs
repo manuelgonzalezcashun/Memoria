@@ -12,15 +12,13 @@ public class UiManager : MonoBehaviour
 
     void OnEnable()
     {
+        EventDispatcher.AddListener<LoadPuzzleEvent>(OnPuzzleLoaded);
         // TODO EventDispatcher.AddListener<CollectedEvent>(ctx => AddScore());
-        EventDispatcher.AddListener<LoadSceneEvent>(ctx => EnableUI(false));
-        EventDispatcher.AddListener<PuzzleWinEvent>(ctx => EnableUI(true));
     }
     void OnDisable()
     {
-        //TODO EventDispatcher.RemoveListener<CollectedEvent>(ctx => AddScore());
-        EventDispatcher.RemoveListener<LoadSceneEvent>(ctx => EnableUI(false));
-        EventDispatcher.RemoveListener<PuzzleWinEvent>(ctx => EnableUI(true));
+        EventDispatcher.RemoveListener<LoadPuzzleEvent>(OnPuzzleLoaded);
+        // TODO EventDispatcher.RemoveListener<CollectedEvent>(ctx => AddScore());
     }
     // void Start()
     // {
@@ -34,8 +32,14 @@ public class UiManager : MonoBehaviour
     //     collectableTextUI.text = $"Memories Collected {score}/{count}";
     // }
 
+    void OnPuzzleLoaded(LoadPuzzleEvent evt)
+    {
+        EnableUI(!evt.loaded);
+    }
     void EnableUI(bool enable)
     {
+        if (UICanvas == null) return;
+
         UICanvas.gameObject.SetActive(enable);
     }
 }

@@ -35,9 +35,9 @@ public class PlayerController : MonoBehaviour
         InteractableManager.Instance.SearchForNearestInteractable(transform.position, interactDist);
         InteractableManager.Instance.PickupInteractable();
     }
-    void PlayerSpawn(Vector2 spawnPos)
+    void PlayerSpawn(SpawnPlayerEvent evt)
     {
-        transform.position = spawnPos;
+        transform.position = evt.spawnPos;
     }
     void PlayerMove()
     {
@@ -61,14 +61,6 @@ public class PlayerController : MonoBehaviour
         }
 
         Flip(moveX);
-    }
-    void HandlePlayerInput(bool input)
-    {
-        gameObject.SetActive(input);
-    }
-    void HandlePlayerMovement(bool stopMove)
-    {
-        stopPlayerMovement = stopMove;
     }
 
     void Flip(float velocity) //* Flips the player based on the direction they are heading.
@@ -99,22 +91,22 @@ public class PlayerController : MonoBehaviour
         InputManager.Instance.InteractAction.performed += ctx => PlayerInteract();
 
         // * Event Listeners
-        EventDispatcher.AddListener<SceneLoadingEvent>(ctx => HandlePlayerMovement(ctx.isSceneLoading));
-        EventDispatcher.AddListener<LoadSceneEvent>(ctx => HandlePlayerInput(false));
-        EventDispatcher.AddListener<PuzzleWinEvent>(ctx => HandlePlayerInput(true));
-        EventDispatcher.AddListener<ShowDialogueEvent>(ctx => HandlePlayerMovement(ctx.showDialogueUI));
-        EventDispatcher.AddListener<SpawnPlayerEvent>(ctx => PlayerSpawn(ctx.spawnPos));
+        //EventDispatcher.AddListener<SceneLoadingEvent>(ctx => HandlePlayerMovement(ctx.isSceneLoading));
+        //EventDispatcher.AddListener<LoadSceneEvent>(ctx => HandlePlayerInput(false));
+        //EventDispatcher.AddListener<PuzzleWinEvent>(ctx => HandlePlayerInput(true));
+        //EventDispatcher.AddListener<ShowDialogueEvent>(ctx => HandlePlayerMovement(ctx.showDialogueUI));
+        EventDispatcher.AddListener<SpawnPlayerEvent>(PlayerSpawn);
     }
     void RemoveListeners()
     {
         // * Player Input Listeners
 
         // * Event Listeners
-        EventDispatcher.RemoveListener<SceneLoadingEvent>(ctx => HandlePlayerMovement(ctx.isSceneLoading));
-        EventDispatcher.RemoveListener<LoadSceneEvent>(ctx => HandlePlayerInput(false));
-        EventDispatcher.RemoveListener<PuzzleWinEvent>(ctx => HandlePlayerInput(true));
-        EventDispatcher.RemoveListener<ShowDialogueEvent>(ctx => HandlePlayerMovement(ctx.showDialogueUI));
-        EventDispatcher.RemoveListener<SpawnPlayerEvent>(ctx => PlayerSpawn(ctx.spawnPos));
+        //EventDispatcher.RemoveListener<SceneLoadingEvent>(ctx => HandlePlayerMovement(ctx.isSceneLoading));
+        //EventDispatcher.RemoveListener<LoadSceneEvent>(ctx => HandlePlayerInput(false));
+        //EventDispatcher.RemoveListener<PuzzleWinEvent>(ctx => HandlePlayerInput(true));
+        //EventDispatcher.RemoveListener<ShowDialogueEvent>(ctx => HandlePlayerMovement(ctx.showDialogueUI));
+        EventDispatcher.RemoveListener<SpawnPlayerEvent>(PlayerSpawn);
     }
     #endregion
 

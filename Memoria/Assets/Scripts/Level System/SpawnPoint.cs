@@ -12,7 +12,8 @@ public class SpawnPoint : MonoBehaviour
     {
         if (_isSpawnSuitable)
         {
-            EventDispatcher.Raise(new SpawnPlayerEvent { spawnPos = _pointTransform.position });
+            SpawnPlayerEvent spawn = new SpawnPlayerEvent { spawnPos = _pointTransform.position };
+            EventDispatcher.Raise(spawn);
         }
     }
 

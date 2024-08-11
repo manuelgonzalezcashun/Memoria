@@ -24,15 +24,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Dialogue",
-                    "type": "Button",
-                    "id": "d83f1914-2d73-471c-8325-70d9b6374c21",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Interact",
                     "type": "Button",
                     "id": "bfe45e3a-3bf8-4587-87bc-44b38f3fedd5",
@@ -216,28 +207,6 @@
                     "processors": "",
                     "groups": "XR",
                     "action": "Fire",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "b5386f5c-0055-4dba-8d2d-5213e2bbb58a",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Dialogue",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "02978a91-86f7-4f07-a11c-9b235ed60727",
-                    "path": "<Gamepad>/buttonSouth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Dialogue",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -776,6 +745,73 @@
                     "processors": "",
                     "groups": "XR",
                     "action": "TrackedDeviceOrientation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Dialogue",
+            "id": "df7a15b2-0435-4ce9-a061-b092caeadbe7",
+            "actions": [
+                {
+                    "name": "Dialogue",
+                    "type": "Button",
+                    "id": "def0a54c-bf0a-44bf-8516-eb8c8fa1be2f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "70c1d05c-b756-4097-b0e6-62a7cbe92ea5",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dialogue",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "210a2605-55ec-4337-b2cb-0c61eed22231",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dialogue",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Disable",
+            "id": "0a9bb6b5-2c33-4695-a49a-82473901407d",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "4a9f17e6-d182-418c-a1c5-4560c139a8d1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "238c5c20-843d-4c46-916d-210be08e6282",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

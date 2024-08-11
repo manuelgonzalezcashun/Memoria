@@ -1,65 +1,45 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour
+public class AudioManager : Singleton<AudioManager>
 {
-    Dictionary<string, Sounds> m_sfxClipDict = new(), m_musicClipDict = new();
-    [SerializeField] List<Sounds> sfx_SoundList = new(), music_SoundList = new();
-
-    private static AudioManager _instance = null;
-    public static AudioManager Instance => _instance;
-
+    Dictionary<string, Sounds> m_soundDict = new();
+    [SerializeField] List<Sounds> _soundList = new();
     void OnEnable()
     {
-        if (_instance == null)
-        {
-            _instance = this;
-            DontDestroyOnLoad(_instance);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-
-        EventDispatcher.AddListener<PlaySoundEvent>(ctx => Play(ctx._clipName));
+        EventDispatcher.AddListener<PlaySoundEvent>(Play);
     }
     void OnDisable()
     {
-        EventDispatcher.RemoveListener<PlaySoundEvent>(ctx => Play(ctx._clipName));
+        EventDispatcher.RemoveListener<PlaySoundEvent>(Play);
     }
-
-    void Awake()
+    void Start()
     {
-        foreach (Sounds sfxClips in sfx_SoundList)
+        foreach (Sounds soundClips in _soundList)
         {
-            sfxClips._audioSource = gameObject.AddComponent<AudioSource>();
-            m_sfxClipDict.Add(sfxClips.clipName, sfxClips);
+            m_soundDict.Add(soundClips.clipName, soundClips);
+
+            soundClips.audioSource = gameObject.AddComponent<AudioSource>();
+            soundClips.audioSource.clip = soundClips.audioClip;
+            soundClips.audioSource.loop = soundClips.loop;
         }
-        foreach (Sounds musicClips in music_SoundList)
-        {
-            musicClips._audioSource = gameObject.AddComponent<AudioSource>();
-            m_musicClipDict.Add(musicClips.clipName, musicClips);
-        }
+    }
+    private void Play(PlaySoundEvent evt)
+    {
+        Play(evt._clipName);
     }
     public void Play(string clipName)
     {
-        if (clipName == null) return;
+        if (!m_soundDict.ContainsKey(clipName))
+        {
+            Debug.LogError($"Could not find {clipName} in the database");
+            return;
+        }
 
-        if (m_sfxClipDict.ContainsKey(clipName))
+        AudioSource source = m_soundDict[clipName].audioSource;
+        if (source != null)
         {
-            AudioSource source = m_sfxClipDict[clipName]._audioSource;
-            source.clip = m_sfxClipDict[clipName].audioClip;
             source.Play();
-        }
-        else if (m_musicClipDict.ContainsKey(clipName))
-        {
-            AudioSource source = m_musicClipDict[clipName]._audioSource;
-            source.clip = m_musicClipDict[clipName].audioClip;
-            source.Play();
-        }
-        else
-        {
-            Debug.LogWarning($"Could not find {clipName} in the database");
         }
     }
 
@@ -69,6 +49,7 @@ public class Sounds
 {
     public string clipName = string.Empty;
     public AudioClip audioClip = null;
+    public bool loop = false;
 
-    [HideInInspector] public AudioSource _audioSource;
+    [HideInInspector] public AudioSource audioSource = null;
 }
