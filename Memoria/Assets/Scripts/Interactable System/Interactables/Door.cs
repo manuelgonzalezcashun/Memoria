@@ -18,5 +18,6 @@ public class Door : Interactable
 
         LoadSceneEvent loadSceneEvent = new LoadSceneEvent { sceneToLoad = roomToLoad.Name };
         EventDispatcher.Raise(loadSceneEvent);
+        Debug.Log("Door Interacted");
     }
 }

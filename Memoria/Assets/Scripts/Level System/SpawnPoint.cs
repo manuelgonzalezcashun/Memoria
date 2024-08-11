@@ -5,7 +5,7 @@ public class SpawnPoint : MonoBehaviour
     [SerializeField] private RoomConnection _roomConnection;
     [SerializeField] private Transform _pointTransform;
 
-    private bool _isSpawnSuitable => _pointTransform != null && RoomConnection.ActiveConnection == _roomConnection;
+    private bool _isSpawnSuitable => _pointTransform != null && GameVariables.Instance.ActiveConnection == _roomConnection;
 
 
     public void SpawnAtPoint()
@@ -19,6 +19,6 @@ public class SpawnPoint : MonoBehaviour
 
     public void SetActiveConnection()
     {
-        RoomConnection.ActiveConnection = _roomConnection;
+        GameVariables.Instance.SetActiveRoomConnection(_roomConnection);
     }
 }
