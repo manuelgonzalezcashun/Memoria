@@ -12,14 +12,14 @@ public class KeyGate : Interactable
     }
     public override void Interact()
     {
-        if (GameVariables.keyCount > 0)
+        if (GameVariables.Instance.KeyCount < 1)
         {
-            GameVariables.keyCount--;
-            EventDispatcher.Raise(new KeyUsedEvent());
-
-            Destroy(gameObject);
-            puzzlepiece.SetActive(true);
+            Database.LoadDialogue();
+            return;
         }
 
+        GameVariables.Instance.SubtractKeyCount();
+        gameObject.SetActive(false);
+        puzzlepiece.SetActive(true);
     }
 }

@@ -8,7 +8,8 @@ public class CollectedEvent : Event { }
 public class KeyCollectedEvent : Event { }
 public class KeyUsedEvent : Event { }
 public class AddPuzzlePieceCount : Event { }
-public class PlayerInteractEvent : Event { }
+public class InteractPressedEvent : Event { }
+public class DialoguePressedEvent : Event { }
 public class LoadPuzzleEvent : Event
 {
     public bool loaded = false;

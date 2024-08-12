@@ -7,8 +7,6 @@ public class InputManager : Singleton<InputManager>
 
     private InputAction moveAction = null, interactAction = null, dialogueAction = null;
     public InputAction MoveAction => moveAction;
-    public InputAction InteractAction => interactAction;
-    public InputAction DialogueAction => dialogueAction;
     void OnEnable()
     {
         playerInput = GetComponent<PlayerInput>();
@@ -19,6 +17,7 @@ public class InputManager : Singleton<InputManager>
 
         EventDispatcher.AddListener<ChangeActionMapEvent>(ctx => ChangePlayerActionMap(ctx.newActionMap));
         interactAction.performed += RaiseInteractEvent;
+        dialogueAction.performed += RaiseDialogueEvent;
     }
 
     void OnDisable()
@@ -27,6 +26,7 @@ public class InputManager : Singleton<InputManager>
 
         if (interactAction == null) return;
         interactAction.performed -= RaiseInteractEvent;
+        dialogueAction.performed -= RaiseDialogueEvent;
     }
     void ChangePlayerActionMap(string mapName)
     {
@@ -38,7 +38,14 @@ public class InputManager : Singleton<InputManager>
     {
         if (interactAction == null) return;
 
-        PlayerInteractEvent playerInteractEvent = new PlayerInteractEvent();
-        EventDispatcher.Raise(playerInteractEvent);
+        InteractPressedEvent interact = new InteractPressedEvent();
+        EventDispatcher.Raise(interact);
+    }
+    private void RaiseDialogueEvent(InputAction.CallbackContext context)
+    {
+        if (dialogueAction == null) return;
+
+        DialoguePressedEvent dialogue = new DialoguePressedEvent();
+        EventDispatcher.Raise(dialogue);
     }
 }
