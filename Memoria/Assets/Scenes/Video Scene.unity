@@ -1348,6 +1348,96 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+  - name: Piece 1
+    comicVideos:
+    - {fileID: 32900000, guid: 8d611ee8771324f1f94f363f6ae6a28b, type: 3}
+    _comicEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 467399377}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - name: Piece 2
+    comicVideos:
+    - {fileID: 32900000, guid: 054b3344e24144f11986193737d548ac, type: 3}
+    _comicEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 467399377}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - name: Piece 3
+    comicVideos:
+    - {fileID: 32900000, guid: 584aa2417ff836844bebbbadc644f44a, type: 3}
+    _comicEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 467399377}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - name: Piece 4
+    comicVideos:
+    - {fileID: 32900000, guid: 0a74869ae172f0a42b1fd8cc4541ea11, type: 3}
+    _comicEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 467399377}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - name: Piece 5
+    comicVideos:
+    - {fileID: 32900000, guid: 4290ba87fc687e64ead4db60a2e99d4c, type: 3}
+    _comicEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 467399377}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   itchBuild: 1
 --- !u!1 &1922891578
 GameObject:

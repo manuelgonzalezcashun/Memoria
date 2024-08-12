@@ -547,6 +547,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1405681280328048943, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
+      propertyPath: database
+      value: 
+      objectReference: {fileID: 11400000, guid: 5607ca795a179406a8d33a807e6a573c, type: 2}
+    - target: {fileID: 1405681280328048943, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
       propertyPath: RoomToLoad
       value: Backyard
       objectReference: {fileID: 0}
