@@ -54,7 +54,5 @@ public class ChangeActionMapEvent : Event
     public string newActionMap = string.Empty;
 }
 
-public class ScreenShakeEvent : Event
-{
-
-}
+public class ScreenShakeEvent : Event { }
+public class RemoveItemEvent : Event { }
