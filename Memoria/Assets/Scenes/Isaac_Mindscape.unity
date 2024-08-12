@@ -986,8 +986,29 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8761124677337099355, guid: 95df00ff827800f4f97d356ba5f79311, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 353617020}
   m_SourcePrefab: {fileID: 100100000, guid: 95df00ff827800f4f97d356ba5f79311, type: 3}
+--- !u!1 &353617019 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8761124677337099355, guid: 95df00ff827800f4f97d356ba5f79311, type: 3}
+  m_PrefabInstance: {fileID: 353617018}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &353617020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353617019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d437972f4b80a61488c93370818e83d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _songName: Rain
 --- !u!1 &447449263
 GameObject:
   m_ObjectHideFlags: 0
