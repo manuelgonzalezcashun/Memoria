@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2396677036786487874
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 387844981685620371}
+  - component: {fileID: 978634164349055460}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &387844981685620371
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2396677036786487874}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &978634164349055460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2396677036786487874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9f70d91b37b1e747970f1e1d1d62827, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _soundList:
+  - clipName: Collect
+    audioClip: {fileID: 8300000, guid: ae9ac757ba0b39e4f91369d167331c3e, type: 3}
+    loop: 0
+    audioSource: {fileID: 0}
+  - clipName: Menu
+    audioClip: {fileID: 8300000, guid: 2b8670b132d29984c93743808adbfcb3, type: 3}
+    loop: 0
+    audioSource: {fileID: 0}
+  - clipName: Main
+    audioClip: {fileID: 8300000, guid: 87ea2b697c3801449a0727e93788aa04, type: 3}
+    loop: 1
+    audioSource: {fileID: 0}
+  - clipName: Storm
+    audioClip: {fileID: 8300000, guid: c8a63207173c9e84ba42cddac3c60656, type: 3}
+    loop: 1
+    audioSource: {fileID: 0}
+  - clipName: Backyard
+    audioClip: {fileID: 8300000, guid: 16d8f55788392e648b5fd965ad45abaf, type: 3}
+    loop: 1
+    audioSource: {fileID: 0}
+  - clipName: Bedroom
+    audioClip: {fileID: 8300000, guid: 8c73ec0bdb4fecb408720aaf2894e84b, type: 3}
+    loop: 1
+    audioSource: {fileID: 0}

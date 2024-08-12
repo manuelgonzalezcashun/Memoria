@@ -927,6 +927,67 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b84baa57d4608314d832904a7f843409, type: 3}
+--- !u!1001 &353617018
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4748294068354768095, guid: 95df00ff827800f4f97d356ba5f79311, type: 3}
+      propertyPath: _songName
+      value: Storm
+      objectReference: {fileID: 0}
+    - target: {fileID: 6738214791942565113, guid: 95df00ff827800f4f97d356ba5f79311, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6738214791942565113, guid: 95df00ff827800f4f97d356ba5f79311, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6738214791942565113, guid: 95df00ff827800f4f97d356ba5f79311, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6738214791942565113, guid: 95df00ff827800f4f97d356ba5f79311, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6738214791942565113, guid: 95df00ff827800f4f97d356ba5f79311, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6738214791942565113, guid: 95df00ff827800f4f97d356ba5f79311, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6738214791942565113, guid: 95df00ff827800f4f97d356ba5f79311, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6738214791942565113, guid: 95df00ff827800f4f97d356ba5f79311, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6738214791942565113, guid: 95df00ff827800f4f97d356ba5f79311, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6738214791942565113, guid: 95df00ff827800f4f97d356ba5f79311, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8761124677337099355, guid: 95df00ff827800f4f97d356ba5f79311, type: 3}
+      propertyPath: m_Name
+      value: MusicLoader
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 95df00ff827800f4f97d356ba5f79311, type: 3}
 --- !u!1 &447449263
 GameObject:
   m_ObjectHideFlags: 0
@@ -3436,4 +3497,4 @@ SceneRoots:
   - {fileID: 1882751649}
   - {fileID: 578333114}
   - {fileID: 1809144105}
-  - {fileID: 776661585}
+  - {fileID: 353617018}

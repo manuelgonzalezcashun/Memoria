@@ -9,17 +9,17 @@ public class PuzzleManager : MonoBehaviour
 
     void OnEnable()
     {
-        EventDispatcher.AddListener<LoadSceneEvent>(ctx => EnablePuzzle(true));
-        EventDispatcher.AddListener<PuzzleWinEvent>(ctx => EnablePuzzle(false));
+        EventDispatcher.AddListener<LoadPuzzleEvent>(ctx => EnablePuzzle(ctx.loaded));
     }
     void OnDisable()
     {
-        EventDispatcher.RemoveListener<LoadSceneEvent>(ctx => EnablePuzzle(true));
-        EventDispatcher.RemoveListener<PuzzleWinEvent>(ctx => EnablePuzzle(false));
+        EventDispatcher.RemoveListener<LoadPuzzleEvent>(ctx => EnablePuzzle(ctx.loaded));
     }
 
     public void EnablePuzzle(bool enable)
     {
+        if (puzzleCamera == null || puzzleCanvas == null) return;
+
         puzzleCamera.gameObject.SetActive(enable);
         puzzleCanvas.gameObject.SetActive(enable);
     }

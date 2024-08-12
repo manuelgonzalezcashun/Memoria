@@ -24,14 +24,11 @@ public class Inventory : MonoBehaviour
     {
         pieceCount++;
         counterText.text = pieceCount + "/6";
-        ///if (pieceCount == 3)
-        ///{
-        ///EventDispatcher.Raise(new LoadSceneEvent { sceneToLoad = "Video Scene" });
-        ///}
 
         if (pieceCount == 6)
         {
-            EventDispatcher.Raise(new LoadSceneEvent { sceneToLoad = "Puzzle Scene" });
+            LoadPuzzleEvent loadPuzzleEvent = new LoadPuzzleEvent { loaded = true };
+            EventDispatcher.Raise(loadPuzzleEvent);
             pieceCount = 0;
         }
     }

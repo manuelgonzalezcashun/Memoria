@@ -12,20 +12,17 @@ public class RoomManager : MonoBehaviour
     private string _currentRoom = string.Empty;
     void OnEnable()
     {
-        EventDispatcher.AddListener<PuzzleWinEvent>(ctx => StartCoroutine(LoadingScreen(ctx.endSceneName)));
-        Door.LoadRoomEvent += LoadScreen;
+        EventDispatcher.AddListener<LoadSceneEvent>(LoadScreen);
     }
     void OnDisable()
     {
-        EventDispatcher.RemoveListener<PuzzleWinEvent>(ctx => StartCoroutine(LoadingScreen(ctx.endSceneName)));
-        Door.LoadRoomEvent -= LoadScreen;
+        EventDispatcher.RemoveListener<LoadSceneEvent>(LoadScreen);
     }
     void Start()
     {
-        if (_roomToLoad != null)
-        {
-            LoadRoom(_roomToLoad.Name);
-        }
+        if (_roomToLoad == null) return;
+
+        LoadRoom(_roomToLoad.Name);
     }
     void LoadRoom(string roomName)
     {
@@ -46,49 +43,23 @@ public class RoomManager : MonoBehaviour
     {
         SceneManager.UnloadSceneAsync(roomName);
     }
-    void LoadScreen(string roomName)
+    void LoadScreen(LoadSceneEvent evt)
     {
-        StartCoroutine(LoadingScreen(roomName));
+        if (loadingScreen == null) return;
+        StartCoroutine(PlayLoadingScreen(evt.sceneToLoad));
     }
-    IEnumerator LoadingScreen(string roomName)
+    IEnumerator PlayLoadingScreen(string roomName)
     {
+
         UnloadCurrentRoom();
         loadingScreen.SetActive(true);
-        EventDispatcher.Raise(new SceneLoadingEvent { isSceneLoading = true });
+
+        EventDispatcher.Raise(new ChangeActionMapEvent { newActionMap = "Disable" });
         LoadRoom(roomName);
 
         yield return new WaitForSeconds(_loadingTime);
 
         loadingScreen.SetActive(false);
-        EventDispatcher.Raise(new SceneLoadingEvent { isSceneLoading = false });
-    }
-    // Method to find the Gameplay camera and modify it only in Backyard scene, return to normal otherwise
-    void AdjustCamera(string roomName)
-    {
-        Scene gameplayScene = SceneManager.GetSceneByName("Gameplay");
-        Scene backyardScene = SceneManager.GetSceneByName("Backyard");
-
-        if (gameplayScene.isLoaded)
-        {
-            GameObject gameplayCamera = GameObject.FindWithTag("MainCamera");
-            Camera mainCamera = gameplayCamera.GetComponent<Camera>();
-            CameraFollow cameraFollow = gameplayCamera.GetComponent<CameraFollow>();
-            if (roomName == "Backyard" && mainCamera)
-            {
-                mainCamera.orthographicSize = 12f;
-                cameraFollow.xLimit = new Vector2(-28f, 29.3f);
-            }
-            else if (roomName == "LivingRoom")
-            {
-                mainCamera.orthographicSize = 5.31f;
-            }
-            else
-            {
-                mainCamera.orthographicSize = 7f;
-                cameraFollow.xLimit = new Vector2(-37f, 37f);
-            }
-
-        }
-
+        EventDispatcher.Raise(new ChangeActionMapEvent { newActionMap = "Player" });
     }
 }
