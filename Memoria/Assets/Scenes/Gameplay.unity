@@ -925,7 +925,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &428259207
 RectTransform:
   m_ObjectHideFlags: 0
@@ -994,7 +994,6 @@ GameObject:
   - component: {fileID: 439780919}
   - component: {fileID: 439780922}
   - component: {fileID: 439780921}
-  - component: {fileID: 439780920}
   m_Layer: 0
   m_Name: flat-sparkling-stars-collection_5 (1)
   m_TagString: Untagged
@@ -1017,21 +1016,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1294754533}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!111 &439780920
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 439780918}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 2268bf0e6bb59da46918ec8ba33d974f, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!95 &439780921
 Animator:
   serializedVersion: 5
@@ -2451,7 +2435,6 @@ GameObject:
   - component: {fileID: 931178791}
   - component: {fileID: 931178794}
   - component: {fileID: 931178793}
-  - component: {fileID: 931178792}
   m_Layer: 0
   m_Name: flat-sparkling-stars-collection_5 (3)
   m_TagString: Untagged
@@ -2474,21 +2457,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1294754533}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!111 &931178792
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 931178790}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 2268bf0e6bb59da46918ec8ba33d974f, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!95 &931178793
 Animator:
   serializedVersion: 5
@@ -5992,7 +5960,6 @@ GameObject:
   - component: {fileID: 1687072185}
   - component: {fileID: 1687072184}
   - component: {fileID: 1687072187}
-  - component: {fileID: 1687072186}
   m_Layer: 0
   m_Name: flat-sparkling-stars-collection_5
   m_TagString: Untagged
@@ -6067,21 +6034,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1294754533}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!111 &1687072186
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1687072183}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 2268bf0e6bb59da46918ec8ba33d974f, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!95 &1687072187
 Animator:
   serializedVersion: 5
@@ -6688,7 +6640,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1869038587}
   - component: {fileID: 1869038590}
-  - component: {fileID: 1869038589}
   - component: {fileID: 1869038588}
   m_Layer: 0
   m_Name: flat-sparkling-stars-collection_5 (2)
@@ -6733,21 +6684,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!111 &1869038589
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1869038586}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 2268bf0e6bb59da46918ec8ba33d974f, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!212 &1869038590
 SpriteRenderer:
   m_ObjectHideFlags: 0
