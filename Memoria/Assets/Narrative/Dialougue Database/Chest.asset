@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: Chest
   m_EditorClassIdentifier: 
   dialogueLines:
-  - I think I drop the key in the Backyard
+  - It's locked..
+  - I think i dropped the key somewhere..
+  - Maybe the Backyard?
