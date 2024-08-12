@@ -275,6 +275,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5111193330544163711, guid: b84baa57d4608314d832904a7f843409, type: 3}
+      propertyPath: database
+      value: 
+      objectReference: {fileID: 11400000, guid: d9030f6ebc9b5ce49b9f5fc8f2fe338d, type: 2}
     - target: {fileID: 6346634058133796567, guid: b84baa57d4608314d832904a7f843409, type: 3}
       propertyPath: m_Name
       value: Book
@@ -283,6 +287,10 @@ PrefabInstance:
       propertyPath: database
       value: 
       objectReference: {fileID: 11400000, guid: d9030f6ebc9b5ce49b9f5fc8f2fe338d, type: 2}
+    - target: {fileID: 6393962207084805078, guid: b84baa57d4608314d832904a7f843409, type: 3}
+      propertyPath: dialogueLoader
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6953410317771768411, guid: b84baa57d4608314d832904a7f843409, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.051407468
@@ -6169,6 +6177,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 5111193330544163711, guid: b84baa57d4608314d832904a7f843409, type: 3}
+      propertyPath: database
+      value: 
+      objectReference: {fileID: 11400000, guid: 8aae847bf698c4ea2994d225461857c3, type: 2}
     - target: {fileID: 6346634058133796567, guid: b84baa57d4608314d832904a7f843409, type: 3}
       propertyPath: m_Name
       value: Rabbit
@@ -6177,6 +6189,10 @@ PrefabInstance:
       propertyPath: database
       value: 
       objectReference: {fileID: 11400000, guid: 8aae847bf698c4ea2994d225461857c3, type: 2}
+    - target: {fileID: 6393962207084805078, guid: b84baa57d4608314d832904a7f843409, type: 3}
+      propertyPath: dialogueLoader
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6953410317771768411, guid: b84baa57d4608314d832904a7f843409, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.096389
@@ -6882,6 +6898,10 @@ PrefabInstance:
       propertyPath: puzzlepiece
       value: 
       objectReference: {fileID: 1648381641}
+    - target: {fileID: 6648651444884729079, guid: 9112895b0a6d3fd48b72050529eeb457, type: 3}
+      propertyPath: dialogueLoader
+      value: 
+      objectReference: {fileID: 3341009737305816122}
     - target: {fileID: 8054528593072854248, guid: 9112895b0a6d3fd48b72050529eeb457, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.96
@@ -6925,8 +6945,29 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6023152595670699184, guid: 9112895b0a6d3fd48b72050529eeb457, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3341009737305816122}
   m_SourcePrefab: {fileID: 100100000, guid: 9112895b0a6d3fd48b72050529eeb457, type: 3}
+--- !u!1 &3341009737305816121 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6023152595670699184, guid: 9112895b0a6d3fd48b72050529eeb457, type: 3}
+  m_PrefabInstance: {fileID: 3341009737305816120}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3341009737305816122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3341009737305816121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d93df170468adac419040af5dc783f56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  database: {fileID: 11400000, guid: aab4b9c18536a224d81dafe66003b874, type: 2}
 --- !u!1001 &7411062718021714239
 PrefabInstance:
   m_ObjectHideFlags: 0
