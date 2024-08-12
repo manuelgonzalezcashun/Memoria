@@ -21,12 +21,17 @@ public class AudioManager : Singleton<AudioManager>
 
         foreach (Sounds soundClips in _soundList)
         {
-            m_soundDict.Add(soundClips.clipName, soundClips);
-
-            soundClips.audioSource = gameObject.AddComponent<AudioSource>();
-            soundClips.audioSource.clip = soundClips.audioClip;
-            soundClips.audioSource.loop = soundClips.loop;
+            AddSound(soundClips);
         }
+    }
+    public void AddSound(Sounds sound)
+    {
+        m_soundDict.Add(sound.clipName, sound);
+
+        sound.audioSource = gameObject.AddComponent<AudioSource>();
+        sound.audioSource.clip = sound.audioClip;
+        sound.audioSource.loop = sound.loop;
+        sound.audioSource.volume = sound.volume;
     }
     private void Play(PlaySoundEvent evt)
     {
@@ -73,6 +78,6 @@ public class Sounds
     public string clipName = string.Empty;
     public AudioClip audioClip = null;
     public bool loop = false;
-
+    [Range(0, 1)] public float volume = 0;
     [HideInInspector] public AudioSource audioSource = null;
 }

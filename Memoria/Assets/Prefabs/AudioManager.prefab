@@ -48,24 +48,35 @@ MonoBehaviour:
   - clipName: Collect
     audioClip: {fileID: 8300000, guid: ae9ac757ba0b39e4f91369d167331c3e, type: 3}
     loop: 0
+    volume: 0.5
     audioSource: {fileID: 0}
   - clipName: Menu
     audioClip: {fileID: 8300000, guid: 2b8670b132d29984c93743808adbfcb3, type: 3}
     loop: 0
+    volume: 0.5
     audioSource: {fileID: 0}
   - clipName: Main
     audioClip: {fileID: 8300000, guid: 87ea2b697c3801449a0727e93788aa04, type: 3}
     loop: 1
+    volume: 0.5
     audioSource: {fileID: 0}
   - clipName: Storm
     audioClip: {fileID: 8300000, guid: c8a63207173c9e84ba42cddac3c60656, type: 3}
     loop: 1
+    volume: 0.5
     audioSource: {fileID: 0}
   - clipName: Backyard
     audioClip: {fileID: 8300000, guid: 16d8f55788392e648b5fd965ad45abaf, type: 3}
     loop: 1
+    volume: 0.5
     audioSource: {fileID: 0}
   - clipName: Bedroom
     audioClip: {fileID: 8300000, guid: 8c73ec0bdb4fecb408720aaf2894e84b, type: 3}
     loop: 1
+    volume: 0.5
+    audioSource: {fileID: 0}
+  - clipName: Rain
+    audioClip: {fileID: 8300000, guid: 850add382082cbe45b7d9c10be455d6e, type: 3}
+    loop: 1
+    volume: 0.2
     audioSource: {fileID: 0}

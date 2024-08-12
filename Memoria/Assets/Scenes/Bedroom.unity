@@ -6747,6 +6747,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6648651444884729079, guid: 9112895b0a6d3fd48b72050529eeb457, type: 3}
+      propertyPath: database
+      value: 
+      objectReference: {fileID: 11400000, guid: aab4b9c18536a224d81dafe66003b874, type: 2}
+    - target: {fileID: 6648651444884729079, guid: 9112895b0a6d3fd48b72050529eeb457, type: 3}
       propertyPath: puzzlepiece
       value: 
       objectReference: {fileID: 1648381641}

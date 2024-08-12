@@ -8,9 +8,8 @@ public class KeyItem : Interactable
     }
     public override void Interact()
     {
-        GameVariables.keyCount += 2;
+        GameVariables.Instance.AddKeyCount();
         GameVariables.Instance.AddCollectedCount(this);
-        EventDispatcher.Raise(new KeyCollectedEvent());
         Destroy(gameObject);
     }
 }

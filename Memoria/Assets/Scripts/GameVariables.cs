@@ -17,9 +17,10 @@ public class GameVariables
     List<string> _collectedPieces = new();
     private string _comicToLoad = string.Empty;
     public string ComicToLoad => _comicToLoad;
-    public static int keyCount;
-    public RoomConnection ActiveConnection = null;
+    private int keyCount = 0;
+    public int KeyCount => keyCount;
 
+    public RoomConnection ActiveConnection = null;
     public void AddCollectedCount(Interactable interactable)
     {
         _collectedPieces.Add(interactable.name);
@@ -33,6 +34,16 @@ public class GameVariables
                 interactable.gameObject.SetActive(false);
             }
         }
+    }
+    public void AddKeyCount()
+    {
+        keyCount++;
+        EventDispatcher.Raise(new KeyCollectedEvent());
+    }
+    public void SubtractKeyCount()
+    {
+        keyCount--;
+        EventDispatcher.Raise(new KeyUsedEvent());
     }
     public void SetActiveRoomConnection(RoomConnection connection)
     {

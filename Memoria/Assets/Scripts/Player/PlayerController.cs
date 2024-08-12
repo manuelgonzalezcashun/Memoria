@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
 
         transform.localScale = new Vector3(velocity, 1, 1);
     }
-    void PlayerInteract(PlayerInteractEvent evt) //* Interacts with objects
+    void PlayerInteract(InteractPressedEvent evt) //* Interacts with objects
     {
         player_asm.ChangeAnimState("Collect");
         InteractableManager.Instance.InteractWithObjects();
@@ -85,7 +85,7 @@ public class PlayerController : MonoBehaviour
         //EventDispatcher.AddListener<PuzzleWinEvent>(ctx => HandlePlayerInput(true));
 
         EventDispatcher.AddListener<SpawnPlayerEvent>(PlayerSpawn);
-        EventDispatcher.AddListener<PlayerInteractEvent>(PlayerInteract);
+        EventDispatcher.AddListener<InteractPressedEvent>(PlayerInteract);
     }
     void RemoveListeners()
     {
@@ -94,7 +94,7 @@ public class PlayerController : MonoBehaviour
         //TODO EventDispatcher.RemoveListener<PuzzleWinEvent>(ctx => HandlePlayerInput(true));
 
         EventDispatcher.RemoveListener<SpawnPlayerEvent>(PlayerSpawn);
-        EventDispatcher.RemoveListener<PlayerInteractEvent>(PlayerInteract);
+        EventDispatcher.RemoveListener<InteractPressedEvent>(PlayerInteract);
     }
     #endregion
 

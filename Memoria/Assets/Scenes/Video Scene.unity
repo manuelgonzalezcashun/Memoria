@@ -1348,7 +1348,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-  itchBuild: 0
+  itchBuild: 1
 --- !u!1 &1922891578
 GameObject:
   m_ObjectHideFlags: 0

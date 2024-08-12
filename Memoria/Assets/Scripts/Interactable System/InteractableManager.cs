@@ -3,12 +3,12 @@ using UnityEngine;
 public class InteractableManager
 {
     private List<Interactable> _interactables = new List<Interactable>();
-    private Interactable closestInteractable = null;
-
+    private Interactable _closestInteractable = null;
+    public Interactable ClosestInteractable => _closestInteractable;
     public void SearchForNearestInteractable(Vector3 interactPosition, float interactDistance)
     {
         float closestDistance = interactDistance;
-        closestInteractable = null;
+        _closestInteractable = null;
         EventDispatcher.Raise(new ShowInteractUI { showUI = false, interactable = null });
 
         foreach (Interactable interactable in _interactables)
@@ -18,25 +18,25 @@ public class InteractableManager
             if (distance < closestDistance)
             {
                 closestDistance = distance;
-                closestInteractable = interactable;
+                _closestInteractable = interactable;
 
-                EventDispatcher.Raise(new ShowInteractUI { showUI = true, interactable = closestInteractable });
+                EventDispatcher.Raise(new ShowInteractUI { showUI = true, interactable = _closestInteractable });
             }
         }
     }
     public void PickupInteractable()
     {
-        if (closestInteractable != null &&
-        closestInteractable.CanPickupInteractable)
+        if (_closestInteractable != null &&
+        _closestInteractable.CanPickupInteractable)
         {
-            closestInteractable.Interact();
+            _closestInteractable.Interact();
         }
     }
     public void InteractWithObjects()
     {
-        if (closestInteractable == null) return;
+        if (_closestInteractable == null) return;
 
-        closestInteractable.Interact();
+        _closestInteractable.Interact();
     }
 
     public void Add(Interactable interactable)

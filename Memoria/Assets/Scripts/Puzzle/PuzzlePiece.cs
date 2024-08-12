@@ -6,7 +6,7 @@ public class PuzzlePiece : MonoBehaviour, IClickable
     PointClick pointClick;
     Collider2D puzzleCollider;
     Image puzzleImage;
-    float collisionDist = 1.0f;
+    [SerializeField] float collisionDist = 1.5f;
     bool lockPiece = false;
     public GameObject dropArea = null;
     void Awake()
