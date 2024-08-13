@@ -5,7 +5,7 @@ public class InputManager : Singleton<InputManager>
 {
     PlayerInput playerInput = null;
 
-    private InputAction moveAction = null, interactAction = null, dialogueAction = null;
+    private InputAction moveAction = null, interactAction = null, dialogueAction = null, pauseAction = null;
     public InputAction MoveAction => moveAction;
     void OnEnable()
     {
@@ -14,20 +14,23 @@ public class InputManager : Singleton<InputManager>
         moveAction = playerInput.actions["Move"];
         interactAction = playerInput.actions["Interact"];
         dialogueAction = playerInput.actions["Dialogue"];
+        pauseAction = playerInput.actions["Pause"];
 
-        EventDispatcher.AddListener<ChangeActionMapEvent>(ctx => ChangePlayerActionMap(ctx.newActionMap));
+        EventDispatcher.AddListener<ChangeActionMapEvent>(ChangePlayerActionMap);
         interactAction.performed += RaiseInteractEvent;
         dialogueAction.performed += RaiseDialogueEvent;
+        pauseAction.performed += RaisePauseEvent;
     }
-
     void OnDisable()
     {
-        EventDispatcher.RemoveListener<ChangeActionMapEvent>(ctx => ChangePlayerActionMap(ctx.newActionMap));
+        EventDispatcher.RemoveListener<ChangeActionMapEvent>(ChangePlayerActionMap);
 
         if (interactAction == null) return;
         interactAction.performed -= RaiseInteractEvent;
         dialogueAction.performed -= RaiseDialogueEvent;
+        pauseAction.performed -= RaisePauseEvent;
     }
+    void ChangePlayerActionMap(ChangeActionMapEvent evt) => ChangePlayerActionMap(evt.newActionMap);
     void ChangePlayerActionMap(string mapName)
     {
         if (playerInput == null) return;
@@ -47,5 +50,12 @@ public class InputManager : Singleton<InputManager>
 
         DialoguePressedEvent dialogue = new DialoguePressedEvent();
         EventDispatcher.Raise(dialogue);
+    }
+    private void RaisePauseEvent(InputAction.CallbackContext context)
+    {
+        if (pauseAction == null) return;
+
+        GamePausedEvent gamePaused = new GamePausedEvent { isPaused = true };
+        EventDispatcher.Raise(gamePaused);
     }
 }

@@ -3,8 +3,10 @@ using UnityEngine.SceneManagement;
 using Eflatun.SceneReference;
 public class MenuButton : MonoBehaviour
 {
-    [SerializeField] string _clickClipName = "";
     [SerializeField] SceneReference scene = null;
+
+    const string _clickClipName = "Menu";
+
     public void LoadScene()
     {
         if (SceneManager.GetSceneByName(scene.Name).isLoaded)

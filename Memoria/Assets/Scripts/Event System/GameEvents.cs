@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 public class ShowInteractUI : Event
 {
@@ -53,7 +54,17 @@ public class StopSoundEvent : Event
 public class ChangeActionMapEvent : Event
 {
     public string newActionMap = string.Empty;
+
+    public static implicit operator bool(ChangeActionMapEvent v)
+    {
+        throw new NotImplementedException();
+    }
 }
 
 public class ScreenShakeEvent : Event { }
 public class RemoveItemEvent : Event { }
+
+public class GamePausedEvent : Event
+{
+    public bool isPaused = false;
+}
