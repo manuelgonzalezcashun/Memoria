@@ -1,7 +1,9 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public abstract class Interactable : MonoBehaviour
 {
+    public UnityEvent interactedEvent = null;
     [SerializeField] bool canPickup = false;
     public bool CanPickupInteractable => canPickup;
 
@@ -35,5 +37,16 @@ public abstract class Interactable : MonoBehaviour
 
         interactUI.SetActive(evtData.showUI);
     }
-    public abstract void Interact();
+    public virtual void Interact()
+    {
+        if (dialogueLoader != null)
+        {
+            dialogueLoader.LoadDialogue();
+        }
+
+        if (interactedEvent != null)
+        {
+            interactedEvent?.Invoke();
+        }
+    }
 }

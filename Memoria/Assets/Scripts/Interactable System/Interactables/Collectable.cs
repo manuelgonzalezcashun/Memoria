@@ -9,14 +9,13 @@ public class Collectable : Interactable, IClickable
     }
     public override void Interact()
     {
-        if (DialogueLoader != null)
+        if (DialogueLoader == null)
         {
-            DialogueLoader.SetCollectable(this);
-            DialogueLoader.LoadDialogue();
-            return;
+            Collect();
         }
 
-        Collect();
+        DialogueLoader.SetCollectable(this);
+        base.Interact();
     }
     public void Collect()
     {

@@ -14,7 +14,7 @@ public class KeyGate : Interactable
     {
         if (GameVariables.Instance.KeyCount < 1)
         {
-            if (DialogueLoader != null) DialogueLoader.LoadDialogue();
+            base.Interact();
             return;
         }
 
