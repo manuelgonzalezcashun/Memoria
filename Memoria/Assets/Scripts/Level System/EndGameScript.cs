@@ -9,9 +9,6 @@ public class EndGameScript : MonoBehaviour
     {
         if (endScene == null) return;
 
-        // !PuzzleWinEvent puzzleWinEvent = new PuzzleWinEvent();
-        // !EventDispatcher.Raise(puzzleWinEvent);
-
         GameVariables.Instance.SetActiveRoomConnection(endConnection);
 
         LoadPuzzleEvent loadPuzzleEvent = new LoadPuzzleEvent { loaded = false };

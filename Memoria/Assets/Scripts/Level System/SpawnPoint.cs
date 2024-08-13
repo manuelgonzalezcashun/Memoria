@@ -7,7 +7,10 @@ public class SpawnPoint : MonoBehaviour
 
     private bool _isSpawnSuitable => _pointTransform != null && GameVariables.Instance.ActiveConnection == _roomConnection;
 
-
+    private void Start()
+    {
+        SpawnAtPoint();
+    }
     public void SpawnAtPoint()
     {
         if (_isSpawnSuitable)
