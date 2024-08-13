@@ -7,13 +7,6 @@ public class Door : Interactable
     [SerializeField] private SpawnPoint _spawnPoint;
 
     [SerializeField] private bool _doorLocked;
-
-    void Start()
-    {
-        if (_spawnPoint == null) return;
-
-        _spawnPoint.SpawnAtPoint();
-    }
     public override void Interact()
     {
         if (_doorLocked)

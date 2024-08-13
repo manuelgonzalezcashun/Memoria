@@ -548,6 +548,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f09282ffb6d51b9499986e26f5afbd97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactedEvent:
+    m_PersistentCalls:
+      m_Calls: []
   canPickup: 0
   interactUI: {fileID: 0}
   _event:
@@ -922,6 +925,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7594290678607044130, guid: aa83289ee569b4f498c00d14b3f91eb6, type: 3}
+      propertyPath: _roomConnection
+      value: 
+      objectReference: {fileID: 11400000, guid: 233a3a2587ac0ed45b5c1acde276f8f4, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

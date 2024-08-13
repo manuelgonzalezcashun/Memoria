@@ -242,6 +242,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2a34dfa90b796b47beaa603186e5b15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactedEvent:
+    m_PersistentCalls:
+      m_Calls: []
   canPickup: 0
   interactUI: {fileID: 3637172917624829238}
 --- !u!61 &9182743711204260216

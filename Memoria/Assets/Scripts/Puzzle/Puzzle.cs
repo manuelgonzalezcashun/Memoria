@@ -10,14 +10,14 @@ public class Puzzle : MonoBehaviour
 
     void OnEnable()
     {
-        EventDispatcher.AddListener<AddPuzzlePieceCount>(ctx => AddToPieceCount());
+        EventDispatcher.AddListener<AddPuzzlePieceCount>(AddToPieceCount);
     }
     void OnDisable()
     {
-        EventDispatcher.RemoveListener<AddPuzzlePieceCount>(ctx => AddToPieceCount());
+        EventDispatcher.RemoveListener<AddPuzzlePieceCount>(AddToPieceCount);
     }
 
-    void AddToPieceCount()
+    void AddToPieceCount(AddPuzzlePieceCount evt)
     {
         pieceCount++;
 

@@ -60,6 +60,9 @@ public class GameVariables
         _collectedPieces.Clear();
         _comicToLoad = string.Empty;
         keyCount = 0;
+
+        ChangeActionMapEvent changeActionMap = new ChangeActionMapEvent { newActionMap = "Player" };
+        EventDispatcher.Raise(changeActionMap);
     }
 }
 
