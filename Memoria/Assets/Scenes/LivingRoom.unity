@@ -990,7 +990,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3919400806032336654, guid: 37aeb369bab3eed468d9ebcb7abb2d46, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 21.13
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 3919400806032336654, guid: 37aeb369bab3eed468d9ebcb7abb2d46, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1320,7 +1320,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3919400806032336654, guid: 37aeb369bab3eed468d9ebcb7abb2d46, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -119.18
+      value: -136.1
       objectReference: {fileID: 0}
     - target: {fileID: 3919400806032336654, guid: 37aeb369bab3eed468d9ebcb7abb2d46, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1512,7 +1512,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -40.7299, y: -2.1927}
+  m_AnchoredPosition: {x: -57.900005, y: -2.1927}
   m_SizeDelta: {x: 39.4712, y: 11.2986}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1035403764
@@ -1934,7 +1934,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 64.1647, y: -2.2036}
+  m_AnchoredPosition: {x: 78.6, y: -2.2036}
   m_SizeDelta: {x: 31.304, y: 11.288}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1104041142
@@ -2099,11 +2099,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 461526358538808585, guid: a2061a4d3ba2c4423860dc2ca1a38e12, type: 3}
       propertyPath: _camLimitX.x
-      value: -55
+      value: -74
       objectReference: {fileID: 0}
     - target: {fileID: 461526358538808585, guid: a2061a4d3ba2c4423860dc2ca1a38e12, type: 3}
       propertyPath: _camLimitX.y
-      value: 75
+      value: 88
       objectReference: {fileID: 0}
     - target: {fileID: 461526358538808585, guid: a2061a4d3ba2c4423860dc2ca1a38e12, type: 3}
       propertyPath: _camLimitY.x
@@ -2616,6 +2616,10 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 165811581
       objectReference: {fileID: 0}
+    - target: {fileID: 5111193330544163711, guid: b84baa57d4608314d832904a7f843409, type: 3}
+      propertyPath: database
+      value: 
+      objectReference: {fileID: 11400000, guid: 5b3846fd76c23491d8f51a3e4ab2914f, type: 2}
     - target: {fileID: 6346634058133796567, guid: b84baa57d4608314d832904a7f843409, type: 3}
       propertyPath: m_Name
       value: Family Photo
@@ -2889,6 +2893,10 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 165811581
       objectReference: {fileID: 0}
+    - target: {fileID: 5111193330544163711, guid: b84baa57d4608314d832904a7f843409, type: 3}
+      propertyPath: database
+      value: 
+      objectReference: {fileID: 11400000, guid: 7dba0b42f7e494b2c968299fe2cfe75e, type: 2}
     - target: {fileID: 6346634058133796567, guid: b84baa57d4608314d832904a7f843409, type: 3}
       propertyPath: m_Name
       value: Apples

@@ -226,6 +226,88 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1001 &355232763
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4748294068354768095, guid: 95df00ff827800f4f97d356ba5f79311, type: 3}
+      propertyPath: _songName
+      value: Beach Waves
+      objectReference: {fileID: 0}
+    - target: {fileID: 6738214791942565113, guid: 95df00ff827800f4f97d356ba5f79311, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6738214791942565113, guid: 95df00ff827800f4f97d356ba5f79311, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6738214791942565113, guid: 95df00ff827800f4f97d356ba5f79311, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6738214791942565113, guid: 95df00ff827800f4f97d356ba5f79311, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6738214791942565113, guid: 95df00ff827800f4f97d356ba5f79311, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6738214791942565113, guid: 95df00ff827800f4f97d356ba5f79311, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6738214791942565113, guid: 95df00ff827800f4f97d356ba5f79311, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6738214791942565113, guid: 95df00ff827800f4f97d356ba5f79311, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6738214791942565113, guid: 95df00ff827800f4f97d356ba5f79311, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6738214791942565113, guid: 95df00ff827800f4f97d356ba5f79311, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8761124677337099355, guid: 95df00ff827800f4f97d356ba5f79311, type: 3}
+      propertyPath: m_Name
+      value: MusicLoader
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8761124677337099355, guid: 95df00ff827800f4f97d356ba5f79311, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 355232765}
+  m_SourcePrefab: {fileID: 100100000, guid: 95df00ff827800f4f97d356ba5f79311, type: 3}
+--- !u!1 &355232764 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8761124677337099355, guid: 95df00ff827800f4f97d356ba5f79311, type: 3}
+  m_PrefabInstance: {fileID: 355232763}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &355232765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355232764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d437972f4b80a61488c93370818e83d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _songName: Beach
 --- !u!1 &391481596
 GameObject:
   m_ObjectHideFlags: 0
@@ -520,6 +602,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71ec5454fa0e00b4e9fa5e422fa2dbb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _clickClipName: 
   scene:
     asset: {fileID: 102900000, guid: b87836a744d233c4aae241100605071c, type: 3}
     guid: b87836a744d233c4aae241100605071c
@@ -932,3 +1015,4 @@ SceneRoots:
   - {fileID: 3785661117249184095}
   - {fileID: 664618812}
   - {fileID: 3262388217354982688}
+  - {fileID: 355232763}

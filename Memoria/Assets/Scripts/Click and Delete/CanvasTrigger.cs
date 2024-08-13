@@ -12,9 +12,6 @@ public class CanvasTrigger : Interactable
     {
         EventDispatcher.AddListener<ShowDialogueEvent>(ctx => CheckForDialogue(ctx.showDialogueUI));
     }
-
-
-
     void Update()
     {
         if (gameObject.activeInHierarchy && !dialogueIsPlaying && Input.GetKeyDown(KeyCode.Space))
