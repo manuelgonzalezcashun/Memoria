@@ -4493,6 +4493,7 @@ MonoBehaviour:
   endScene:
     asset: {fileID: 102900000, guid: a3e971375011cfc49b1110a5c1c3dc6b, type: 3}
     guid: a3e971375011cfc49b1110a5c1c3dc6b
+  endConnection: {fileID: 11400000, guid: 233a3a2587ac0ed45b5c1acde276f8f4, type: 2}
 --- !u!1 &1387271526
 GameObject:
   m_ObjectHideFlags: 0
@@ -8015,7 +8016,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 556304688585382051, guid: f892acf4ee65177438315048b1da1548, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 556304688585382051, guid: f892acf4ee65177438315048b1da1548, type: 3}
       propertyPath: m_AnchorMin.x
@@ -8023,7 +8024,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 556304688585382051, guid: f892acf4ee65177438315048b1da1548, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 556304688585382051, guid: f892acf4ee65177438315048b1da1548, type: 3}
       propertyPath: m_SizeDelta.x
@@ -8075,11 +8076,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 556304688585382051, guid: f892acf4ee65177438315048b1da1548, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 556304688585382051, guid: f892acf4ee65177438315048b1da1548, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 556304688585382051, guid: f892acf4ee65177438315048b1da1548, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
