@@ -6,6 +6,8 @@ public class Door : Interactable
     [SerializeField] private SceneReference roomToLoad;
     [SerializeField] private SpawnPoint _spawnPoint;
 
+    [SerializeField] private bool _doorLocked;
+
     void Start()
     {
         if (_spawnPoint == null) return;
@@ -14,9 +16,9 @@ public class Door : Interactable
     }
     public override void Interact()
     {
-        if (DialogueLoader != null)
+        if (_doorLocked)
         {
-            DialogueLoader.LoadDialogue();
+            base.Interact();
             return;
         }
 
@@ -24,5 +26,9 @@ public class Door : Interactable
 
         LoadSceneEvent loadSceneEvent = new LoadSceneEvent { sceneToLoad = roomToLoad.Name };
         EventDispatcher.Raise(loadSceneEvent);
+    }
+    public void UnlockDoor()
+    {
+        _doorLocked = false;
     }
 }

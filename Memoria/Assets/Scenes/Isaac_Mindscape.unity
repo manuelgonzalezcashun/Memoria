@@ -551,6 +551,10 @@ PrefabInstance:
       value: Backyard
       objectReference: {fileID: 0}
     - target: {fileID: 1405681280328048943, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
+      propertyPath: _doorLocked
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1405681280328048943, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
       propertyPath: _spawnPoint
       value: 
       objectReference: {fileID: 278564548}
@@ -612,6 +616,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4744790879723357861, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 278564550}
     - targetCorrespondingSourceObject: {fileID: 8740289074021146483, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
       insertIndex: -1
       addedObject: {fileID: 278564547}
@@ -667,6 +674,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d7c15a5cd927fc4fa33a2ed63bacf7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &278564549 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4744790879723357861, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
+  m_PrefabInstance: {fileID: 278564544}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &278564550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278564549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d93df170468adac419040af5dc783f56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  database: {fileID: 11400000, guid: 6bce659b123e56840bccc35e43cf2b7d, type: 2}
 --- !u!1 &297650103
 GameObject:
   m_ObjectHideFlags: 0
@@ -807,6 +832,34 @@ PrefabInstance:
     - target: {fileID: 6393962207084805078, guid: b84baa57d4608314d832904a7f843409, type: 3}
       propertyPath: dialogueLoader
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393962207084805078, guid: b84baa57d4608314d832904a7f843409, type: 3}
+      propertyPath: interactedEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393962207084805078, guid: b84baa57d4608314d832904a7f843409, type: 3}
+      propertyPath: interactedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393962207084805078, guid: b84baa57d4608314d832904a7f843409, type: 3}
+      propertyPath: interactedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1452316456}
+    - target: {fileID: 6393962207084805078, guid: b84baa57d4608314d832904a7f843409, type: 3}
+      propertyPath: interactedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393962207084805078, guid: b84baa57d4608314d832904a7f843409, type: 3}
+      propertyPath: interactedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UnlockDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393962207084805078, guid: b84baa57d4608314d832904a7f843409, type: 3}
+      propertyPath: interactedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Door, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393962207084805078, guid: b84baa57d4608314d832904a7f843409, type: 3}
+      propertyPath: interactedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6684122434880838210, guid: b84baa57d4608314d832904a7f843409, type: 3}
       propertyPath: m_SizeDelta.x
@@ -2471,6 +2524,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1452316456 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1405681280328048943, guid: f340f4f5924eb4040bfcc54d997a4171, type: 3}
+  m_PrefabInstance: {fileID: 278564544}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278564549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db48f242eeb5acc47a80c08f26b2b05d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1458178685
 GameObject:
   m_ObjectHideFlags: 0
