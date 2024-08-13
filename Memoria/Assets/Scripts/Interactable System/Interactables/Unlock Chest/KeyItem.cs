@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class KeyItem : Interactable
 {
-    void Awake()
+    void Start()
     {
         GameVariables.Instance.CheckIfCollected(this);
     }

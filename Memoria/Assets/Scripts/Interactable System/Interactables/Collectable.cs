@@ -3,24 +3,19 @@ using UnityEngine;
 public class Collectable : Interactable, IClickable
 {
     private const string k_CollectSound = "Collect";
-    void Awake()
+    void Start()
     {
         GameVariables.Instance.CheckIfCollected(this);
     }
-    void CheckIfClosestCollectable()
-    {
-        if (this == InteractableManager.Instance.ClosestInteractable)
-        {
-            Database.SetCollectable(this);
-        }
-    }
-    void LateUpdate()
-    {
-        CheckIfClosestCollectable();
-    }
     public override void Interact()
     {
-        Database.LoadDialogue();
+        if (DialogueLoader == null)
+        {
+            Collect();
+        }
+
+        DialogueLoader.SetCollectable(this);
+        base.Interact();
     }
     public void Collect()
     {
@@ -37,6 +32,5 @@ public class Collectable : Interactable, IClickable
     public void Click()
     {
         Interact();
-        Database.SetCollectable(this);
     }
 }
