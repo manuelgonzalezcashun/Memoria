@@ -80,3 +80,13 @@ MonoBehaviour:
     loop: 1
     volume: 0.2
     audioSource: {fileID: 0}
+  - clipName: Beach Waves
+    audioClip: {fileID: 8300000, guid: 47afc162413c4c142af58462a268df9b, type: 3}
+    loop: 1
+    volume: 0.2
+    audioSource: {fileID: 0}
+  - clipName: Beach
+    audioClip: {fileID: 8300000, guid: c199e41894e75bf41adeabe84c570ada, type: 3}
+    loop: 1
+    volume: 0.5
+    audioSource: {fileID: 0}

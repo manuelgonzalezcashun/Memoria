@@ -5,23 +5,22 @@ public abstract class Interactable : MonoBehaviour
     [SerializeField] bool canPickup = false;
     public bool CanPickupInteractable => canPickup;
 
-    [SerializeField] DialogueDatabase database;
-    public DialogueDatabase Database => database;
-
+    private DialogueLoader dialogueLoader = null;
+    public DialogueLoader DialogueLoader => dialogueLoader;
     public GameObject interactUI = null;
     protected void OnEnable()
     {
         InteractableManager.Instance.Add(this);
         EventDispatcher.AddListener<ShowInteractUI>(ShowUI);
-
-        if (database != null) EventDispatcher.AddListener<DialoguePressedEvent>(database.StepThroughDialogue);
     }
     protected void OnDisable()
     {
         InteractableManager.Instance.Remove(this);
         EventDispatcher.RemoveListener<ShowInteractUI>(ShowUI);
-
-        if (database != null) EventDispatcher.RemoveListener<DialoguePressedEvent>(database.StepThroughDialogue);
+    }
+    void Awake()
+    {
+        TryGetComponent(out dialogueLoader);
     }
     void ShowUI(ShowInteractUI evtData)
     {

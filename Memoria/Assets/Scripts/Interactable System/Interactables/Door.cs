@@ -14,6 +14,12 @@ public class Door : Interactable
     }
     public override void Interact()
     {
+        if (DialogueLoader != null)
+        {
+            DialogueLoader.LoadDialogue();
+            return;
+        }
+
         _spawnPoint.SetActiveConnection();
 
         LoadSceneEvent loadSceneEvent = new LoadSceneEvent { sceneToLoad = roomToLoad.Name };

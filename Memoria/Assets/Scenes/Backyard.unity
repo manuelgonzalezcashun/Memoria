@@ -183,6 +183,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5111193330544163711, guid: b84baa57d4608314d832904a7f843409, type: 3}
+      propertyPath: database
+      value: 
+      objectReference: {fileID: 11400000, guid: d180d718e87814e599589104c921f01f, type: 2}
     - target: {fileID: 6346634058133796567, guid: b84baa57d4608314d832904a7f843409, type: 3}
       propertyPath: m_Name
       value: Collectable (1)
@@ -191,6 +195,10 @@ PrefabInstance:
       propertyPath: database
       value: 
       objectReference: {fileID: 11400000, guid: d180d718e87814e599589104c921f01f, type: 2}
+    - target: {fileID: 6393962207084805078, guid: b84baa57d4608314d832904a7f843409, type: 3}
+      propertyPath: dialogueLoader
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6953410317771768411, guid: b84baa57d4608314d832904a7f843409, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.82906497
