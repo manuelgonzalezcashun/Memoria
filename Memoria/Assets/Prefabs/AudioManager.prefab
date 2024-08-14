@@ -90,3 +90,8 @@ MonoBehaviour:
     loop: 1
     volume: 0.5
     audioSource: {fileID: 0}
+  - clipName: Living Room
+    audioClip: {fileID: 8300000, guid: 490b547172089fa468e7fbc12dd0e03e, type: 3}
+    loop: 1
+    volume: 0.5
+    audioSource: {fileID: 0}
