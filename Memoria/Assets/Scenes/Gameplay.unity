@@ -949,8 +949,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 351704372}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.974, y: 1.225, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1450,6 +1450,18 @@ MonoBehaviour:
   - _name: Starburst
     _clip: {fileID: 7400000, guid: 68385e5cb7c009949bd6d42d30043d52, type: 2}
   playOnAwake: 0
+--- !u!114 &516703975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516703965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be4eca5c48a5f5542a9297d942fe63c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &545567788
 GameObject:
   m_ObjectHideFlags: 0
@@ -2821,6 +2833,7 @@ GameObject:
   - component: {fileID: 926472353}
   - component: {fileID: 926472352}
   - component: {fileID: 926472354}
+  - component: {fileID: 926472355}
   m_Layer: 0
   m_Name: PuzzleCamera
   m_TagString: Untagged
@@ -2907,6 +2920,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugMode: 0
+--- !u!81 &926472355
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 926472350}
+  m_Enabled: 1
 --- !u!1 &931178790
 GameObject:
   m_ObjectHideFlags: 0
@@ -3042,7 +3063,7 @@ RectTransform:
   m_GameObject: {fileID: 946155740}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1841135258}
@@ -6777,6 +6798,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1065745328789369414, guid: 2e8ecc6ebfabf0f479b8648dfb9396da, type: 3}
       insertIndex: -1
       addedObject: {fileID: 516703970}
+    - targetCorrespondingSourceObject: {fileID: 1065745328789369414, guid: 2e8ecc6ebfabf0f479b8648dfb9396da, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 516703975}
   m_SourcePrefab: {fileID: 100100000, guid: 2e8ecc6ebfabf0f479b8648dfb9396da, type: 3}
 --- !u!224 &1829791059 stripped
 RectTransform:
