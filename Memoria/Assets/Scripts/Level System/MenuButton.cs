@@ -20,6 +20,7 @@ public class MenuButton : MonoBehaviour
     public void UnloadVideoScene()
     {
         SceneManager.UnloadSceneAsync("Video Scene");
+        EventDispatcher.Raise(new ChangeActionMapEvent { newActionMap = "Player" });
     }
     public void PlayClickSound()
     {

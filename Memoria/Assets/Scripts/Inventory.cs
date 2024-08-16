@@ -69,6 +69,6 @@ public class Inventory : MonoBehaviour
     {
         GameVariables.Instance.SetComicToLoad(name);
         EventDispatcher.Raise(new LoadVideoComics { });
-
+        EventDispatcher.Raise(new ChangeActionMapEvent { newActionMap = "Disable" });
     }
 }
