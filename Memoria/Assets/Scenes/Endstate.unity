@@ -816,7 +816,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1e2bb363e5c0e4e31b9b00d292fb0317, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e97770db23f06467a8c13fb91b5cdd2d, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2497,7 +2497,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 461526358538808585, guid: a2061a4d3ba2c4423860dc2ca1a38e12, type: 3}
       propertyPath: _camLimitY.x
-      value: -5
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 461526358538808585, guid: a2061a4d3ba2c4423860dc2ca1a38e12, type: 3}
       propertyPath: _camLimitY.y
