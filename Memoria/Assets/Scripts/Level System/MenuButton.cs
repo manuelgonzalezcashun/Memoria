@@ -6,7 +6,6 @@ public class MenuButton : MonoBehaviour
     [SerializeField] SceneReference scene = null;
 
     const string _clickClipName = "Menu";
-
     public void LoadScene()
     {
         if (SceneManager.GetSceneByName(scene.Name).isLoaded)
@@ -16,6 +15,11 @@ public class MenuButton : MonoBehaviour
         }
 
         SceneManager.LoadScene(scene.Name);
+    }
+
+    public void UnloadVideoScene()
+    {
+        SceneManager.UnloadSceneAsync("Video Scene");
     }
     public void PlayClickSound()
     {

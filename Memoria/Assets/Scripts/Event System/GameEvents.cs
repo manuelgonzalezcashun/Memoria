@@ -18,6 +18,7 @@ public class LoadPuzzleEvent : Event
 public class PuzzleWinEvent : Event { }
 public class SpawnDoor : Event { }
 
+public class LoadVideoComics : Event { }
 public class LoadSceneEvent : Event
 {
     public string sceneToLoad = string.Empty;
