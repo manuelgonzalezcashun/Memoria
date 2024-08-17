@@ -13,10 +13,13 @@ public class RoomManager : MonoBehaviour
     void OnEnable()
     {
         EventDispatcher.AddListener<LoadSceneEvent>(LoadScreen);
+        EventDispatcher.AddListener<LoadVideoComics>(LoadVideoScene);
+
     }
     void OnDisable()
     {
         EventDispatcher.RemoveListener<LoadSceneEvent>(LoadScreen);
+        EventDispatcher.RemoveListener<LoadVideoComics>(LoadVideoScene);
     }
     void Start()
     {
@@ -61,5 +64,9 @@ public class RoomManager : MonoBehaviour
 
         loadingScreen.SetActive(false);
         EventDispatcher.Raise(new ChangeActionMapEvent { newActionMap = "Player" });
+    }
+    void LoadVideoScene(LoadVideoComics evt)
+    {
+        SceneManager.LoadScene("Video Scene", LoadSceneMode.Additive);
     }
 }

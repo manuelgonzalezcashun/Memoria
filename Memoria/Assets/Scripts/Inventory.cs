@@ -25,6 +25,27 @@ public class Inventory : MonoBehaviour
         pieceCount++;
         counterText.text = pieceCount + "/6";
 
+        switch (pieceCount)
+        {
+            case 0:
+                break;
+            case 1:
+                PlayComicVideo("Piece 1");
+                break;
+            case 2:
+                PlayComicVideo("Piece 2");
+                break;
+            case 3:
+                PlayComicVideo("Piece 3");
+                break;
+            case 4:
+                PlayComicVideo("Piece 4");
+                break;
+            case 5:
+                PlayComicVideo("Piece 5");
+                break;
+        }
+
         if (pieceCount == 6)
         {
             LoadPuzzleEvent loadPuzzleEvent = new LoadPuzzleEvent { loaded = true };
@@ -43,5 +64,11 @@ public class Inventory : MonoBehaviour
         if (keyIcon == null) return;
 
         keyIcon.SetActive(false);
+    }
+    void PlayComicVideo(string name)
+    {
+        GameVariables.Instance.SetComicToLoad(name);
+        EventDispatcher.Raise(new LoadVideoComics { });
+        EventDispatcher.Raise(new ChangeActionMapEvent { newActionMap = "Disable" });
     }
 }
