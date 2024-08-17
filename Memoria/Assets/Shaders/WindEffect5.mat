@@ -47,10 +47,10 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _WindIntensity: 1
-    - _WindSpeed: 0.33
+    - _WindSpeed: 0.1
     m_Colors:
-    - _Color: {r: 1, g: 0.82745105, b: 0.30980393, a: 1}
-    - _ColorTop: {r: 0.9716981, g: 0.94233215, b: 0.7104397, a: 1}
+    - _Color: {r: 0.7924528, g: 0.6270468, b: 0.13082945, a: 1}
+    - _ColorTop: {r: 0.9716981, g: 0.860149, b: 0.55460125, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &32139913664074348
 MonoBehaviour:
