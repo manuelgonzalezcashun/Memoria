@@ -1727,6 +1727,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727c680a67ca388448ab8e8c608e13ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactedEvent:
+    m_PersistentCalls:
+      m_Calls: []
   canPickup: 0
   interactUI: {fileID: 0}
 --- !u!1 &345977401
@@ -2108,10 +2111,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2a34dfa90b796b47beaa603186e5b15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactedEvent:
+    m_PersistentCalls:
+      m_Calls: []
   canPickup: 0
   interactUI: {fileID: 1118281932}
-  database: {fileID: 11400000, guid: 6bce659b123e56840bccc35e43cf2b7d, type: 2}
-  debugMode: 0
 --- !u!1 &379462823
 GameObject:
   m_ObjectHideFlags: 0
@@ -2631,6 +2635,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e5b5f4be67c26d499bd2740a2584d4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactedEvent:
+    m_PersistentCalls:
+      m_Calls: []
   canPickup: 0
   interactUI: {fileID: 0}
   puzzlepiece: {fileID: 82157218}
@@ -2849,7 +2856,7 @@ MonoBehaviour:
   animClips:
   - _name: Rain
     _clip: {fileID: 7400000, guid: 43153114fda988d4a9c1131af1da085e, type: 2}
-  playOnAwake: 0
+  playOnAwake: 1
 --- !u!1 &527851274
 GameObject:
   m_ObjectHideFlags: 0
@@ -7575,7 +7582,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffc30816a9ca31e48a3dd6a6e25f9d28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Collectable: {fileID: 63966362}
+  _blockingObjects: []
+  _collectable: {fileID: 0}
 --- !u!114 &1499363009
 MonoBehaviour:
   m_ObjectHideFlags: 0
