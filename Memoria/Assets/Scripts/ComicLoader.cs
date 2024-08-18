@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// * Checks which comic to load if it exists in scene
 public class ComicLoader : MonoBehaviour
 {
     [SerializeField] string comicToLoad = string.Empty;

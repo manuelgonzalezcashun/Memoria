@@ -12,7 +12,7 @@ public class KeyGate : Interactable
     }
     public override void Interact()
     {
-        if (GameVariables.Instance.KeyCount < 1)
+        if (GameVariables.Instance.KeysCollected < 1)
         {
             base.Interact();
             return;

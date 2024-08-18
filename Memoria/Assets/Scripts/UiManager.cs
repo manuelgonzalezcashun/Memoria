@@ -32,10 +32,13 @@ public class UiManager : MonoBehaviour
     //     collectableTextUI.text = $"Memories Collected {score}/{count}";
     // }
 
+    // * Loads Puzzle UI after all the puzzle pieces are collected
     void OnPuzzleLoaded(LoadPuzzleEvent evt)
     {
         EnableUI(!evt.loaded);
     }
+
+    // * Sets Canvas Gameobject active or inactive
     void EnableUI(bool enable)
     {
         if (UICanvas == null) return;

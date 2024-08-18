@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// * For use whenever creating Singleton Manager scripts
 public abstract class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 {
     private static T _instance = null;

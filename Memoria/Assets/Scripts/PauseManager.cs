@@ -26,9 +26,10 @@ public class PauseManager : MonoBehaviour
         pauseMenu.SetActive(pause);
 
         if (pause)
-            changeActionMap = new ChangeActionMapEvent { newActionMap = "Pause" };
+            changeActionMap = new ChangeActionMapEvent { newActionMap = "Pause" }; // * Changes Input Action Map so Player doesn't move when pause menu is active
+
         else
-            changeActionMap = new ChangeActionMapEvent { newActionMap = "Player" };
+            changeActionMap = new ChangeActionMapEvent { newActionMap = "Player" }; // * Changes Input Action Map back so player can move again
 
         EventDispatcher.Raise(changeActionMap);
     }

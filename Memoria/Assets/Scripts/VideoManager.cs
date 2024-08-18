@@ -3,6 +3,7 @@ using UnityEngine.Video;
 using System.Collections.Generic;
 using System;
 using UnityEngine.Events;
+using System.Linq;
 
 public class VideoManager : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class VideoManager : MonoBehaviour
     {
         vp = GetComponent<VideoPlayer>();
 
+        // * Initializes Comic Dictionary from the list of comics using the comic name as the key
         foreach (var comic in comics)
         {
             m_ComicDict.Add(comic.name, comic);
@@ -34,6 +36,7 @@ public class VideoManager : MonoBehaviour
     void Start() => PlayVideo(GameVariables.Instance.ComicToLoad);
     void Update()
     {
+        // * When Space is pressed, play the next video in the dictionary 
         if (Input.GetKeyDown(KeyCode.Space))
         {
             PlayNextVideo();
@@ -41,7 +44,7 @@ public class VideoManager : MonoBehaviour
     }
     private void PlayVideo(VideoClip videoClip)
     {
-        if (itchBuild)
+        if (itchBuild) // * Changes the way videos are loaded for WebGL Builds
         {
             vp.source = VideoSource.Url;
             vp.url = $"{Application.streamingAssetsPath}/{videoClip.name}.mp4";
@@ -53,6 +56,8 @@ public class VideoManager : MonoBehaviour
         }
         vp.Play();
     }
+
+    // * Checks if comic video exists in Dictionary, then plays the video
     private void PlayVideo(string comicName)
     {
         if (!m_ComicDict.ContainsKey(comicName))
@@ -67,6 +72,8 @@ public class VideoManager : MonoBehaviour
 
         PlayVideo(videoClip);
     }
+
+    // * Plays next video in the list of comic videos
     private void PlayNextVideo()
     {
         currentIndex++;
@@ -83,6 +90,7 @@ public class VideoManager : MonoBehaviour
         PlayVideo(_comicVideos[currentIndex]);
     }
 
+    // * Creates a list of comic videos from the dictionary
     private void InitializeVideoList(string comicName)
     {
         if (_comicVideos == null || _comicVideos.Count <= 0)
@@ -90,6 +98,8 @@ public class VideoManager : MonoBehaviour
             _comicVideos = m_ComicDict[comicName].comicVideos;
         }
     }
+
+    // * Toggle for auto play videos
     public void SetAutoPlayToggle(bool isAuto)
     {
         autoPlayVideo = isAuto;

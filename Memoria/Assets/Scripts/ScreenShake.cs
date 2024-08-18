@@ -1,13 +1,14 @@
 using PrimeTween;
 using UnityEngine;
 
+// * To be put onto Camera Game Objects
 public class ScreenShake : MonoBehaviour
 {
     Camera _camera;
 
-    [SerializeField][Range(0, 1)] float _shakeStrength = 0; // ? How strong it will shake the camera
-    [SerializeField] float _duration = 0; // ? How long the camera will shake for
-    [SerializeField] float _frequency = 0; // ? How many shakes it will have
+    [SerializeField][Range(0, 1)] float _shakeStrength = 0; // * How strong it will shake the camera
+    [SerializeField] float _duration = 0; // * How long the camera will shake for
+    [SerializeField] float _frequency = 0; // * How many shakes it will have
 
     void Awake()
     {

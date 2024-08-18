@@ -4,9 +4,9 @@ using TMPro;
 
 public class Inventory : MonoBehaviour
 {
-    int pieceCount = 0;
-    public TMP_Text counterText;
-    public GameObject keyIcon = null;
+    int piecesCollected = 0; // * Keeps count of all the pieces that have been collected
+    public TMP_Text counterText; // * Text UI that shows how many pieces were collected
+    public GameObject keyIcon = null; // * Key UI Animation
     void OnEnable()
     {
         EventDispatcher.AddListener<CollectedEvent>(ctx => AddToCount());
@@ -22,10 +22,10 @@ public class Inventory : MonoBehaviour
     }
     void AddToCount()
     {
-        pieceCount++;
-        counterText.text = pieceCount + "/6";
+        piecesCollected++;
+        counterText.text = piecesCollected + "/6";
 
-        switch (pieceCount)
+        switch (piecesCollected)
         {
             case 0:
                 break;
@@ -46,29 +46,34 @@ public class Inventory : MonoBehaviour
                 break;
         }
 
-        if (pieceCount == 6)
+        if (piecesCollected == 6)
         {
             LoadPuzzleEvent loadPuzzleEvent = new LoadPuzzleEvent { loaded = true };
             EventDispatcher.Raise(loadPuzzleEvent);
-            pieceCount = 0;
+            piecesCollected = 0;
         }
     }
+    // * Enables Key UI after key is collected
     void ShowKeyIcon()
     {
         if (keyIcon == null) return;
 
         keyIcon.SetActive(true);
     }
+
+    // * Disables Key UI after key is collected
     void HideKeyIcon()
     {
         if (keyIcon == null) return;
 
         keyIcon.SetActive(false);
     }
+
+    //* Fires Events to VideoManager to play a comic cutscene after piece was collected
     void PlayComicVideo(string name)
     {
         GameVariables.Instance.SetComicToLoad(name);
         EventDispatcher.Raise(new LoadVideoComics { });
-        EventDispatcher.Raise(new ChangeActionMapEvent { newActionMap = "Disable" });
+        EventDispatcher.Raise(new ChangeActionMapEvent { newActionMap = "Disable" }); // * Changes action map so input is diabled during cutscenes
     }
 }
