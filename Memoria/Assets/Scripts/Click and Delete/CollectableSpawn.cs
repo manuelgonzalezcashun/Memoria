@@ -7,10 +7,16 @@ public class CollectableSpawn : MonoBehaviour
     [SerializeField] GameObject _collectable;
     void OnEnable()
     {
+        ChangeActionMapEvent mapEvent = new ChangeActionMapEvent { newActionMap = "Disable" };
+        EventDispatcher.Raise(mapEvent);
+
         EventDispatcher.AddListener<RemoveItemEvent>(CheckListIfAllActive);
     }
     void OnDisable()
     {
+        ChangeActionMapEvent mapEvent = new ChangeActionMapEvent { newActionMap = "Player" };
+        EventDispatcher.Raise(mapEvent);
+
         EventDispatcher.RemoveListener<RemoveItemEvent>(CheckListIfAllActive);
     }
     void CheckListIfAllActive(RemoveItemEvent evtData) => CheckListIfAllActive();

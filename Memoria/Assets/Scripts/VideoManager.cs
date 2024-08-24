@@ -3,13 +3,16 @@ using UnityEngine.Video;
 using System.Collections.Generic;
 using System;
 using UnityEngine.Events;
-using System.Linq;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem.UI;
+using UnityEngine.InputSystem;
 
 public class VideoManager : MonoBehaviour
 {
     #region Initialized Variables
     private Dictionary<string, Comic> m_ComicDict = new();
     private VideoPlayer vp = null;
+    private InputAction pressedAction = null;
     #endregion
 
     #region Edited Variables
@@ -25,6 +28,7 @@ public class VideoManager : MonoBehaviour
     #endregion
     void Awake()
     {
+        pressedAction = EventSystem.current.GetComponent<InputSystemUIInputModule>().actionsAsset["Submit"];
         vp = GetComponent<VideoPlayer>();
 
         // * Initializes Comic Dictionary from the list of comics using the comic name as the key
@@ -37,7 +41,7 @@ public class VideoManager : MonoBehaviour
     void Update()
     {
         // * When Space is pressed, play the next video in the dictionary 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (pressedAction.WasPerformedThisFrame())
         {
             PlayNextVideo();
         }
