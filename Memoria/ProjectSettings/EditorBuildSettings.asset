@@ -6,36 +6,36 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main Menu.unity
+    path: Assets/Project/Runtime/Scenes/Main Menu.unity
     guid: 647c3c27a5e9588459bfbaf7d09d33a5
   - enabled: 1
-    path: Assets/Scenes/Video Scene.unity
+    path: Assets/Project/Runtime/Scenes/Video Scene.unity
     guid: b87836a744d233c4aae241100605071c
   - enabled: 1
-    path: Assets/Scenes/Isaac_Mindscape.unity
+    path: Assets/Project/Runtime/Scenes/Isaac_Mindscape.unity
     guid: 0b6bc81a3af3e2d4f902f53b6c203f39
   - enabled: 1
-    path: Assets/Scenes/Gameplay.unity
+    path: Assets/Project/Runtime/Scenes/Gameplay.unity
     guid: eeac4b488561926418d19a59b05fae83
   - enabled: 1
-    path: Assets/Scenes/Backyard.unity
+    path: Assets/Project/Runtime/Scenes/Backyard.unity
     guid: 206ca20fa7e0e84478c6585732fe20ce
   - enabled: 1
-    path: Assets/Scenes/Bedroom.unity
+    path: Assets/Project/Runtime/Scenes/Bedroom.unity
     guid: d59115bf2a1167143a93522cc04558e3
   - enabled: 1
-    path: Assets/Scenes/LivingRoom.unity
+    path: Assets/Project/Runtime/Scenes/LivingRoom.unity
     guid: 22c783852fe078e4c925938ea461c3c9
   - enabled: 0
-    path: Assets/Scenes/Puzzle Scene.unity
+    path: Assets/Project/Runtime/Scenes/Puzzle Scene.unity
     guid: e7b03c615ab7d354a95ad5c74b047f4f
   - enabled: 1
-    path: Assets/Scenes/Video Scene.unity
+    path: Assets/Project/Runtime/Scenes/Video Scene.unity
     guid: b87836a744d233c4aae241100605071c
   - enabled: 1
-    path: Assets/Scenes/Endstate.unity
+    path: Assets/Project/Runtime/Scenes/Endstate.unity
     guid: a3e971375011cfc49b1110a5c1c3dc6b
   - enabled: 0
-    path: Assets/Scenes/WHITEBOX.unity
+    path: Assets/Project/Runtime/Scenes/WHITEBOX.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}
