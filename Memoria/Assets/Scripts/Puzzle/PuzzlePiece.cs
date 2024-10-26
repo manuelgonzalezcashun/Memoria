@@ -52,4 +52,9 @@ public class PuzzlePiece : MonoBehaviour, IClickable
             EventDispatcher.Raise(addPuzzlePiece);
         }
     }
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireCube(dropArea.transform.position, new Vector3(collisionDist, collisionDist, 0));
+    }
 }
