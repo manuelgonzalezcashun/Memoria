@@ -36,6 +36,7 @@ public class PuzzlePiece : MonoBehaviour, IClickable
         float distance = Vector3.Distance(transform.position, dropArea.transform.position);
         puzzleCollider.enabled = false;
 
+        // * Collision Detection
         if (distance < collisionDist)
         {
             transform.position = dropArea.transform.position + new Vector3(0, 0, -0.01f);
@@ -52,6 +53,8 @@ public class PuzzlePiece : MonoBehaviour, IClickable
             EventDispatcher.Raise(addPuzzlePiece);
         }
     }
+
+    // * Only used in the scene view
     void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
