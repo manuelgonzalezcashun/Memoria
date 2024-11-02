@@ -396,7 +396,7 @@ GameObject:
   - component: {fileID: 130314624}
   - component: {fileID: 130314623}
   m_Layer: 0
-  m_Name: Layer-7-MIDGround
+  m_Name: Layer-7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -486,7 +486,7 @@ GameObject:
   - component: {fileID: 268932126}
   - component: {fileID: 268932125}
   m_Layer: 0
-  m_Name: Layer-9-MIDCar
+  m_Name: Layer-9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -575,7 +575,7 @@ GameObject:
   - component: {fileID: 293818206}
   - component: {fileID: 293818205}
   m_Layer: 0
-  m_Name: Layer-10-MIDBbq
+  m_Name: Layer-10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -883,7 +883,7 @@ GameObject:
   - component: {fileID: 458244836}
   - component: {fileID: 458244835}
   m_Layer: 0
-  m_Name: Layer-4-fog
+  m_Name: Layer-4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5851,7 +5851,7 @@ GameObject:
   - component: {fileID: 472569853}
   - component: {fileID: 472569852}
   m_Layer: 0
-  m_Name: Layer-13-FORETree2
+  m_Name: Layer-14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6076,7 +6076,7 @@ GameObject:
   - component: {fileID: 624131167}
   - component: {fileID: 624131166}
   m_Layer: 0
-  m_Name: Layer-6-MIDTrees
+  m_Name: Layer-6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6361,7 +6361,7 @@ GameObject:
   - component: {fileID: 781497608}
   - component: {fileID: 781497607}
   m_Layer: 0
-  m_Name: Layer-12-FORELaundry
+  m_Name: Layer-12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6451,7 +6451,7 @@ GameObject:
   - component: {fileID: 948534612}
   - component: {fileID: 948534611}
   m_Layer: 0
-  m_Name: Layer-11-FOREShed
+  m_Name: Layer-11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6541,7 +6541,7 @@ GameObject:
   - component: {fileID: 960209767}
   - component: {fileID: 960209766}
   m_Layer: 0
-  m_Name: Layer-13-FORETree
+  m_Name: Layer-13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7086,7 +7086,7 @@ GameObject:
   - component: {fileID: 1117299845}
   - component: {fileID: 1117299844}
   m_Layer: 0
-  m_Name: Layer-5-BGFence
+  m_Name: Layer-5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7176,7 +7176,7 @@ GameObject:
   - component: {fileID: 1146342921}
   - component: {fileID: 1146342920}
   m_Layer: 0
-  m_Name: Layer-1-BGTrees
+  m_Name: Layer-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7910,7 +7910,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: -10
+  m_SortingOrder: -30
   m_TargetDisplay: 0
 --- !u!224 &1516115287
 RectTransform:
@@ -8072,7 +8072,7 @@ GameObject:
   - component: {fileID: 1526399975}
   - component: {fileID: 1526399974}
   m_Layer: 0
-  m_Name: Layer-3-BGTrees
+  m_Name: Layer-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8250,7 +8250,7 @@ GameObject:
   - component: {fileID: 1561189162}
   - component: {fileID: 1561189161}
   m_Layer: 0
-  m_Name: Layer-0-BGHouses
+  m_Name: Layer-0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14045,7 +14045,7 @@ GameObject:
   - component: {fileID: 1979000655}
   - component: {fileID: 1979000654}
   m_Layer: 0
-  m_Name: Layer-8-MIDHouse
+  m_Name: Layer-8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14135,7 +14135,7 @@ GameObject:
   - component: {fileID: 2059181204}
   - component: {fileID: 2059181203}
   m_Layer: 0
-  m_Name: Layer-2-BGPlains
+  m_Name: Layer-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
