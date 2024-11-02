@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cf5bfa7a974604135907c0b399c0bdfe
+guid: c2d8ee5c5c1cf484ba60c90ab016f9bc
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,28 +97,28 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Idle_Animation__0
+      name: Idle_Animation_ 4_0
       rect:
         serializedVersion: 2
-        x: 400
-        y: 17
+        x: 398
+        y: 15
         width: 317
         height: 1252
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f97fce85a4e354a89b791169170db121
-      internalID: 1316041085
+      spriteID: a8b5918ffe9c542bbb4edc9c01cd7e40
+      internalID: -536003430
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_Animation__1
+      name: Idle_Animation_ 4_1
       rect:
         serializedVersion: 2
         x: 796
@@ -126,35 +126,14 @@ TextureImporter:
         width: 353
         height: 1241
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 26, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ca0c2ecfef07e47c6993668f8938ed9d
-      internalID: 900508356
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Idle_Animation__2
-      rect:
-        serializedVersion: 2
-        x: 1513
-        y: 297
-        width: 8
-        height: 19
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 680c45b1203ba445c89c7f001bbae555
-      internalID: -451615711
+      spriteID: 2b460c4e30766487983660fcc8e4c896
+      internalID: 909629888
       vertices: []
       indices: 
       edges: []
@@ -170,9 +149,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Idle_Animation__0: 1316041085
-      Idle_Animation__1: 900508356
-      Idle_Animation__2: -451615711
+      Idle_Animation_ 4_0: -536003430
+      Idle_Animation_ 4_1: 909629888
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
