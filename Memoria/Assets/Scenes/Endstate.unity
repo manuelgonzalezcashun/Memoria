@@ -1185,8 +1185,8 @@ GameObject:
   - component: {fileID: 664618811}
   - component: {fileID: 664618813}
   - component: {fileID: 664618814}
-  - component: {fileID: 664618815}
   - component: {fileID: 664618816}
+  - component: {fileID: 664618817}
   m_Layer: 0
   m_Name: Star
   m_TagString: Untagged
@@ -1293,9 +1293,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 664618815}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: LoadScene
+      - m_Target: {fileID: 664618817}
+        m_TargetAssemblyTypeName: EndGameScript, Assembly-CSharp
+        m_MethodName: InvokeEndGameEvent
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1318,21 +1318,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   comicToLoad: Ending
---- !u!114 &664618815
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 664618810}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71ec5454fa0e00b4e9fa5e422fa2dbb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scene:
-    asset: {fileID: 102900000, guid: b87836a744d233c4aae241100605071c, type: 3}
-    guid: b87836a744d233c4aae241100605071c
 --- !u!95 &664618816
 Animator:
   serializedVersion: 5
@@ -1354,6 +1339,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &664618817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664618810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc074c3d59030904bbbb1cb4d8f58f9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endScene:
+    asset: {fileID: 102900000, guid: b87836a744d233c4aae241100605071c, type: 3}
+    guid: b87836a744d233c4aae241100605071c
+  endConnection: {fileID: 0}
 --- !u!1 &812066850
 GameObject:
   m_ObjectHideFlags: 0
