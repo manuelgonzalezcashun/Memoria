@@ -12,10 +12,11 @@ public class CameraLimitsLoader : MonoBehaviour
     private bool IsCamLimitAcceptable => _camLimitX != null && _camLimitY != null
         || _camLimitX != Vector2.zero && _camLimitY != Vector2.zero || cameraZoom != 0;
 
-    private void Awake()
+    void OnEnable()
     {
         if (!IsCamLimitAcceptable) return;
 
         EventDispatcher.Raise(new ChangeCameraSettings { newXlimit = _camLimitX, newYLimit = _camLimitY, newCamZoom = cameraZoom });
+        Debug.Log("Setting Camera Limits");
     }
 }
