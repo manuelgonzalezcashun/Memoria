@@ -10,6 +10,7 @@ public class DialogueUI : MonoBehaviour
 
     private Coroutine typingCoroutine = null; // Reference to the coroutine for typing effect
     [SerializeField] private float typingSpeed = 0.05f; // Speed of the typing effect (time between characters)
+    private bool submitButtonPressed = false;
 
     void OnEnable()
     {
@@ -42,8 +43,8 @@ public class DialogueUI : MonoBehaviour
         if (typingCoroutine != null)
         {
             StopCoroutine(typingCoroutine);
+            typingCoroutine = null;
         }
-
         // Start the typewriter effect coroutine
         typingCoroutine = StartCoroutine(TypewriterEffect(evt.dialogueLine));
     }
