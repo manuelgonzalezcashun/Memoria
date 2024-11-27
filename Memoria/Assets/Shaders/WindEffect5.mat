@@ -43,13 +43,13 @@ Material:
     m_Floats:
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
-    - _DarkenFactor: 0.73
+    - _DarkenFactor: 1.07
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _WindIntensity: 1
-    - _WindSpeed: 0.1
+    - _WindIntensity: 1.25
+    - _WindSpeed: 0.2
     m_Colors:
-    - _Color: {r: 0.7924528, g: 0.6270468, b: 0.13082945, a: 1}
+    - _Color: {r: 0.7877358, g: 0.70032555, b: 0.14862938, a: 1}
     - _ColorTop: {r: 0.9716981, g: 0.860149, b: 0.55460125, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &32139913664074348
