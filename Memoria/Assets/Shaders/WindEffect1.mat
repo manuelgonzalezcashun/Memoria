@@ -69,7 +69,7 @@ Material:
     m_Floats:
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
-    - _DarkenFactor: 0.72
+    - _DarkenFactor: 0.88
     - _QueueControl: 0
     - _QueueOffset: 0
     - _WindIntensity: 0.58
