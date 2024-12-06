@@ -2566,7 +2566,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Yay you completed the memory! '
+  m_text: 'I... I shouldn''t have said those things to you Mama..
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d11316013a329b145826a348576ade61, type: 2}
   m_sharedMaterial: {fileID: 5155988059209335814, guid: d11316013a329b145826a348576ade61, type: 2}
