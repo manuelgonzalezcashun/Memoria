@@ -44,6 +44,9 @@ public class CameraFollow : MonoBehaviour
         xLimit = newXLimit;
         yLimit = newYLimit;
 
+        Debug.Log($"X-Limit: {xLimit}");
+        Debug.Log($"Y-Limit: {yLimit}");
+
         if (cameraInstance == null) return;
         cameraInstance.orthographicSize = newCamZoom;
     }

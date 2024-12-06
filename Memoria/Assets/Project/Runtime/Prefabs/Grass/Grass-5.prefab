@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 8880132104613012366}
   - component: {fileID: 4003382711830902700}
   - component: {fileID: 8934882093825130245}
+  - component: {fileID: 9077364516452717062}
   m_Layer: 0
   m_Name: Grass-5-art
   m_TagString: Untagged
@@ -119,3 +120,15 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8462570885326677622}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!210 &9077364516452717062
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8462570885326677622}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortAtRoot: 0

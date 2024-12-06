@@ -56,14 +56,14 @@ Material:
     m_Floats:
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
-    - _DarkenFactor: 0.73
+    - _DarkenFactor: 0.96
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _WindIntensity: 1
-    - _WindSpeed: 0.1
+    - _WindIntensity: 1.45
+    - _WindSpeed: 0.54
     m_Colors:
-    - _Color: {r: 0.7924528, g: 0.6270468, b: 0.13082945, a: 1}
-    - _ColorTop: {r: 0.9716981, g: 0.860149, b: 0.55460125, a: 1}
+    - _Color: {r: 0.9669811, g: 0.80962557, b: 0.45156193, a: 1}
+    - _ColorTop: {r: 0.8820755, g: 0.7490098, b: 0.39110893, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &6028388358754793327
 MonoBehaviour:
