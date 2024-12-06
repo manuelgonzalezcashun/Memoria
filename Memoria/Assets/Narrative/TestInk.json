@@ -1,0 +1,1 @@
+﻿{"inkVersion":21,"root":[["^Hello from Planet Earth","\n","^My name is ______","\n","^I can't tell you all my secrets","\n","ev",true,"/ev",{"VAR=":"saveState","re":true},"^You'll learn one day","\n",["done",{"#f":5,"#n":"g-0"}],null],"done",{"global decl":["ev",false,{"VAR=":"saveState"},"/ev","end",null],"#f":1}],"listDefs":{}}
