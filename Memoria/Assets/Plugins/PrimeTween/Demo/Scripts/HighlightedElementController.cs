@@ -19,15 +19,15 @@ namespace PrimeTweenDemo {
             if (cameraProjectionMatrixAnimation.IsAnimating) {
                 return;
             }
-            if (Input.touchSupported && !Input.GetMouseButton(0)) {
+            if (InputController.touchSupported && !InputController.Get()) {
                 SetCurrentHighlighted(null);
                 return;
             }
-            var ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+            var ray = mainCamera.ScreenPointToRay(InputController.screenPosition);
             var highlightableElement = RaycastHighlightableElement(ray);
             SetCurrentHighlighted(highlightableElement);
 
-            if (current != null && Input.GetMouseButtonDown(0)) {
+            if (current != null && InputController.GetDown()) {
                 current.GetComponent<Animatable>().OnClick();
             }
         }
@@ -54,10 +54,12 @@ namespace PrimeTweenDemo {
             }
         }
 
+        static readonly int emissionColorPropId = Shader.PropertyToID("_EmissionColor");
+
         static void AnimateHighlightedElement([NotNull] HighlightableElement highlightable, bool isHighlighted) {
             Tween.LocalPositionZ(highlightable.highlightAnchor, isHighlighted ? 0.08f : 0, 0.3f);
             foreach (var model in highlightable.models) {
-                Tween.MaterialColor(model.material, Shader.PropertyToID("_EmissionColor"), isHighlighted ? Color.white * 0.25f : Color.black, 0.2f, Ease.OutQuad);
+                Tween.MaterialColor(model.material, emissionColorPropId, isHighlighted ? Color.white * 0.25f : Color.black, 0.2f, Ease.OutQuad);
             }
         }
     }
