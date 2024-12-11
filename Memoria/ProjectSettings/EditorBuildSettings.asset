@@ -38,4 +38,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/WHITEBOX.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Shed.unity
+    guid: 2d8610114c9108547ae0b96e7136f78b
   m_configObjects: {}
