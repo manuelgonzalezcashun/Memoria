@@ -1,4 +1,4 @@
-#if PRIME_TWEEN_INSTALLED
+#if PRIME_TWEEN_INSTALLED && UNITY_UGUI_INSTALLED
 using PrimeTween;
 using UnityEngine;
 

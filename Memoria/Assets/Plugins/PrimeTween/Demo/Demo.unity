@@ -378,7 +378,7 @@ GameObject:
   - component: {fileID: 206828975}
   - component: {fileID: 206828974}
   m_Layer: 0
-  m_Name: EventSystem
+  m_Name: InputController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -393,16 +393,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 206828973}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: ea1502cb33ab4d4ca1fedbdde163c980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
 --- !u!114 &206828975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1694,7 +1687,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6113f6e98f16c489f87f373fc4133597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  demo: {fileID: 182366648}
   wheels:
   - {fileID: 4185769961175156060}
   - {fileID: 7375368130044152401}

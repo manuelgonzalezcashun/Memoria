@@ -1,8 +1,14 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
+using System.Reflection.Emit;
 using UnityEditor;
 using UnityEditor.PackageManager;
 using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.Assertions;
 using UnityEngine.Rendering;
 using static UnityEngine.GUILayout;
 
@@ -12,8 +18,8 @@ namespace PrimeTween {
         [SerializeField] internal SceneAsset demoSceneUrp;
         [SerializeField] internal Color uninstallButtonColor;
 
-        [ContextMenu(nameof(ResetReviewRequest))]
-        void ResetReviewRequest() => ReviewRequest.ResetReviewRequest();
+        [ContextMenu(nameof(ResetReviewRequest))] void ResetReviewRequest() => ReviewRequest.ResetReviewRequest();
+        [ContextMenu(nameof(DebugReviewRequest))] void DebugReviewRequest() => ReviewRequest.DebugReviewRequest();
     }
 
     [CustomEditor(typeof(PrimeTweenInstaller), false)]
@@ -25,10 +31,9 @@ namespace PrimeTween {
         bool isInstalled;
         GUIStyle boldButtonStyle;
         GUIStyle uninstallButtonStyle;
+        GUIStyle wordWrapLabelStyle;
 
-        void OnEnable() {
-            isInstalled = CheckPluginInstalled();
-        }
+        void OnEnable() => isInstalled = CheckPluginInstalled();
 
         static bool CheckPluginInstalled() {
             var listRequest = Client.List(true);
@@ -45,17 +50,19 @@ namespace PrimeTween {
             if (uninstallButtonStyle == null) {
                 uninstallButtonStyle = new GUIStyle(GUI.skin.button) { normal = { textColor = installer.uninstallButtonColor } };
             }
+            if (wordWrapLabelStyle == null) {
+                wordWrapLabelStyle = new GUIStyle(GUI.skin.label) { wordWrap = true, richText = true, margin = new RectOffset(4, 4, 8, 8) };
+            }
+            EditorGUI.indentLevel = 5;
             Space(8);
             Label(pluginName, EditorStyles.boldLabel);
+            Space(4);
             if (!isInstalled) {
-                Space(8);
                 if (Button("Install " + pluginName)) {
                     installPlugin();
                 }
                 return;
             }
-
-            Space(8);
             if (Button("Documentation", boldButtonStyle)) {
                 Application.OpenURL(documentationUrl);
             }
@@ -96,7 +103,29 @@ namespace PrimeTween {
                 Debug.Log(msg);
             }
 
-            ReviewRequest.DrawInspector();
+            Space(24);
+            Label("Updating from PrimeTween [1.1.10 - 1.1.22]", EditorStyles.boldLabel);
+            Label("The behaviour of 'Sequence.ChainCallback()' and 'InsertCallback()' was fixed in PrimeTween 1.2.0 so the code written with older versions may work differently in some cases.", wordWrapLabelStyle);
+            if (Button("Find potential issues")) {
+                ChainInsertCallbackBug.Find();
+            }
+            BeginHorizontal();
+            if (Button("More info")) {
+                Application.OpenURL(ChainInsertCallbackBug.moreInfoUrl);
+            }
+            if (Button("Download version 1.1.22")) {
+                Application.OpenURL("https://github.com/KyryloKuzyk/PrimeTween/blob/545dcc52769d52841e282c772e98c8984bfeb243/Benchmarks/Packages/com.kyrylokuzyk.primetween.tgz");
+            }
+            EndHorizontal();
+
+            Space(24);
+            Label("Enjoying PrimeTween?", EditorStyles.boldLabel);
+            Label("Consider leaving an <b>honest review</b> and starring PrimeTween on GitHub!\n\n" +
+                  "Honest reviews make PrimeTween better and help other developers discover it.", wordWrapLabelStyle);
+            if (Button("Leave review!", GUI.skin.button)) {
+                ReviewRequest.DisableReviewRequest();
+                ReviewRequest.OpenReviewsURL();
+            }
         }
 
         static void installPlugin() {
@@ -137,7 +166,7 @@ namespace PrimeTween {
     }
 
     internal static class ReviewRequest {
-        const string version = "1.1.19";
+        internal const string version = "1.2.2";
         const string canAskKey = "PrimeTween.canAskForReview";
         const string versionKey = "PrimeTween.version";
 
@@ -147,16 +176,32 @@ namespace PrimeTween {
                 log("not installed");
                 return;
             }
-            if (!EditorPrefs.GetBool(canAskKey, true)) {
-                log("can't ask");
-                return;
-            }
             if (savedVersion == version) {
                 log($"same version {version}");
                 return;
             }
-            log($"updated from version {savedVersion} to {version}, ask for review");
+            bool shouldFindUpdateIssues = Version.TryParse(savedVersion, out var parsedSavedVersion)
+                                           && new Version(1, 1, 10) <= parsedSavedVersion
+                                           && parsedSavedVersion <= new Version(1, 1, 22);
+            log($"updated from version {savedVersion} to {version}, shouldFindUpdateIssues: {shouldFindUpdateIssues}");
             savedVersion = version;
+            if (shouldFindUpdateIssues) {
+                ChainInsertCallbackBug.Find();
+                int updateResponse = EditorUtility.DisplayDialogComplex("PrimeTween 1.2.0",
+                    "PrimeTween 1.2.0 fixed a bug in ChainCallback() and InsertCallback() methods.\n" +
+                    "This fix may introduce breaking changes in the existing projects. Please see the Console output for more details.",
+                    "More info",
+                    "Close",
+                    "");
+                if (updateResponse == 0) {
+                    Application.OpenURL(ChainInsertCallbackBug.moreInfoUrl);
+                }
+                return; // don't ask for review if shouldFindUpdateIssues
+            }
+            if (!EditorPrefs.GetBool(canAskKey, true)) {
+                log("can't ask");
+                return;
+            }
             DisableReviewRequest();
             var response = EditorUtility.DisplayDialogComplex("Enjoying PrimeTween?",
                 "Would you mind to leave an honest review on Asset store? Honest reviews make PrimeTween better and help other developers discover it.",
@@ -190,22 +235,8 @@ namespace PrimeTween {
             set => EditorPrefs.SetString(versionKey, value);
         }
 
-        static void DisableReviewRequest() => EditorPrefs.SetBool(canAskKey, false);
-        static void OpenReviewsURL() => Application.OpenURL("https://assetstore.unity.com/packages/slug/252960#reviews");
-
-        internal static void DrawInspector() {
-            Space(32);
-            Label("Enjoying PrimeTween?", EditorStyles.boldLabel);
-            Space(8);
-            Label("Consider leaving an <b>honest review</b> and starring PrimeTween on GitHub!\n\n" +
-                  "Honest reviews make PrimeTween better and help other developers discover it.",
-                new GUIStyle(GUI.skin.label) { wordWrap = true, richText = true, margin = new RectOffset(4, 4, 4, 4) });
-            Space(8);
-            if (Button("Leave review!", GUI.skin.button)) {
-                DisableReviewRequest();
-                OpenReviewsURL();
-            }
-        }
+        internal static void DisableReviewRequest() => EditorPrefs.SetBool(canAskKey, false);
+        internal static void OpenReviewsURL() => Application.OpenURL("https://assetstore.unity.com/packages/slug/252960#reviews");
 
         internal static void ResetReviewRequest() {
             Debug.Log(nameof(ResetReviewRequest));
@@ -213,9 +244,134 @@ namespace PrimeTween {
             EditorPrefs.DeleteKey(canAskKey);
         }
 
+        internal static void DebugReviewRequest() {
+            Debug.Log(nameof(DebugReviewRequest));
+            savedVersion = "1.1.22";
+            EditorPrefs.SetBool("PrimeTween.canAskForReview", false);
+            // TryAskForReview();
+        }
+
         [System.Diagnostics.Conditional("_")]
         static void log(string msg) {
             Debug.Log($"ReviewRequest: {msg}");
+        }
+    }
+
+    internal static class ChainInsertCallbackBug {
+        internal const string moreInfoUrl = "https://github.com/KyryloKuzyk/PrimeTween/discussions/112";
+        static Dictionary<short, OpCode> OpcodeDict;
+        static MethodInfo[] methodsWithBug;
+        static MethodInfo[] groupMethods;
+
+        internal static void Find() {
+            OpcodeDict = typeof(OpCodes)
+                .GetFields(BindingFlags.Public | BindingFlags.Static)
+                .Select(x => (OpCode)x.GetValue(null))
+                .ToDictionary(x => x.Value, x => x);
+            #if PRIME_TWEEN_INSTALLED
+            methodsWithBug = typeof(Sequence).GetMethods(BindingFlags.Public | BindingFlags.Instance)
+                .Where(methodInfo => methodInfo.Name == nameof(Sequence.ChainCallback) || methodInfo.Name == nameof(Sequence.InsertCallback))
+                .Select(methodInfo => methodInfo.IsGenericMethod ? methodInfo.GetGenericMethodDefinition() : methodInfo)
+                .ToArray();
+            Assert.AreEqual(4, methodsWithBug.Length);
+            groupMethods = typeof(Sequence).GetMethods(BindingFlags.Public | BindingFlags.Instance)
+                .Where(methodInfo => methodInfo.Name == nameof(Sequence.Group))
+                .ToArray();
+            #endif
+            Assert.AreEqual(2, groupMethods.Length);
+
+            string methodAssemblyName = methodsWithBug[0].Module.Assembly.FullName;
+            const BindingFlags findAll = BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static;
+            int numPotentialIssues = AppDomain.CurrentDomain.GetAssemblies()
+                .Where(assembly => assembly.GetReferencedAssemblies().Any(dependency => dependency.FullName == methodAssemblyName))
+                .Where(assembly => !assembly.GetName().Name.StartsWith("PrimeTween.", StringComparison.Ordinal))
+                .SelectMany(assembly => assembly.GetTypes())
+                .SelectMany(type => type.GetMethods(findAll).Cast<MethodBase>().Union(type.GetConstructors(findAll)))
+                .Count(method => FindInMethod(method));
+            if (numPotentialIssues == 0) {
+                Debug.Log($"PrimeTween updated to version {ReviewRequest.version}: no potential issues found in ChainCallback() and InsertCallback() usages.\n" +
+                          $"More info: {moreInfoUrl}\n");
+            }
+        }
+
+        /// https://stackoverflow.com/a/33034906/1951038
+        static bool FindInMethod(MethodBase method) {
+            byte[] il = method.GetMethodBody()?.GetILAsByteArray();
+            if (il == null) {
+                return false;
+            }
+            bool bugFound = false;
+            using (var br = new BinaryReader(new MemoryStream(il))) {
+                while (br.BaseStream.Position < br.BaseStream.Length) {
+                    byte firstByte = br.ReadByte();
+                    short opCodeValue = firstByte == 0xFE ? BitConverter.ToInt16(new[] { br.ReadByte(), firstByte }, 0) : firstByte;
+                    OpCode opCode = OpcodeDict[opCodeValue];
+                    switch (opCode.OperandType) {
+                        case OperandType.ShortInlineBrTarget:
+                        case OperandType.ShortInlineVar:
+                        case OperandType.ShortInlineI:
+                            br.ReadByte();
+                            break;
+                        case OperandType.InlineVar:
+                            br.ReadInt16();
+                            break;
+                        case OperandType.InlineField:
+                        case OperandType.InlineType:
+                        case OperandType.ShortInlineR:
+                        case OperandType.InlineString:
+                        case OperandType.InlineSig:
+                        case OperandType.InlineI:
+                        case OperandType.InlineBrTarget:
+                            br.ReadInt32();
+                            break;
+                        case OperandType.InlineI8:
+                        case OperandType.InlineR:
+                            br.ReadInt64();
+                            break;
+                        case OperandType.InlineSwitch:
+                            var size = (int)br.ReadUInt32();
+                            br.ReadBytes(size * 4);
+                            break;
+                        case OperandType.InlineTok:
+                            br.ReadUInt32();
+                            break;
+                        case OperandType.InlineMethod:
+                            int token = (int)br.ReadUInt32();
+                            if (method.Module.ResolveMethod(token) is MethodInfo resolvedMethod) {
+                                if (bugFound) {
+                                    if (groupMethods.Contains(resolvedMethod)) {
+                                        Debug.LogError($"PrimeTween updated to version {ReviewRequest.version}: potential breaking change found in the '{method.DeclaringType}.{method.Name}()' method.\n" +
+                                                       "Please double-check the behavior if Group() is called immediately after the ChainCallback() or InsertCallback() and apply the fix manually if necessary.\n" +
+                                                       "Or use ChainCallbackObsolete/InsertCallbackObsolete() instead to preserve the old incorrect behavior.\n" +
+                                                       $"More info: {moreInfoUrl}\n");
+                                        return true;
+                                    }
+                                } else {
+                                    bugFound = isMethodWithBug(resolvedMethod);
+                                }
+                            }
+                            break;
+                        case OperandType.InlineNone:
+                            break;
+                        default:
+                            throw new Exception();
+                    }
+                }
+            }
+            return false;
+        }
+
+        static bool isMethodWithBug(MethodInfo method) {
+            foreach (var methodWithBug in methodsWithBug) {
+                if (methodWithBug.IsGenericMethodDefinition && method.IsGenericMethod) {
+                    if (methodWithBug == method.GetGenericMethodDefinition()) {
+                        return true;
+                    }
+                } else if (methodWithBug == method) {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

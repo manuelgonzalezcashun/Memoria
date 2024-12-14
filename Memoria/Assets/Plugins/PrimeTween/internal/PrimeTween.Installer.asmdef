@@ -1,7 +1,9 @@
 {
     "name": "PrimeTween.Installer",
     "rootNamespace": "",
-    "references": [],
+    "references": [
+        "PrimeTween.Runtime"
+    ],
     "includePlatforms": [
         "Editor"
     ],

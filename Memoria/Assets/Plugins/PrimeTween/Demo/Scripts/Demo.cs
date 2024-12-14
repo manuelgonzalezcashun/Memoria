@@ -1,4 +1,4 @@
-#if PRIME_TWEEN_INSTALLED
+#if PRIME_TWEEN_INSTALLED && UNITY_UGUI_INSTALLED
 using PrimeTween;
 using UnityEngine.UI;
 #endif
@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace PrimeTweenDemo {
     public class Demo : MonoBehaviour {
-        #if PRIME_TWEEN_INSTALLED
+        #if PRIME_TWEEN_INSTALLED && UNITY_UGUI_INSTALLED
         [SerializeField] AnimateAllType animateAllType; enum AnimateAllType { Sequence, Async, Coroutine }
         [SerializeField] Slider sequenceTimelineSlider;
         [SerializeField] Text pausedLabel;
@@ -97,7 +97,7 @@ namespace PrimeTweenDemo {
                 return;
             }
             animateAllSequence = Sequence.Create();
-            #if TEXT_MESH_PRO_INSTALLED || (UNITY_6000_0_OR_NEWER && UNITY_UGUI_INSTALLED)
+            #if TEXT_MESH_PRO_INSTALLED
             animateAllSequence.Group(typewriterAnimatorExample.Animate());
             #endif
             float delay = 0f;
