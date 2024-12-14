@@ -3,8 +3,7 @@
     "rootNamespace": "",
     "references": [
         "PrimeTween.Runtime",
-        "Unity.TextMeshPro",
-        "Unity.InputSystem"
+        "Unity.TextMeshPro"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
@@ -32,16 +31,6 @@
         {
             "name": "com.unity.textmeshpro",
             "expression": "1.0.0",
-            "define": "TEXT_MESH_PRO_INSTALLED"
-        },
-        {
-            "name": "com.unity.inputsystem",
-            "expression": "1.0.0",
-            "define": "INPUT_SYSTEM_INSTALLED"
-        },
-        {
-            "name": "com.unity.ugui",
-            "expression": "2.0.0",
             "define": "TEXT_MESH_PRO_INSTALLED"
         }
     ],
