@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44824862, g: 0.49827528, b: 0.57558256, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -98,7 +97,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: 64acb5532649148ad8702bd2c1c99441, type: 2}
-  m_LightingSettings: {fileID: 0}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 57f0c8ec6c3514d5786caf6ce528a88a, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -403,7 +402,7 @@ GameObject:
   - component: {fileID: 206828975}
   - component: {fileID: 206828974}
   m_Layer: 0
-  m_Name: EventSystem
+  m_Name: InputController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -418,17 +417,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 206828973}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Script: {fileID: 11500000, guid: ea1502cb33ab4d4ca1fedbdde163c980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
 --- !u!114 &206828975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -729,7 +720,6 @@ GameObject:
   - component: {fileID: 384398582}
   - component: {fileID: 384398581}
   - component: {fileID: 384398583}
-  - component: {fileID: 384398584}
   m_Layer: 0
   m_Name: DirectionalLightController
   m_TagString: Untagged
@@ -830,29 +820,6 @@ MonoBehaviour:
   mainCamera: {fileID: 142301653}
   startColor: {r: 1, g: 0.9490196, b: 0.8509804, a: 1}
   endColor: {r: 0.69803923, g: 0.87058824, b: 1, a: 1}
---- !u!114 &384398584
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 384398580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Version: 3
-  m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
-  m_LightLayerMask: 1
-  m_RenderingLayers: 1
-  m_CustomShadowLayers: 0
-  m_ShadowLayerMask: 1
-  m_ShadowRenderingLayers: 1
-  m_LightCookieSize: {x: 1, y: 1}
-  m_LightCookieOffset: {x: 0, y: 0}
-  m_SoftShadowQuality: 0
 --- !u!1 &414605616
 GameObject:
   m_ObjectHideFlags: 0
@@ -1849,7 +1816,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6113f6e98f16c489f87f373fc4133597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  demo: {fileID: 182366648}
   wheels:
   - {fileID: 4185769961175156060}
   - {fileID: 7375368130044152401}

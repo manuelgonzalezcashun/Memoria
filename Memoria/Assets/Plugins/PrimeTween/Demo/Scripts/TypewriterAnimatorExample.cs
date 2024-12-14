@@ -1,5 +1,5 @@
 #if PRIME_TWEEN_INSTALLED
-#if TEXT_MESH_PRO_INSTALLED || (UNITY_6000_0_OR_NEWER && UNITY_UGUI_INSTALLED)
+#if TEXT_MESH_PRO_INSTALLED
 using TMPro;
 #endif
 using JetBrains.Annotations;
@@ -13,7 +13,7 @@ namespace PrimeTweenDemo {
         [SerializeField] AnimationType animationType = AnimationType.WithPunctuations;
         [SerializeField] float charsPerSecond = 40f;
         [SerializeField] int pauseAfterPunctuation = 20;
-        #if TEXT_MESH_PRO_INSTALLED || (UNITY_6000_0_OR_NEWER && UNITY_UGUI_INSTALLED)
+        #if TEXT_MESH_PRO_INSTALLED
         TextMeshProUGUI text;
 
         void Awake() {

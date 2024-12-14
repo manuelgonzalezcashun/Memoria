@@ -26,7 +26,7 @@ namespace PrimeTweenDemo {
         [SerializeField] Text gcAllocText;
         #pragma warning restore 0414
         #if UNITY_EDITOR && UNITY_2019_1_OR_NEWER
-        int curTweensCount = -1;
+        long curTweensCount = -1;
         int? curGCAlloc;
 
         void Start() {
