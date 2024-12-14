@@ -418,6 +418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f7d081c54b5e7f4a8b3d164cfaade4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionDist: 1.5
   dropArea: {fileID: 1307405552}
 --- !u!61 &201560843
 BoxCollider2D:
@@ -566,6 +567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f7d081c54b5e7f4a8b3d164cfaade4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionDist: 1.5
   dropArea: {fileID: 391604971}
 --- !u!61 &276826704
 BoxCollider2D:
@@ -955,6 +957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f7d081c54b5e7f4a8b3d164cfaade4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionDist: 1.5
   dropArea: {fileID: 0}
 --- !u!61 &553027496
 BoxCollider2D:
@@ -1091,6 +1094,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f7d081c54b5e7f4a8b3d164cfaade4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionDist: 1.5
   dropArea: {fileID: 1468127450}
 --- !u!61 &574062555
 BoxCollider2D:
@@ -1246,8 +1250,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Drag and Drop Pieces in!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d11316013a329b145826a348576ade61, type: 2}
-  m_sharedMaterial: {fileID: 5155988059209335814, guid: d11316013a329b145826a348576ade61, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0590d9a2c378fa54194335d58bc1b4e8, type: 2}
+  m_sharedMaterial: {fileID: 6792668140723522181, guid: 0590d9a2c378fa54194335d58bc1b4e8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1277,7 +1281,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1446,6 +1450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f7d081c54b5e7f4a8b3d164cfaade4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionDist: 1.5
   dropArea: {fileID: 1512240235}
 --- !u!61 &734755683
 BoxCollider2D:
@@ -1726,7 +1731,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Yay you completed the memory! '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d11316013a329b145826a348576ade61, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0590d9a2c378fa54194335d58bc1b4e8, type: 2}
   m_sharedMaterial: {fileID: 5155988059209335814, guid: d11316013a329b145826a348576ade61, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1757,7 +1762,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -1790,7 +1795,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &878669079
@@ -2103,6 +2108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f7d081c54b5e7f4a8b3d164cfaade4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionDist: 1.5
   dropArea: {fileID: 1980680307}
 --- !u!61 &990501937
 BoxCollider2D:
@@ -2425,6 +2431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f7d081c54b5e7f4a8b3d164cfaade4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionDist: 1.5
   dropArea: {fileID: 0}
 --- !u!61 &1139984341
 BoxCollider2D:
@@ -2560,6 +2567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f7d081c54b5e7f4a8b3d164cfaade4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionDist: 1.5
   dropArea: {fileID: 0}
 --- !u!61 &1225529874
 BoxCollider2D:
@@ -3184,6 +3192,7 @@ MonoBehaviour:
   endScene:
     asset: {fileID: 0}
     guid: 00000000000000000000000000000000
+  endConnection: {fileID: 0}
 --- !u!1 &1398034316
 GameObject:
   m_ObjectHideFlags: 0
@@ -3374,7 +3383,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Go to Beach
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0590d9a2c378fa54194335d58bc1b4e8, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -3438,7 +3447,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1446210611
@@ -3621,6 +3630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f7d081c54b5e7f4a8b3d164cfaade4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionDist: 1.5
   dropArea: {fileID: 0}
 --- !u!61 &1459602226
 BoxCollider2D:
@@ -4246,6 +4256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f7d081c54b5e7f4a8b3d164cfaade4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionDist: 1.5
   dropArea: {fileID: 0}
 --- !u!61 &1574139687
 BoxCollider2D:
