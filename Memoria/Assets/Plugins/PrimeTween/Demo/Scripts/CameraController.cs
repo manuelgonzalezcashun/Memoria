@@ -1,4 +1,4 @@
-#if PRIME_TWEEN_INSTALLED && UNITY_UGUI_INSTALLED
+#if PRIME_TWEEN_INSTALLED
 using PrimeTween;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -10,7 +10,7 @@ namespace PrimeTweenDemo {
         [SerializeField] Camera mainCamera;
         [SerializeField, Range(0f, 1f)] float cameraShakeStrength = 0.4f;
         float currentAngle;
-        Vector2? inputBeginPos;
+        Vector3? inputBeginPos;
         bool isAnimating;
         float curRotationSpeed;
 
@@ -25,14 +25,14 @@ namespace PrimeTweenDemo {
                 currentAngle += curRotationSpeed * Time.deltaTime;
                 transform.localEulerAngles = new Vector3(0f, currentAngle);
             }
-            if (highlightedElementController.current == null && InputController.GetDown() && !EventSystem.current.IsPointerOverGameObject()) {
-                inputBeginPos = InputController.screenPosition;
+            if (highlightedElementController.current == null && Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject()) {
+                inputBeginPos = Input.mousePosition;
             }
-            if (InputController.GetUp()) {
+            if (Input.GetMouseButtonUp(0)) {
                 inputBeginPos = null;
             }
             if (inputBeginPos.HasValue) {
-                var deltaMove = InputController.screenPosition - inputBeginPos.Value;
+                var deltaMove = Input.mousePosition - inputBeginPos.Value;
                 if (Mathf.Abs(deltaMove.x) / Screen.width > 0.05f) {
                     isAnimating = false;
                     inputBeginPos = null;
