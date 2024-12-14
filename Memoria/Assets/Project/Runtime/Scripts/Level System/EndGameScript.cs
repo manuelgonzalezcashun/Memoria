@@ -16,10 +16,12 @@ public class EndGameScript : MonoBehaviour
 
         LoadSceneEvent loadSceneEvent = new LoadSceneEvent { sceneToLoad = endScene.Name };
         EventDispatcher.Raise(loadSceneEvent);
+
     }
 
     public void LoadEndScene()
     {
+        Debug.Log("It's Syrus' Fault");
         UnityEngine.SceneManagement.SceneManager.LoadScene(endScene.Name);
     }
 }
