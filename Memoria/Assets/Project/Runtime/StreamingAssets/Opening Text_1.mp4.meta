@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: a63658ede9b63324a9e5b10d5b36b363
+VideoClipImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  frameRange: 0
+  startFrame: -1
+  endFrame: -1
+  colorSpace: 0
+  deinterlace: 0
+  encodeAlpha: 0
+  flipVertical: 0
+  flipHorizontal: 0
+  importAudio: 1
+  targetSettings: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
